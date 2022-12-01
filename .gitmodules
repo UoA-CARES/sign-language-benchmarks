@@ -4,3 +4,6 @@
 [submodule "WLASL"]
 	path = WLASL
 	url = https://github.com/dxli94/WLASL.git
+[submodule "wlasl"]
+	path = wlasl
+	url = https://github.com/dxli94/WLASL.git
