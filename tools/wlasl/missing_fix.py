@@ -1,6 +1,8 @@
 import json
 import argparse
+import os
 
+DATA_PATH = "../../data/wlasl/wlasl-uncompressed"
 
 def load_args():
     parser = argparse.ArgumentParser()
@@ -34,6 +36,7 @@ def save_json(args, videos):
 
 
 if __name__ == '__main__':
+    os.chdir(DATA_PATH)
     args = load_args()
     videos = load_json(args)
     videos = delete_missing(args, videos)
