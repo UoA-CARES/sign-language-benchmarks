@@ -7,3 +7,6 @@
 [submodule "wlasl"]
 	path = wlasl
 	url = https://github.com/dxli94/WLASL.git
+[submodule "label-bob"]
+	path = label-bob
+	url = https://github.com/Oh-hi-marx/label-bob.git
