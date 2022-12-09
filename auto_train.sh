@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Download the dataset
+mkdir -p data
 cd data
 mkdir -p wlasl
 cd wlasl
