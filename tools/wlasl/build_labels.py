@@ -29,10 +29,10 @@ def write_annotations(args, videos):
     for video_id in videos:
         class_id = videos[video_id]['action'][0]
         subset = videos[video_id]['subset']
-        directory = f'{subset}/{video_id}'
+        directory = f'rawframes/{subset}/{video_id}'
 
         frames = len([frame for frame in os.listdir(directory) if os.path.isfile(os.path.join(directory, frame))])
-        with open(f'../{subset}_annotations.txt', 'a') as fout:
+        with open(f'{subset}_annotations.txt', 'a') as fout:
             fout.write(f'{subset}/{video_id} {frames} {class_id}\n')
     
 

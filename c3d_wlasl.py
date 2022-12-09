@@ -104,7 +104,7 @@ log_config = dict(
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./work_dirs/c3d_mnist_sign_{split}_rgb/'
+work_dir = f'./work_dirs/c3d_wlasl_{split}_rgb/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
