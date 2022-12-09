@@ -2,13 +2,13 @@ _base_ = 'mmaction2/configs/_base_/models/c3d_sports1m_pretrained.py'
 
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = 'datasets/outputs'
-data_root_val = 'datasets/outputs'
+data_root = 'data/wlasl/rawframes'
+data_root_val = 'data/wlasl/rawframes'
 split = 1  # official train/test splits. valid numbers: 1, 2, 3
 clip_length = 16
-ann_file_train = 'dataset/labels.txt'
-ann_file_val = 'dataset/labels.txt'
-ann_file_test = 'dataset/labels.txt'
+ann_file_train = 'data/wlasl/train_annotations.txt'
+ann_file_val = 'data/wlasl/val_annotations.txt'
+ann_file_test = 'data/wlasl/test_annotations.txt'
 img_norm_cfg = dict(mean=[104, 117, 128], std=[1, 1, 1], to_bgr=False)
 train_pipeline = [
     dict(type='SampleFrames', clip_len=16, frame_interval=1, num_clips=1),
@@ -52,7 +52,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs', 'label'])
 ]
 data = dict(
-    videos_per_gpu=30,
+    videos_per_gpu=16,
     workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
@@ -81,16 +81,30 @@ total_epochs = 45
 checkpoint_config = dict(interval=5)
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
+
+# WandB setup
+# log_config = dict(interval=10, hooks=[
+#     dict(type='TextLoggerHook'),
+#     dict(type='WandbLoggerHook',
+#          init_kwargs={
+#              'entity': "cares",
+#              'project': "mnist-sign-language"
+#          },
+#          log_artifact=True)
+# ]
+# )
+
 log_config = dict(
     interval=20,
     hooks=[
         dict(type='TextLoggerHook'),
         # dict(type='TensorboardLoggerHook'),
     ])
+
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./work_dirs/c3d_sports1m_16x1x1_45e_ucf101_split_{split}_rgb/'
+work_dir = f'./work_dirs/c3d_mnist_sign_{split}_rgb/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]

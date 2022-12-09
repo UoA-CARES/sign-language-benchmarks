@@ -18,22 +18,27 @@ def delete_existing_annotations():
         except:
             pass
 
-def write_annotations(args):
+def load_annotations(args):
     # Load the json labels
-    with open(f'wlasl-uncompressed/{args.json_file}') as fin:
+    with open(f'data/wlasl/wlasl-uncompressed/{args.json_file}') as fin:
         videos = json.load(fin)
+    return videos
 
+def write_annotations(args, videos):
     # Create the annotation files
-    for subset in SUBSETS:
-        for video_id in os.listdir(subset):
-            class_id = videos[video_id]['action'][0]
-            directory = f'{subset}/{video_id}'
-            frames = len([frame for frame in os.listdir(directory) if os.path.isfile(os.path.join(directory, frame))])
-            with open(f'annotations_{subset}.txt', 'a') as fout:
-                fout.write(f'{subset}/{video_id} {frames} {class_id}\n')
+    for video_id in videos:
+        class_id = videos[video_id]['action'][0]
+        subset = videos[video_id]['subset']
+        directory = f'{subset}/{video_id}'
+
+        frames = len([frame for frame in os.listdir(directory) if os.path.isfile(os.path.join(directory, frame))])
+        with open(f'../{subset}_annotations.txt', 'a') as fout:
+            fout.write(f'{subset}/{video_id} {frames} {class_id}\n')
+    
 
 if __name__ == '__main__':
     args = load_args()
+    videos = load_annotations(args)
     os.chdir(args.directory)
     delete_existing_annotations()
-    write_annotations(args)
+    write_annotations(args, videos)

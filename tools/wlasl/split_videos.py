@@ -6,7 +6,7 @@ DATA_PATH = "data/wlasl/wlasl-uncompressed"
 
 def load_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('json_file', help='json annotation file to be fixed')
+    parser.add_argument('json_file', help='json annotation file name')
     parser.add_argument('directory', help='path to the uncompressed archive')
     return parser.parse_args()
 
