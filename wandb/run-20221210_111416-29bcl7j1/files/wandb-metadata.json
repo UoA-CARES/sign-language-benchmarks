@@ -1,0 +1,113 @@
+{
+    "os": "Linux-5.15.0-56-generic-x86_64-with-glibc2.17",
+    "python": "3.8.15",
+    "heartbeatAt": "2022-12-09T22:14:17.250779",
+    "startedAt": "2022-12-09T22:14:16.236153",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "c3d_wlasl.py",
+        "--validate",
+        "--seed",
+        "0",
+        "--deterministic",
+        "--gpus",
+        "1"
+    ],
+    "state": "running",
+    "program": "mmaction2/tools/train.py",
+    "codePath": "mmaction2/tools/train.py",
+    "git": {
+        "remote": "https://github.com/UoA-CARES/wlasl_reproduce_results.git",
+        "commit": "0ec352d35a4afcdea2fde314d3b823661c007d54"
+    },
+    "email": "sttaseen@example.com",
+    "root": "/home/sttaseen/Desktop/wlasl_reproduce_results",
+    "host": "sttaseen-GS65-Stealth-9SD",
+    "username": "sttaseen",
+    "executable": "/home/sttaseen/anaconda3/envs/mmsign/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2873.0199166666666,
+        "min": 800.0,
+        "max": 4500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4283.876,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4229.417,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2600.0,
+            "min": 800.0,
+            "max": 4500.0
+        }
+    ],
+    "disk": {
+        "total": 229.66946029663086,
+        "used": 181.48989486694336
+    },
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1660 Ti",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.470073699951172
+    }
+}
