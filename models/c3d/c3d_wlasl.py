@@ -1,14 +1,14 @@
-_base_ = 'mmaction2/configs/_base_/models/c3d_sports1m_pretrained.py'
+_base_ = '../../mmaction2/configs/_base_/models/c3d_sports1m_pretrained.py'
 
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = 'data/wlasl/rawframes'
-data_root_val = 'data/wlasl/rawframes'
+data_root = '../../data/wlasl/rawframes'
+data_root_val = '../../data/wlasl/rawframes'
 split = 1  # official train/test splits. valid numbers: 1, 2, 3
 clip_length = 16
-ann_file_train = 'data/wlasl/train_annotations.txt'
-ann_file_val = 'data/wlasl/val_annotations.txt'
-ann_file_test = 'data/wlasl/test_annotations.txt'
+ann_file_train = '../../data/wlasl/train_annotations.txt'
+ann_file_val = '../../data/wlasl/val_annotations.txt'
+ann_file_test = '../../data/wlasl/test_annotations.txt'
 img_norm_cfg = dict(mean=[104, 117, 128], std=[1, 1, 1], to_bgr=False)
 train_pipeline = [
     dict(type='SampleFrames', clip_len=16, frame_interval=1, num_clips=1),
@@ -82,17 +82,17 @@ checkpoint_config = dict(interval=5)
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
-# WandB setup
-log_config = dict(interval=10, hooks=[
-    dict(type='TextLoggerHook'),
-    dict(type='WandbLoggerHook',
-         init_kwargs={
-             'entity': "cares",
-             'project': "wlasl-100-c3d"
-         },
-         log_artifact=True)
-]
-)
+# # WandB setup
+# log_config = dict(interval=10, hooks=[
+#     dict(type='TextLoggerHook'),
+#     dict(type='WandbLoggerHook',
+#          init_kwargs={
+#              'entity': "cares",
+#              'project': "wlasl-100-c3d"
+#          },
+#          log_artifact=True)
+# ]
+# )
 
 # log_config = dict(
 #     interval=20,
@@ -104,7 +104,7 @@ log_config = dict(interval=10, hooks=[
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./work_dirs/c3d_wlasl_{split}_rgb/'
+work_dir = f'../../work_dirs/c3d_wlasl_{split}_rgb/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
