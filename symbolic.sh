@@ -1,1 +1,5 @@
-ln -s /media/$USER/Sadat/wlasl/data data
+# Set the disk name
+DIRECTORY = Sadat/wlasl/data
+
+# Create the symbolic link
+ln -s /media/$USER/$DIRECTORY data

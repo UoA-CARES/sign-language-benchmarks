@@ -1,22 +1,16 @@
-_base_ = [
-    '../mmaction2/configs/_base_/models/i3d_r50.py', '../mmaction2/configs/_base_/schedules/sgd_100e.py',
-    '../mmaction2/configs/_base_/default_runtime.py'
-]
+_base_ = ['../../mmaction2/configs/recognition/i3d/i3d_r50_32x2x1_100e_kinetics400_rgb.py']
 
-gpu_ids = range(1)
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = '../data/wlasl/rawframes'
-data_root_val = '../data/wlasl/rawframes'
-split = 1  # official train/test splits. valid numbers: 1, 2, 3
-clip_length = 16
-ann_file_train = '../data/wlasl/train_annotations.txt'
-ann_file_val = '../data/wlasl/val_annotations.txt'
-ann_file_test = '../data/wlasl/test_annotations.txt'
+data_root = 'data/wlasl/rawframes'
+data_root_val = 'data/wlasl/rawframes'
+ann_file_train = 'data/wlasl/train_annotations.txt'
+ann_file_val = 'data/wlasl/val_annotations.txt'
+ann_file_test = 'data/wlasl/test_annotations.txt'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
 train_pipeline = [
-    dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
+    dict(type='DenseSampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(-1, 256)),
     dict(
@@ -34,7 +28,7 @@ train_pipeline = [
 ]
 val_pipeline = [
     dict(
-        type='SampleFrames',
+        type='DenseSampleFrames',
         clip_len=32,
         frame_interval=2,
         num_clips=1,
@@ -49,10 +43,10 @@ val_pipeline = [
 ]
 test_pipeline = [
     dict(
-        type='SampleFrames',
+        type='DenseSampleFrames',
         clip_len=32,
         frame_interval=2,
-        num_clips=10,
+        num_clips=1,
         test_mode=True),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(-1, 256)),
@@ -63,7 +57,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8,
+    videos_per_gpu=4,
     workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
@@ -81,8 +75,6 @@ data = dict(
         ann_file=ann_file_val,
         data_prefix=data_root_val,
         pipeline=test_pipeline))
-evaluation = dict(
-    interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
 # WandB setup
 log_config = dict(interval=10, hooks=[
@@ -96,8 +88,7 @@ log_config = dict(interval=10, hooks=[
 ]
 )
 
-# runtime settings
-checkpoint_config = dict(interval=5)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_rgb_wlasl/'
-
+# Increase the number of epochs
 total_epochs = 2000
+# runtime settings
+work_dir = './work_dirs/i3d_r50_dense_32x2x1_wlasl/'

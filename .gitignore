@@ -1,3 +1,6 @@
 wlasl/*
 work_dir/*
 data
+wandb
+tools/wlasl/.ipynb_checkpoints
+
