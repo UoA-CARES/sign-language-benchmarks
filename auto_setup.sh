@@ -24,7 +24,4 @@ python mmaction2/tools/data/build_rawframes.py data/wlasl/wlasl-uncompressed/val
 # Build the labels
 python tools/wlasl/build_labels.py wlasl_100.json data/wlasl
 
-# Train the model
-python mmaction2/tools/train.py models/c3d/c3d_wlasl.py --validate --seed 0 --deterministic --gpus 1
-
 

@@ -3,4 +3,4 @@ work_dir/*
 data
 wandb
 tools/wlasl/.ipynb_checkpoints
-
+build_reports.txt
