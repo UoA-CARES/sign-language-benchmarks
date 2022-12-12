@@ -60,8 +60,6 @@ wlasl-summer-research
 │       └── split_videos.py
 └── work_dirs
     └── ...
-
-└── ...
 ```
 ```data/wlasl/wlasl-processed.zip``` is the dataset downloaded from kaggle. It is unzipped and stored in ```data/wlasl/wlasl-uncompressed```. The dataset is prepared using the scripts under ```tools``` and ```mmaction2```. These are automatically run by ```auto_setup.sh```.
 
