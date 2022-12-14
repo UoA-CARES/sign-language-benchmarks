@@ -1,6 +1,7 @@
 from ..builder import PIPELINES
 import json
 import numpy as np
+import random
 
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -15,6 +16,9 @@ class NpEncoder(json.JSONEncoder):
 
 @PIPELINES.register_module()
 class MyTransform(object):
+    """
+    Custom augmentation for testing purposes.
+    """
     def __call__(self, results):
         results['imgs'] = list(np.array(results['imgs']))
         return results
@@ -22,12 +26,21 @@ class MyTransform(object):
 
 @PIPELINES.register_module()
 class SaveContents(object):
+    """Save results content in a JSON file.
+
+    Args:
+        file (str): The file name. Default: 'results.json'
+    """
+
+    def __init__(self, file='results.json'):
+        self.file = file
+
     def __call__(self, results):
         if 'written' not in results:
             results['written'] = False
 
         if not results['written']:
-            with open('results.json', 'w') as convert_file:
+            with open(self.file, 'w') as convert_file:
                 convert_file.write(json.dumps(results, cls=NpEncoder))
             results['written'] = True
 
@@ -54,3 +67,4 @@ class CutOut(object):
         imgs[:, box_h:box_h+self.box_size, box_w:box_w+self.box_size, :] = 0
         results['imgs'] = list(imgs)
         return results
+
