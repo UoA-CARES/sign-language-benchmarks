@@ -105,31 +105,31 @@ checkpoint_config = dict(interval=5)
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
-# # WandB setup
-# log_config = dict(interval=10, hooks=[
-#     dict(type='TextLoggerHook'),
-#     dict(type='WandbLoggerHook',
-#          init_kwargs={
-#              'entity': "cares",
-#              'project': "wlasl-100",
-#              'group': "augmentations",
-#              'name': 'base'
-#          },
-#          log_artifact=True)
-# ]
-# )
+# WandB setup
+log_config = dict(interval=10, hooks=[
+    dict(type='TextLoggerHook'),
+    dict(type='WandbLoggerHook',
+         init_kwargs={
+             'entity': "cares",
+             'project': "wlasl-100",
+             'group': "augmentations",
+             'name': 'base'
+         },
+         log_artifact=True)
+]
+)
 
-log_config = dict(
-    interval=20,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        # dict(type='TensorboardLoggerHook'),
-    ])
+# log_config = dict(
+#     interval=20,
+#     hooks=[
+#         dict(type='TextLoggerHook'),
+#         # dict(type='TensorboardLoggerHook'),
+#     ])
 
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./experiments/work_dirs/c3d_augments_wlasl100/'
+work_dir = f'./experiments/augmentations/work_dirs/c3d_augments_wlasl100/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]

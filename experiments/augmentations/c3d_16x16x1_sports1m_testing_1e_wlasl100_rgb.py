@@ -4,7 +4,7 @@ model = dict(
     backbone=dict(
         type='C3D',
         pretrained=  # noqa: E251
-        '/experiments/word_dirs/c3d_augments_wlasl100/latest.pth',  # noqa: E501
+        'https://download.openmmlab.com/mmaction/recognition/c3d/c3d_sports1m_pretrain_20201016-dcc47ddc.pth',  # noqa: E501
         style='pytorch',
         conv_cfg=dict(type='Conv3d'),
         norm_cfg=None,
@@ -37,7 +37,6 @@ train_pipeline = [
     dict(type='SampleFrames', clip_len=16, frame_interval=1, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(128, 171)),
-    dict(type='CutOut', box_size = 50),
     dict(type='RandomCrop', size=112),
     dict(type='Flip', flip_ratio=0.5),
     dict(type='Normalize', **img_norm_cfg),
@@ -106,31 +105,31 @@ checkpoint_config = dict(interval=5)
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
-# WandB setup
-log_config = dict(interval=10, hooks=[
-    dict(type='TextLoggerHook'),
-    dict(type='WandbLoggerHook',
-         init_kwargs={
-             'entity': "cares",
-             'project': "wlasl-100",
-             'group': "augmentations",
-             'name': "cutout"
-         },
-         log_artifact=True)
-]
-)
+# # WandB setup
+# log_config = dict(interval=10, hooks=[
+#     dict(type='TextLoggerHook'),
+#     dict(type='WandbLoggerHook',
+#          init_kwargs={
+#              'entity': "cares",
+#              'project': "wlasl-100",
+#              'group': "augmentations",
+#              'name': 'base'
+#          },
+#          log_artifact=True)
+# ]
+# )
 
-# log_config = dict(
-#     interval=20,
-#     hooks=[
-#         dict(type='TextLoggerHook'),
-#         # dict(type='TensorboardLoggerHook'),
-#     ])
+log_config = dict(
+    interval=20,
+    hooks=[
+        dict(type='TextLoggerHook'),
+        # dict(type='TensorboardLoggerHook'),
+    ])
 
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./work_dirs/c3d_wlasl_{split}_rgb/'
+work_dir = f'./experiments/augmentations/work_dirs/c3d_augments_wlasl100/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
