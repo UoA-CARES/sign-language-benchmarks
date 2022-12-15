@@ -26,6 +26,16 @@ model = dict(
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
 
+# optimizer
+optimizer = dict(
+    type='SGD',
+    lr=0.01,  # this lr is used for 8 gpus
+    momentum=0.9,
+    weight_decay=0.0001)
+optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
+# learning policy
+lr_config = dict(policy='step', step=[40, 80])
+total_epochs = 100
 
 # dataset settings
 dataset_type = 'RawframeDataset'
@@ -111,26 +121,20 @@ checkpoint_config = dict(interval=5)
 work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_tempflip_rgb/'
 
 checkpoint_config = dict(interval=1)
-log_config = dict(
-    interval=20,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        # dict(type='TensorboardLoggerHook'),
-    ])
 
-# # WandB setup
-# log_config = dict(interval=10, hooks=[
-#     dict(type='TextLoggerHook'),
-#     dict(type='WandbLoggerHook',
-#          init_kwargs={
-#              'entity': "cares",
-#              'project': "wlasl-100",
-#              'group': "augmentations",
-#              'name': 'temporalflip'
-#          },
-#          log_artifact=True)
-# ]
-# )
+# WandB setup
+log_config = dict(interval=10, hooks=[
+    dict(type='TextLoggerHook'),
+    dict(type='WandbLoggerHook',
+         init_kwargs={
+             'entity': "cares",
+             'project': "wlasl-100",
+             'group': "augmentations",
+             'name': 'temporalflip'
+         },
+         log_artifact=True)
+]
+)
 
 # runtime settings
 dist_params = dict(backend='nccl')
