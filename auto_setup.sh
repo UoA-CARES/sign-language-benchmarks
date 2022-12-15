@@ -14,7 +14,7 @@ unzip wlasl-processed.zip -d ./wlasl-uncompressed
 cd ../..
 
 # Delete missing clips and create a clean annotations file
-python tools/wlasl/create_json.py $n
+python tools/wlasl/create_json.py $n data/wlasl/wlasl-uncompressed
 
 # Split the videos
 python tools/wlasl/split_videos.py "wlasl_${n}.json" data/wlasl/wlasl-uncompressed

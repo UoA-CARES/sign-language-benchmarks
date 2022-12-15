@@ -3,12 +3,14 @@ import pandas as pd
 import json
 import argparse
 
-RELATIVE_DATA_PATH = '../../data/wlasl/wlasl-uncompressed/'
 
 def load_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('n_classes', help='number of classes')
+    parser.add_argument('n_classes', help='number of classes', type=int)
+    parser.add_argument(
+        'directory', help='path to folder containing train, test, val folders')
     return parser.parse_args()
+
 
 def fix_missing():
     ''' Read and delete the missing annotations from the nslt_2000.json file.
@@ -29,9 +31,10 @@ def fix_missing():
             pass
 
     return videos
- 
+
+
 def get_topk(videos, k=10):
-    ''' Get the top k classes with the most samples.k
+    ''' Get the top k classes with the most samples
 
     Args:
         videos (dict): The annotations for the videos.
@@ -40,13 +43,14 @@ def get_topk(videos, k=10):
     df = pd.DataFrame(videos).transpose()
     df['class'] = df.apply(lambda x: x.action[0], axis=1)
     top10 = df['class'].value_counts().iloc[:k].index.tolist()
-
     for value in list(videos.keys()):
-        if videos[value]['action'][0] not in top10:
+        if int(videos[value]['action'][0]) not in top10:
             try:
                 videos.pop(value.strip('\n'))
             except KeyError:
                 pass
+
+    return videos
 
 
 def save_json(videos, k=10):
@@ -62,8 +66,8 @@ def save_json(videos, k=10):
 
 if __name__ == '__main__':
     # Make sure that this script is run after the wlasl file is extracted
-    os.chdir(RELATIVE_DATA_PATH)
     args = load_args()
+    os.chdir(args.directory)
     videos = fix_missing()
     videos = get_topk(videos, args.n_classes)
     save_json(videos, args.n_classes)
