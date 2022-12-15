@@ -68,3 +68,20 @@ class CutOut(object):
         results['imgs'] = list(imgs)
         return results
 
+@PIPELINES.register_module()
+class TemporalFlip(object):
+    """Make the video rewind.
+
+    Args:
+        p (float): The probability of the augmentation. Default: 0.5
+    """
+
+    def __init__(self, p=0.5):
+        self.p = p
+
+    def __call__(self, results):
+        if random.random() < p:
+            imgs = np.array(results['imgs'])
+            results['imgs'] = list(np.flip(imgs, axis=0))
+        return results
+

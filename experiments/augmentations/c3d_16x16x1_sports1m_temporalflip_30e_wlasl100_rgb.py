@@ -37,6 +37,7 @@ train_pipeline = [
     dict(type='SampleFrames', clip_len=16, frame_interval=1, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(128, 171)),
+    dict(type='TemporalFlip', p=0.5)
     dict(type='CutOut', box_size = 50),
     dict(type='RandomCrop', size=112),
     dict(type='Flip', flip_ratio=0.5),
@@ -114,7 +115,7 @@ log_config = dict(interval=10, hooks=[
              'entity': "cares",
              'project': "wlasl-100",
              'group': "augmentations",
-             'name': "cutout"
+             'name': "temporalflip"
          },
          log_artifact=True)
 ]

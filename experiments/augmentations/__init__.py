@@ -40,5 +40,5 @@ __all__ = [
     'PoseDecode', 'LoadKineticsPose', 'GeneratePoseTarget', 'PIMSInit',
     'PIMSDecode', 'TorchvisionTrans', 'PytorchVideoTrans', 'PoseNormalize',
     'FormatGCNInput', 'PaddingWithLoop', 'ArrayDecode', 'JointToBone', 'MyTransform',
-    'CutOut', 'SaveContents'
+    'CutOut', 'SaveContents', 'TemporalFlip'
 ]
