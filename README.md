@@ -115,10 +115,11 @@ Install mmcv:
 pip install -U openmim
 mim install mmcv-full
 ```
-Assuming mmcv is already installed, install mmaction2:
+Assuming current directory is the root of the repository, install mmaction2 from source:
 ```
-pip install git+https://github.com/open-mmlab/mim.git
-mim install mmaction2 -f https://github.com/open-mmlab/mmaction2.git
+cd mmaction2
+pip install -r requirements/build.txt
+pip install -v -e .  
 ```
 ## Setup
 ### Setting up a symbolic link
