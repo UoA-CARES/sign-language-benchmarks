@@ -128,19 +128,19 @@ log_config = dict(
         # dict(type='TensorboardLoggerHook'),
     ])
 
-# # WandB setup
-# log_config = dict(interval=10, hooks=[
-#     dict(type='TextLoggerHook'),
-#     dict(type='WandbLoggerHook',
-#          init_kwargs={
-#              'entity': "cares",
-#              'project': "wlasl-100",
-#              'group': "augmentations",
-#              'name': 'base'
-#          },
-#          log_artifact=True)
-# ]
-# )
+# WandB setup
+log_config = dict(interval=10, hooks=[
+    dict(type='TextLoggerHook'),
+    dict(type='WandbLoggerHook',
+         init_kwargs={
+             'entity': "cares",
+             'project': "wlasl",
+             'group': "augmentations",
+             'name': 'base'
+         },
+         log_artifact=True)
+]
+)
 
 # runtime settings
 dist_params = dict(backend='nccl')
