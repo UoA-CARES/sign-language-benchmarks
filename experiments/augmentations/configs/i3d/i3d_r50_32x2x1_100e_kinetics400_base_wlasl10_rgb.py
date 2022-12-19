@@ -117,16 +117,16 @@ evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
 # runtime settings
-checkpoint_config = dict(interval=5)
+checkpoint_config = dict(interval=20)
 work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_base_rgb/'
 
-checkpoint_config = dict(interval=1)
-log_config = dict(
-    interval=20,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        # dict(type='TensorboardLoggerHook'),
-    ])
+# checkpoint_config = dict(interval=1)
+# log_config = dict(
+#     interval=20,
+#     hooks=[
+#         dict(type='TextLoggerHook'),
+#         # dict(type='TensorboardLoggerHook'),
+#     ])
 
 # WandB setup
 log_config = dict(interval=10, hooks=[
