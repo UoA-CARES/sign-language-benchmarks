@@ -4,7 +4,7 @@ model = dict(
     backbone=dict(
         type='ResNet3d',
         pretrained2d=True,
-        pretrained='torchvision://resnet50',
+        pretrained='./work_dirs/i3d_r50_32x2x1_200e_kinetics400_base_wlasl10_rgb/latest.pth',
         depth=50,
         conv1_kernel=(5, 7, 7),
         conv1_stride_t=2,
@@ -26,6 +26,7 @@ model = dict(
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
 
+
 # optimizer
 optimizer = dict(
     type='SGD',
@@ -34,9 +35,8 @@ optimizer = dict(
     weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 # learning policy
-lr_config = dict(policy='step', step=[40, 80])
-total_epochs = 100
-
+lr_config = dict(policy='step', step=[80, 160])
+total_epochs = 200
 
 # dataset settings
 dataset_type = 'RawframeDataset'
@@ -50,15 +50,8 @@ img_norm_cfg = dict(
 train_pipeline = [
     dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
-    dict(type='Resize', scale=(-1, 256)),
-    dict(
-        type='MultiScaleCrop',
-        input_size=224,
-        scales=(1, 0.8),
-        random_crop=False,
-        max_wh_scale_gap=0),
     dict(type='Resize', scale=(224, 224), keep_ratio=False),
-    dict(type='Flip', flip_ratio=0.5),
+    dict(type='Flip', flip_ratio=0.5, direction='horizontal'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='FormatShape', input_format='NCTHW'),
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
@@ -118,15 +111,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=5)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_base_rgb/'
-
-checkpoint_config = dict(interval=1)
-log_config = dict(
-    interval=20,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        # dict(type='TensorboardLoggerHook'),
-    ])
+work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_tempflip_rgb/'
 
 # WandB setup
 log_config = dict(interval=10, hooks=[
@@ -136,7 +121,7 @@ log_config = dict(interval=10, hooks=[
              'entity': "cares",
              'project': "wlasl",
              'group': "augmentations",
-             'name': 'base'
+             'name': 'temporalflip'
          },
          log_artifact=True)
 ]
