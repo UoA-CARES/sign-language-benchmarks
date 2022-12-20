@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set the number of classes
+# Set the number of classes (chooses the top_n classes with the most samples)
 n=10
 
 # Download the dataset
