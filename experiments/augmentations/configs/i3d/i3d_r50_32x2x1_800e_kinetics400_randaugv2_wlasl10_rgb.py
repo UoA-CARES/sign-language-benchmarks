@@ -136,7 +136,7 @@ log_config = dict(interval=5, hooks=[
              'entity': "cares",
              'project': "wlasl",
              'group': "ablation",
-             'name': 'rand-aug'
+             'name': 'randaug-v2'
          },
          log_artifact=True)
 ]
