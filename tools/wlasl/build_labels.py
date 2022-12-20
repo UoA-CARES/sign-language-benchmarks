@@ -7,7 +7,7 @@ SUBSETS = ['train', 'test', 'val']
 def load_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('json_file', help='json annotation file to be fixed')
-    parser.add_argument('directory', help='path to folder containing train, test, val folders')
+    parser.add_argument('directory', help='path to folder rawframes')
     return parser.parse_args()
 
 def delete_existing_annotations():
@@ -20,7 +20,7 @@ def delete_existing_annotations():
 
 def load_annotations(args):
     # Load the json labels
-    with open(f'data/wlasl/wlasl-uncompressed/{args.json_file}') as fin:
+    with open(args.json_file) as fin:
         videos = json.load(fin)
     return videos
 
