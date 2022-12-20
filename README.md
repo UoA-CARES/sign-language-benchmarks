@@ -84,7 +84,7 @@ rm Miniconda3.sh
 #### Creating a virtual environment
 Run the following commands to create a virtual environment and to activate it:
 ```
-conda create -n wlasl python=3.8
+conda create -n wlasl python=3.8 -y
 conda activate wlasl
 ```
 Make sure to run ```conda activate wlasl``` before running any of the scripts in this repo.
@@ -105,10 +105,6 @@ cd wlasl-summer-research
 To install all the other modules, navigate to the root directory of this repo after cloning and run the following:
 ```
 pip install -r requirements.txt
-```
-Sometimes, kaggle doesn't get installed through requirements.txt, so run the following:
-```
-pip install kaggle
 ```
 Install mmcv:
 ```
