@@ -4,7 +4,7 @@ model = dict(
     backbone=dict(
         type='ResNet3d',
         pretrained2d=True,
-        pretrained='./work_dirs/i3d_r50_32x2x1_100e_kinetics400_base_rgb/latest.pth',
+        pretrained='torchvision://resnet50',
         depth=50,
         conv1_kernel=(5, 7, 7),
         conv1_stride_t=2,
@@ -26,7 +26,6 @@ model = dict(
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
 
-
 # optimizer
 optimizer = dict(
     type='SGD',
@@ -35,8 +34,9 @@ optimizer = dict(
     weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 # learning policy
-lr_config = dict(policy='step', step=[40, 80])
-total_epochs = 100
+lr_config = dict(policy='step', step=[80, 160])
+total_epochs = 200
+
 
 # dataset settings
 dataset_type = 'RawframeDataset'
@@ -48,7 +48,6 @@ ann_file_test = 'data/wlasl/test_annotations.txt'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
 train_pipeline = [
-    dict(type='TemporalFlip'),
     dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(-1, 256)),
@@ -118,20 +117,25 @@ evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
 # runtime settings
-checkpoint_config = dict(interval=5)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_tempflip_rgb/'
+checkpoint_config = dict(interval=20)
+work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_base_wlasl10_rgb/'
 
-checkpoint_config = dict(interval=1)
+# log_config = dict(
+#     interval=20,
+#     hooks=[
+#         dict(type='TextLoggerHook'),
+#         # dict(type='TensorboardLoggerHook'),
+#     ])
 
 # WandB setup
-log_config = dict(interval=10, hooks=[
+log_config = dict(interval=20, hooks=[
     dict(type='TextLoggerHook'),
     dict(type='WandbLoggerHook',
          init_kwargs={
              'entity': "cares",
-             'project': "wlasl-100",
+             'project': "wlasl",
              'group': "augmentations",
-             'name': 'temporalflip'
+             'name': 'base'
          },
          log_artifact=True)
 ]
