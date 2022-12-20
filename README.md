@@ -38,8 +38,8 @@ wlasl-summer-research
 │       ├── test_annotations.txt
 │       ├── train_annotations.txt
 │       ├── val_annotations.txt
-│       ├── wlasl-processed.zip
-│       └── wlasl-uncompressed
+│       ├── wlasl2000-resized.zip
+│       └── wlasl-complete
 │           └── ...
 ├── LICENSE
 ├── mmaction2
@@ -61,7 +61,7 @@ wlasl-summer-research
 └── work_dirs
     └── ...
 ```
-```data/wlasl/wlasl-processed.zip``` is the dataset downloaded from kaggle. It is unzipped and stored in ```data/wlasl/wlasl-uncompressed```. The dataset is prepared using the scripts under ```tools``` and ```mmaction2```. These are automatically run by ```auto_setup.sh```.
+```data/wlasl/wlasl2000-resized.zip``` is the dataset downloaded from kaggle. It is unzipped and stored in ```data/wlasl/wlasl-complete```. The dataset is prepared using the scripts under ```tools``` and ```mmaction2```. These are automatically run by ```setup.sh```.
 
 ## Requirements
 ### Setting up a conda environment
@@ -116,6 +116,7 @@ Assuming current directory is the root of the repository, install mmaction2 from
 cd mmaction2
 pip install -r requirements/build.txt
 pip install -v -e .  
+cd ..
 ```
 ## Setup
 ### Setting up a symbolic link
@@ -127,11 +128,12 @@ This will create set up a symbolic link called data in the current to point to t
 
 ### Downloading and extracting the dataset
 In order to download the dataset, an existing [kaggle token](https://www.kaggle.com/docs/api#:~:text=From%20the%20site%20header%2C%20click,Create%20New%20API%20Token%E2%80%9D%20button.) needs to be set up.
-All the data-acquisition and extraction is handled by ```auto_setup.sh```. From the root of the repo, run:
+All the data-acquisition and extraction is handled by ```setup.sh```. From the root of the repo, run:
 ```
-bash auto_setup.sh
+bash setup.sh
 ```
-**Note:** If on other operating system, open the bash file and run each command one by one. The current ```auto_setup.sh``` is set up to create the WLASL-100 dataset for MMAction2. Change the instances to other numbers for other subsets of the WLASL-2000 dataset. Check the different json files under ```data/wlasl/wlasl-uncompressed``` for available options.
+Subsets can be chosen by changing the name of the ```json``` variable inside ```setup.sh```. Options include ```nslt_100.json```, ```nslt_300.json```, ```nslt_1009.json```, and ```nslt_2000.json```. More details can be found [here](https://www.kaggle.com/datasets/sttaseen/wlasl2000-resized). 
+**Note:** If on any other operating system than Linux/Mac, open the bash file and run each command one by one.
 
 This bash script will download the dataset from kaggle (Kaggle token needs to be set up for this), extract and store the dataset under the ```data``` directory.
 
