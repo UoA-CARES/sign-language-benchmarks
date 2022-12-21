@@ -7,7 +7,7 @@ git clone --recurse https://github.com/UoA-CARES/wlasl-summer-research.git
 
 <div align="center">
   <div style="float:left;margin-right:10px;">
-  <img src="https://user-images.githubusercontent.com/67076071/206937055-632e2362-140b-440e-b66f-385407550a55.png"
+  <img src="https://user-images.githubusercontent.com/67076071/208882790-d7189c45-8a45-4d63-8b19-cfe2b7081ebf.png"
   width=700
   height=auto
   ><br>
