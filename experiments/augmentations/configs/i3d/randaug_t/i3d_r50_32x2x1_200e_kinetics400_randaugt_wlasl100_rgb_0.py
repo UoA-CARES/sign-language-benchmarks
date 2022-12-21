@@ -50,15 +50,8 @@ img_norm_cfg = dict(
 train_pipeline = [
     dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
-    dict(type='Resize', scale=(-1, 256)),
-    dict(
-        type='MultiScaleCrop',
-        input_size=224,
-        scales=(1, 0.8),
-        random_crop=False,
-        max_wh_scale_gap=0),
     dict(type='Resize', scale=(224, 224), keep_ratio=False),
-    dict(type='pytorchvideo.RandAugment'),
+    dict(type='RandAugment_T'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='FormatShape', input_format='NCTHW'),
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
@@ -95,8 +88,8 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8, # default: 8
-    workers_per_gpu=2, # default: 2
+    videos_per_gpu=8,  # default: 8
+    workers_per_gpu=2,  # default: 2
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type=dataset_type,
@@ -118,7 +111,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=20)
-work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_augmix_wlasl10_rgb/'
+work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_randaugt_wlasl100_rgb/0/'
 
 # log_config = dict(
 #     interval=20,
@@ -133,9 +126,8 @@ log_config = dict(interval=5, hooks=[
     dict(type='WandbLoggerHook',
          init_kwargs={
              'entity': "cares",
-             'project': "wlasl",
-             'group': "ablation",
-             'name': 'augmix'
+             'project': "wlasl-aug-ablation",
+             'group': "randaug_t",
          },
          log_artifact=True)
 ]
@@ -152,3 +144,5 @@ workflow = [('train', 1)]
 opencv_num_threads = 0
 # set multi-process start method as `fork` to speed up the training
 mp_start_method = 'fork'
+# set gpu ids
+gpu_ids = range(1)

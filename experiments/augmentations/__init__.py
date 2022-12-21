@@ -22,6 +22,7 @@ from .pose_loading import (GeneratePoseTarget, LoadKineticsPose,
                            UniformSampleFrames)
 
 from .my_pipeline import (MyTransform, CutOut, SaveContents)
+from .randaugment_t import RandAugment_T
 
 __all__ = [
     'SampleFrames', 'PyAVDecode', 'DecordDecode', 'DenseSampleFrames',
@@ -40,5 +41,5 @@ __all__ = [
     'PoseDecode', 'LoadKineticsPose', 'GeneratePoseTarget', 'PIMSInit',
     'PIMSDecode', 'TorchvisionTrans', 'PytorchVideoTrans', 'PoseNormalize',
     'FormatGCNInput', 'PaddingWithLoop', 'ArrayDecode', 'JointToBone', 'MyTransform',
-    'CutOut', 'SaveContents', 'TemporalFlip'
+    'CutOut', 'SaveContents', 'TemporalFlip', 'RandAugment_T'
 ]

@@ -4,7 +4,7 @@ model = dict(
     backbone=dict(
         type='ResNet3d',
         pretrained2d=True,
-        pretrained='./work_dirs/i3d_r50_32x2x1_200e_kinetics400_base_wlasl10_rgb/latest.pth',
+        pretrained='torchvision://resnet50',
         depth=50,
         conv1_kernel=(5, 7, 7),
         conv1_stride_t=2,
@@ -26,7 +26,6 @@ model = dict(
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
 
-
 # optimizer
 optimizer = dict(
     type='SGD',
@@ -37,6 +36,7 @@ optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 # learning policy
 lr_config = dict(policy='step', step=[80, 160])
 total_epochs = 200
+
 
 # dataset settings
 dataset_type = 'RawframeDataset'
@@ -51,7 +51,7 @@ train_pipeline = [
     dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(224, 224), keep_ratio=False),
-    dict(type='Flip', flip_ratio=0.5, direction='horizontal'),
+    dict(type='RandAugment_T'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='FormatShape', input_format='NCTHW'),
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
@@ -88,8 +88,8 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8,
-    workers_per_gpu=2,
+    videos_per_gpu=8,  # default: 8
+    workers_per_gpu=2,  # default: 2
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type=dataset_type,
@@ -110,18 +110,24 @@ evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
 # runtime settings
-checkpoint_config = dict(interval=5)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_tempflip_rgb/'
+checkpoint_config = dict(interval=20)
+work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_randaugt_wlasl100_rgb/2/'
+
+# log_config = dict(
+#     interval=20,
+#     hooks=[
+#         dict(type='TextLoggerHook'),
+#         # dict(type='TensorboardLoggerHook'),
+#     ])
 
 # WandB setup
-log_config = dict(interval=10, hooks=[
+log_config = dict(interval=5, hooks=[
     dict(type='TextLoggerHook'),
     dict(type='WandbLoggerHook',
          init_kwargs={
              'entity': "cares",
-             'project': "wlasl",
-             'group': "augmentations",
-             'name': 'temporalflip'
+             'project': "wlasl-aug-ablation",
+             'group': "randaug_t",
          },
          log_artifact=True)
 ]
@@ -138,3 +144,5 @@ workflow = [('train', 1)]
 opencv_num_threads = 0
 # set multi-process start method as `fork` to speed up the training
 mp_start_method = 'fork'
+# set gpu ids
+gpu_ids = range(1)
