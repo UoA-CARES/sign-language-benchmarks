@@ -111,7 +111,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=20)
-work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_augmix_wlasl100_rgb_2/'
+work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_augmix_wlasl100_rgb/2/'
 
 # log_config = dict(
 #     interval=20,
