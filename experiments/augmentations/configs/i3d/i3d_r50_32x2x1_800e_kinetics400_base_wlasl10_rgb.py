@@ -26,6 +26,8 @@ model = dict(
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
 
+gpu_ids = range(1)
+
 # optimizer
 optimizer = dict(
     type='SGD',

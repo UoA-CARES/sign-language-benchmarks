@@ -25,7 +25,6 @@ model = dict(
     test_cfg=dict(average_clips='prob'))
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
-gpu_ids=range(1)
 
 # optimizer
 optimizer = dict(
@@ -59,7 +58,7 @@ train_pipeline = [
         random_crop=False,
         max_wh_scale_gap=0),
     dict(type='Resize', scale=(224, 224), keep_ratio=False),
-    dict(type='Flip', flip_ratio=0.5),
+    dict(type='pytorchvideo.RandAugment'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='FormatShape', input_format='NCTHW'),
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
@@ -96,8 +95,8 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=16, # default: 8
-    workers_per_gpu=4, # default: 2
+    videos_per_gpu=8, # default: 8
+    workers_per_gpu=2, # default: 2
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type=dataset_type,
@@ -119,7 +118,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=20)
-work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_base_wlasl10_rgb/'
+work_dir = './work_dirs/i3d_r50_32x2x1_200e_kinetics400_augmix_wlasl10_rgb/'
 
 # log_config = dict(
 #     interval=20,
@@ -136,7 +135,7 @@ log_config = dict(interval=5, hooks=[
              'entity': "cares",
              'project': "wlasl",
              'group': "ablation",
-             'name': 'base'
+             'name': 'augmix'
          },
          log_artifact=True)
 ]
