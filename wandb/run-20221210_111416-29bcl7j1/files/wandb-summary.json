@@ -1,1 +1,0 @@
-{"train/top1_acc": 0.0125, "train/top5_acc": 0.1125, "train/loss_cls": 4.48645396232605, "train/loss": 4.48645396232605, "train/grad_norm": 10.812388801574707, "learning_rate": 0.001, "momentum": 0.9, "_timestamp": 1670624601.2279847, "_runtime": 544.98526263237, "_step": 372, "_wandb": {"runtime": 553}}
