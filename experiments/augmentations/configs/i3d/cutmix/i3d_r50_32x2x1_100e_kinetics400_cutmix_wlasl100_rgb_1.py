@@ -22,7 +22,7 @@ model = dict(
         init_std=0.01),
     # model training and testing settings
     train_cfg=dict(
-        blending=dict(type='MixupBlending', num_classes=100, alpha=.2)),
+        blending=dict(type='CutmixBlending', num_classes=100, alpha=.2)),
     test_cfg=dict(average_clips='prob'))
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
@@ -111,7 +111,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=20)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_mixup_wlasl100_rgb/1/'
+work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_cutmix_wlasl100_rgb/1/'
 
 # log_config = dict(
 #     interval=20,
@@ -127,7 +127,7 @@ log_config = dict(interval=5, hooks=[
          init_kwargs={
              'entity': "cares",
              'project': "wlasl-aug-ablation",
-             'group': "mixup",
+             'group': "cutmix",
          },
          log_artifact=True)
 ]

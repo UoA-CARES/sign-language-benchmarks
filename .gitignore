@@ -1,6 +1,6 @@
 wlasl/*
-work_dir
+work_dir/*
 data
-wandb
+wandb/*
 tools/wlasl/.ipynb_checkpoints
 build_report.txt
