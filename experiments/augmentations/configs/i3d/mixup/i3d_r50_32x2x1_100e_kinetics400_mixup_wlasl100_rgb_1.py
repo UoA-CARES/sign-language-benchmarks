@@ -15,14 +15,14 @@ model = dict(
         zero_init_residual=False),
     cls_head=dict(
         type='I3DHead',
-        num_classes=100,
+        num_classes=400,
         in_channels=2048,
         spatial_type='avg',
         dropout_ratio=0.5,
         init_std=0.01),
     # model training and testing settings
     train_cfg=dict(
-        blending=dict(type='MixupBlending', num_classes=100, alpha=.2)),
+        blending=dict(type='MixupBlending', num_classes=400, alpha=.2)),
     test_cfg=dict(average_clips='prob'))
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501
