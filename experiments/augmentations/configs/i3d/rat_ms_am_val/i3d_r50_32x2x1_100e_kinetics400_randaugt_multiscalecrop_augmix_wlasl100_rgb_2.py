@@ -44,7 +44,7 @@ dataset_type = 'RawframeDataset'
 data_root = 'data/wlasl/rawframes'
 data_root_val = 'data/wlasl/rawframes'
 ann_file_train = 'data/wlasl/train_annotations.txt'
-ann_file_val = 'data/wlasl/val_annotations.txt'
+ann_file_val = 'data/wlasl/test_annotations.txt'
 ann_file_test = 'data/wlasl/test_annotations.txt'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
