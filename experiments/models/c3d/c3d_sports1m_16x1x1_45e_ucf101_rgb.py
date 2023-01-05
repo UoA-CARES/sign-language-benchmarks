@@ -115,16 +115,28 @@ total_epochs = 45
 checkpoint_config = dict(interval=5)
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
-log_config = dict(
-    interval=20,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        # dict(type='TensorboardLoggerHook'),
-    ])
+# log_config = dict(
+#     interval=20,
+#     hooks=[
+#         dict(type='TextLoggerHook'),
+#         # dict(type='TensorboardLoggerHook'),
+#     ])
+# Set up WandB and TextLogger
+log_config = dict(interval=10,
+                 hooks=[
+                        dict(type='TextLoggerHook'),
+                        dict(type='WandbLoggerHook',
+                        init_kwargs={
+                         'entity': "cares",
+                         'project': "wlasl-model-ablation",
+                         'group': "c3d",
+                        },
+                        log_artifact=True)
+])
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = f'./work_dirs/c3d_sports1m_16x1x1_45e_ucf101_split_{split}_rgb/'
+work_dir = f'./work_dirs/0/c3d_sports1m_16x1x1_45e_ucf101_split_{split}_rgb/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
