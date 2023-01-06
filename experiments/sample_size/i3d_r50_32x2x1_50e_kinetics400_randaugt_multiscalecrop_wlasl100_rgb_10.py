@@ -35,8 +35,8 @@ optimizer = dict(
     weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 # learning policy
-lr_config = dict(policy='step', step=[40, 80])
-total_epochs = 100
+lr_config = dict(policy='step', step=[20, 40])
+total_epochs = 50
 
 
 # dataset settings
@@ -119,7 +119,7 @@ evaluation = dict(
 
 # runtime settings
 checkpoint_config = dict(interval=10)
-work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_randaugt_multiscalecrop_wlasl100_rgb/4/'
+work_dir = './work_dirs/i3d_r50_32x2x1_100e_kinetics400_randaugt_multiscalecrop_wlasl100_rgb/10/'
 
 # log_config = dict(
 #     interval=20,
@@ -135,7 +135,7 @@ log_config = dict(interval=5, hooks=[
          init_kwargs={
              'entity': "cares",
              'project': "wlasl-samples-per-class",
-             'group': "4",
+             'group': "10",
          },
          log_artifact=True)
 ]
