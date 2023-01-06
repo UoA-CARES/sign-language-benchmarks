@@ -19,13 +19,16 @@ def create_subset(n_samples, videos):
     subset = {}
     sample_count = {}
     for video_id in videos:
-        class_id = videos[video_id]['action'][0]
-        if class_id not in sample_count:
-            sample_count[class_id] = 0
+        if videos[video_id]['subset'] == 'test':
             subset[video_id] = videos[video_id]
-        elif sample_count[class_id] < n_samples-1:
-            sample_count[class_id] = sample_count[class_id] + 1
-            subset[video_id] = videos[video_id]
+        else:
+            class_id = videos[video_id]['action'][0]
+            if class_id not in sample_count:
+                sample_count[class_id] = 0      
+                subset[video_id] = videos[video_id]      
+            elif sample_count[class_id] < n_samples-1:
+                sample_count[class_id] = sample_count[class_id] + 1
+                subset[video_id] = videos[video_id]
     
     return subset
 
