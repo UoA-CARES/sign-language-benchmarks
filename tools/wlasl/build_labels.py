@@ -16,7 +16,7 @@ def delete_existing_annotations():
     # Delete existing annotation files
     for subset in SUBSETS:
         try:
-            os.remove(f'annotations_{subset}.txt')
+            os.remove(f'{subset}_annotations.txt')
         except:
             pass
 

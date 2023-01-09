@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import argparse
 
+SUBSETS = ['train', 'test', 'val']
 
 def load_args():
     parser = argparse.ArgumentParser()
@@ -11,6 +12,13 @@ def load_args():
         'directory', help='path to folder containing train, test, val folders')
     return parser.parse_args()
 
+def delete_existing_annotations():
+    # Delete existing annotation files
+    for subset in SUBSETS:
+        try:
+            os.remove(f'{subset}_annotations.txt')
+        except:
+            pass
 
 def fix_missing():
     ''' Read and delete the missing annotations from the nslt_2000.json file.
@@ -68,6 +76,7 @@ if __name__ == '__main__':
     # Make sure that this script is run after the wlasl file is extracted
     args = load_args()
     os.chdir(args.directory)
+    delete_existing_annotations()
     videos = fix_missing()
     videos = get_topk(videos, args.n_classes)
     save_json(videos, args.n_classes)
