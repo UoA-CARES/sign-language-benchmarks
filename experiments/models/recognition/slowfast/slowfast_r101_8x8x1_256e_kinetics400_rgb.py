@@ -60,6 +60,9 @@ train_pipeline = [
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
     dict(type='ToTensor', keys=['imgs', 'label'])
 ]
+
+test_dataloader = dict(videos_per_gpu=1)
+
 val_pipeline = [
     dict(
         type='SampleFrames',
