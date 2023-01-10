@@ -36,9 +36,17 @@ img_norm_cfg = dict(mean=[104, 117, 128], std=[1, 1, 1], to_bgr=False)
 train_pipeline = [
     dict(type='SampleFrames', clip_len=16, frame_interval=1, num_clips=1),
     dict(type='RawFrameDecode'),
-    dict(type='Resize', scale=(128, 171)),
-    dict(type='RandomCrop', size=112),
-    dict(type='Flip', flip_ratio=0.5),
+    dict(type='Resize', scale=(-1, 256)),
+    dict(
+        type='MultiScaleCrop',
+        input_size=224,
+        scales=(1, 0.8),
+        random_crop=False,
+        max_wh_scale_gap=0),
+    dict(type='Resize', scale=(112,112)),
+    # dict(type='RandomCrop', size=112),
+    dict(type='RandAugment_T'),
+    # dict(type='Flip', flip_ratio=0.5),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='FormatShape', input_format='NCTHW'),
     dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
@@ -54,7 +62,7 @@ val_pipeline = [
         frame_interval=1,
         num_clips=1,
         test_mode=True),
-    dict(type='RawFrameDecode'e=(112, 112)),
+    dict(type='RawFrameDecode'e=(112,112)),),
     dict(type='Resize', scale=(128, 171)),
     dict(type='CenterCrop', crop_size=112),
     dict(type='Normalize', **img_norm_cfg),
@@ -115,16 +123,16 @@ evaluation = dict(
 #     ])
 # Set up WandB and TextLogger
 log_config = dict(interval=10,
-                  hooks=[
-                      dict(type='TextLoggerHook'),
-                      dict(type='WandbLoggerHook',
-                           init_kwargs={
-                               'entity': "cares",
-                               'project': "wlasl-model-ablation",
-                               'group': "c3d",
-                           },
-                           log_artifact=True)
-                  ])
+                 hooks=[
+                        dict(type='TextLoggerHook'),
+                        dict(type='WandbLoggerHook',
+                        init_kwargs={
+                         'entity': "cares",
+                         'project': "wlasl-model-ablation",
+                         'group': "c3d",
+                        },
+                        log_artifact=True)
+])
 # runtime settings
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
