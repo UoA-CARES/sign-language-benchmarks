@@ -194,7 +194,7 @@ log_config = dict(
         dict(
             type='WandbLoggerHook',
             init_kwargs=dict(
-                entity='cares', project='wlasl-model-ablation', group='slowfast'),
+                entity='cares', project='wlasl-model-ablation', group='slow-fast'),
             log_artifact=True)
     ])
 dist_params = dict(backend='nccl')
