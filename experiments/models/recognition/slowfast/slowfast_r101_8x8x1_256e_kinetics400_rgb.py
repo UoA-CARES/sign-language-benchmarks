@@ -62,6 +62,7 @@ train_pipeline = [
 ]
 
 test_dataloader = dict(videos_per_gpu=1)
+val_dataloader = dict(videos_per_gpu=1)
 
 val_pipeline = [
     dict(
