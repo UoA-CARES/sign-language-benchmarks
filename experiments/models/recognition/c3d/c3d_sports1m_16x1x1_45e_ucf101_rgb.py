@@ -62,7 +62,7 @@ val_pipeline = [
         frame_interval=1,
         num_clips=1,
         test_mode=True),
-    dict(type='RawFrameDecode'),
+    dict(type='RawFrameDecode'e=(112,112)),),
     dict(type='Resize', scale=(128, 171)),
     dict(type='CenterCrop', crop_size=112),
     dict(type='Normalize', **img_norm_cfg),
