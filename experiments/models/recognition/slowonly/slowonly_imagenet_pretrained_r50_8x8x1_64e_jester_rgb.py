@@ -1,17 +1,57 @@
-_base_ = [
-    '../../_base_/models/slowonly_r50.py', '../../_base_/default_runtime.py'
-]
+# model settings
+model = dict(
+    type='Recognizer3D',
+    backbone=dict(
+        type='ResNet3dSlowOnly',
+        depth=50,
+        pretrained='torchvision://resnet50',
+        lateral=False,
+        conv1_kernel=(1, 7, 7),
+        conv1_stride_t=1,
+        pool1_stride_t=1,
+        inflate=(0, 0, 1, 1),
+        norm_eval=False),
+    cls_head=dict(
+        type='I3DHead',
+        in_channels=2048,
+        num_classes=400,
+        spatial_type='avg',
+        dropout_ratio=0.5),
+    # model training and testing settings
+    train_cfg=None,
+    test_cfg=dict(average_clips='prob'))
+
+checkpoint_config = dict(interval=1)
+log_config = dict(
+    interval=20,
+    hooks=[
+        dict(type='TextLoggerHook'),
+        # dict(type='TensorboardLoggerHook'),
+    ])
+
+# runtime settings
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = None
+resume_from = None
+workflow = [('train', 1)]
+
+# disable opencv multithreading to avoid system being overloaded
+opencv_num_threads = 0
+# set multi-process start method as `fork` to speed up the training
+mp_start_method = 'fork'
+
 
 # model settings
 model = dict(cls_head=dict(num_classes=27))
 
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = 'data/jester/rawframes'
-data_root_val = 'data/jester/rawframes'
-ann_file_train = 'data/jester/jester_train_list_rawframes.txt'
-ann_file_val = 'data/jester/jester_val_list_rawframes.txt'
-ann_file_test = 'data/jester/jester_val_list_rawframes.txt'
+data_root = 'data/wlasl/rawframes'
+data_root_val = 'data/wlasl/rawframes'
+ann_file_train = 'data/wlasl/train_annotations.txt'
+ann_file_val = 'data/wlasl/test_annotations.txt'
+ann_file_test = 'data/wlasl/test_annotations.txt'
 jester_flip_label_map = {0: 1, 1: 0, 6: 7, 7: 6}
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
