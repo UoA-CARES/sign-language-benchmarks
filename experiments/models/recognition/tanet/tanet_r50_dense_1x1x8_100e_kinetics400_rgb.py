@@ -1,14 +1,56 @@
-_base_ = [
-    '../../_base_/models/tanet_r50.py', '../../_base_/default_runtime.py'
-]
+checkpoint_config = dict(interval=1)
+log_config = dict(interval=10,
+                  hooks=[
+                      dict(type='TextLoggerHook'),
+                      dict(type='WandbLoggerHook',
+                           init_kwargs={
+                               'entity': "cares",
+                               'project': "wlasl-model-ablation",
+                               'group': "tanet",
+                           },
+                           log_artifact=True)
+                  ])
+# runtime settings
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = None
+resume_from = None
+workflow = [('train', 1)]
+
+# disable opencv multithreading to avoid system being overloaded
+opencv_num_threads = 0
+# set multi-process start method as `fork` to speed up the training
+mp_start_method = 'fork'
+
+# model settings
+model = dict(
+    type='Recognizer2D',
+    backbone=dict(
+        type='TANet',
+        pretrained='torchvision://resnet50',
+        depth=50,
+        num_segments=8,
+        tam_cfg=dict()),
+    cls_head=dict(
+        type='TSMHead',
+        num_classes=400,
+        in_channels=2048,
+        spatial_type='avg',
+        consensus=dict(type='AvgConsensus', dim=1),
+        dropout_ratio=0.5,
+        init_std=0.001),
+    # model training and testing settings
+    train_cfg=None,
+    test_cfg=dict(average_clips='prob'))
+
 
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = 'data/kinetics400/rawframes_train'
-data_root_val = 'data/kinetics400/rawframes_val'
-ann_file_train = 'data/kinetics400/kinetics400_train_list_rawframes.txt'
-ann_file_val = 'data/kinetics400/kinetics400_val_list_rawframes.txt'
-ann_file_test = 'data/kinetics400/kinetics400_val_list_rawframes.txt'
+data_root = 'data/wlasl/rawframes'
+data_root_val = 'data/wlasl/rawframes'
+ann_file_train = 'data/wlasl/train_annotations.txt'
+ann_file_val = 'data/wlasl/test_annotations.txt'
+ann_file_test = 'data/wlasl/test_annotations.txt'
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
@@ -83,12 +125,14 @@ data = dict(
 evaluation = dict(
     interval=2, metrics=['top_k_accuracy', 'mean_class_accuracy'])
 
+gpu_ids = range(1)
+
 # optimizer
 optimizer = dict(
     type='SGD',
     constructor='TSMOptimizerConstructor',
     paramwise_cfg=dict(fc_lr5=True),
-    lr=0.01,  # this lr is used for 8 gpus
+    lr=0.01/8,  # this lr is used for 8 gpus
     momentum=0.9,
     weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=20, norm_type=2))
