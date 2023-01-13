@@ -19,7 +19,7 @@ model = dict(
         init_std=0.01),
     train_cfg=None,
     test_cfg=dict(average_clips='prob', max_testing_views=10))
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=20)
 log_config = dict(interval=10,
                  hooks=[
                         dict(type='TextLoggerHook'),
