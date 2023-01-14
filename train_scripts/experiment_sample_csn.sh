@@ -23,29 +23,29 @@ python mmaction2/tools/data/build_rawframes.py data/wlasl/wlasl-complete/val dat
 # Experiment with samples per class
 bash create_subset.sh
 
-json="nslt_100_1.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/1.py --deterministic --validate --seed 0
+# json="nslt_100_1.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/1.py --deterministic --validate --seed 0
 
-json="nslt_100_2.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/2.py --deterministic --validate --seed 0
+# json="nslt_100_2.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/2.py --deterministic --validate --seed 0
 
-json="nslt_100_3.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/3.py --deterministic --validate --seed 0
+# json="nslt_100_3.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/3.py --deterministic --validate --seed 0
 
-json="nslt_100_4.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/4.py --deterministic --validate --seed 0
+# json="nslt_100_4.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/4.py --deterministic --validate --seed 0
 
-json="nslt_100_5.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/5.py --deterministic --validate --seed 0
+# json="nslt_100_5.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/5.py --deterministic --validate --seed 0
 
-json="nslt_100_6.json"
-python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
-python mmaction2/tools/train.py experiments/sample_size/csn/6.py --deterministic --validate --seed 0
+# json="nslt_100_6.json"
+# python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
+# python mmaction2/tools/train.py experiments/sample_size/csn/6.py --deterministic --validate --seed 0
 
 json="nslt_100_7.json"
 python tools/wlasl/build_labels.py "data/wlasl/wlasl-complete/${json}" data/wlasl
