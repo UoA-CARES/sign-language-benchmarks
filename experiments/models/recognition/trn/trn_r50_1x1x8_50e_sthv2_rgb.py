@@ -26,8 +26,8 @@ optimizer = dict(
     momentum=0.9,
     weight_decay=0.0005)
 optimizer_config = dict(grad_clip=dict(max_norm=20, norm_type=2))
-lr_config = dict(policy='step', step=[30, 45])
-total_epochs = 50
+lr_config = dict(policy='step', step=[50, 120])
+total_epochs = 150
 checkpoint_config = dict(interval=1)
 log_config = dict(interval=10,
                   hooks=[
