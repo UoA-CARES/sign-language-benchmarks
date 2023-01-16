@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ..
 
 # Set parameters
 n_classes=10 # classes with the most samples are favoured to create WLASL_{n_classes}

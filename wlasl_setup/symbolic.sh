@@ -1,5 +1,7 @@
  #!/bin/bash 
  
+cd ..
+
 # Change the external drive name here
 EXTERNALDRIVE='Sadat'
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 # Set parameters
 json="nslt_100.json"
 n_workers=12
