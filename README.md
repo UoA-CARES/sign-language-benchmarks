@@ -21,6 +21,8 @@ git clone --recurse https://github.com/UoA-CARES/wlasl-summer-research.git
 wlasl-summer-research
 ├── auto_setup.sh
 ├── data
+│   └── autsl
+│       └── ...
 │   └── wlasl
 │       ├── rawframes
 │       │   ├── test
@@ -44,13 +46,17 @@ wlasl-summer-research
 ├── LICENSE
 ├── mmaction2
 │   └── ...
-├── models
-│   ├── c3d
-│   │   └── c3d_16x16x1_sports1m_wlasl100_rgb.py
+├── experiments
+│   ├── models
+│   │   ├── c3d
+│   │       └── c3d_16x16x1_sports1m_wlasl100_rgb.py
+│   │            └── ...
 │   └── ...
 ├── README.md
 ├── symbolic.sh
 ├── tools
+│   └── autsl
+│       └── ...
 │   └── wlasl
 │       ├── build_labels.py
 │       ├── create_annotations.ipynb
@@ -84,10 +90,10 @@ rm Miniconda3.sh
 #### Creating a virtual environment
 Run the following commands to create a virtual environment and to activate it:
 ```
-conda create -n wlasl python=3.8 -y
-conda activate wlasl
+conda create -n mmsign python=3.8 -y
+conda activate mmsign
 ```
-Make sure to run ```conda activate wlasl``` before running any of the scripts in this repo.
+Make sure to run ```conda activate mmsign``` before running any of the scripts in this repo.
 
 ### Installing Dependencies
 Install PyTorch by running the following:
@@ -99,8 +105,8 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 
 Clone the repo if not done already and go inside the repo:
 ```
-git clone --recurse https://github.com/UoA-CARES/wlasl-summer-research.git
-cd wlasl-summer-research
+git clone --recurse https://github.com/UoA-CARES/sign-language-summer-research.git
+cd sign-language-summer-research
 ````
 To install all the other modules, navigate to the root directory of this repo after cloning and run the following:
 ```
@@ -124,15 +130,15 @@ This step is optional. If you want to set up an external disk to store the datas
 ```
 bash symbolic.sh
 ```
-This will create set up a symbolic link called data in the current to point to the ```EXTERNALDRIVE/wlasl/data```.
+This will create set up a symbolic link called data in the current to point to the ```EXTERNALDRIVE/<dataset>/data```.
 
 ### Downloading and extracting the dataset
 In order to download the dataset, an existing [kaggle token](https://www.kaggle.com/docs/api#:~:text=From%20the%20site%20header%2C%20click,Create%20New%20API%20Token%E2%80%9D%20button.) needs to be set up.
-All the data-acquisition and extraction is handled by ```setup.sh```. From the root of the repo, run:
+All the data-acquisition and extraction is handled by ```setup.sh```. From the ```<dataset>_setup``` directory of the repo, run:
 ```
 bash setup.sh
 ```
-Subsets can be chosen by changing the name of the ```json``` variable inside ```setup.sh```. Options include ```nslt_100.json```, ```nslt_300.json```, ```nslt_1009.json```, and ```nslt_2000.json```. More details can be found [here](https://www.kaggle.com/datasets/sttaseen/wlasl2000-resized). 
+For WLASL, subsets can be chosen by changing the name of the ```json``` variable inside ```setup.sh```. Options include ```nslt_100.json```, ```nslt_300.json```, ```nslt_1009.json```, and ```nslt_2000.json```. More details can be found [here](https://www.kaggle.com/datasets/sttaseen/wlasl2000-resized). 
 **Note:** If on any other operating system than Linux/Mac, open the bash file and run each command one by one.
 
 This bash script will download the dataset from kaggle (Kaggle token needs to be set up for this), extract and store the dataset under the ```data``` directory.
