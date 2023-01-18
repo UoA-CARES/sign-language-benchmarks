@@ -142,5 +142,5 @@ lr_config = dict(policy='step', step=[40, 80])
 total_epochs = 100
 
 # runtime settings
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=100)
 work_dir = './work_dirs/timesformer_divST_8x32x1_15e_kinetics400_rgb'
