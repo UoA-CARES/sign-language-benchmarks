@@ -1,6 +1,6 @@
-# wlasl-summer-research
+# sign-language-summer-research
 
-This is a repo that contains the setup for the [WLASL dataset](https://github.com/dxli94/WLASL) to be used with tools available with [MMAction2](https://github.com/open-mmlab/mmaction2). Clone recursively for mmaction2:
+This is a repo that contains the setup for the [WLASL dataset](https://github.com/dxli94/WLASL) and [AUTSL dataset](https://paperswithcode.com/dataset/autsl) to be used with tools available with [MMAction2](https://github.com/open-mmlab/mmaction2). Clone recursively for mmaction2:
 ```
 git clone --recurse https://github.com/UoA-CARES/wlasl-summer-research.git
 ```
