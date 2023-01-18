@@ -3,8 +3,7 @@ model = dict(
     backbone=dict(
         type='ResNet3dCSN',
         pretrained2d=False,
-        pretrained='/home/myuser1/Desktop/wlasl-summer-research/work_dirs/ircsn_ig65m_pretrained_bnfrozen_r50_32x2x1_58e_kinetics400_rgb/2/epoch_52.pth',
-        #'https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
         depth=50,
         with_pool2=False,
         bottleneck_mode='ir',
@@ -13,21 +12,21 @@ model = dict(
         bn_frozen=True),
     cls_head=dict(
         type='I3DHead',
-        num_classes=400,
+        num_classes=2000,
         in_channels=2048,
         spatial_type='avg',
         dropout_ratio=0.5,
         init_std=0.01),
     train_cfg=None,
     test_cfg=dict(average_clips='prob', max_testing_views=10))
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=50)
 log_config = dict(interval=10,
                  hooks=[
                         dict(type='TextLoggerHook'),
                         dict(type='WandbLoggerHook',
                         init_kwargs={
                          'entity': "cares",
-                         'project': "wlasl-model-ablation",
+                         'project': "wlasl2000-model-ablation",
                          'group': "csn",
                         },
                         log_artifact=True)
