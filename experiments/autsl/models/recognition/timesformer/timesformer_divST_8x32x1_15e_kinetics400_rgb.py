@@ -99,7 +99,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs', 'label'])
 ]
 data = dict(
-    videos_per_gpu=2,
+    videos_per_gpu=12,
     workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     val_dataloader=dict(videos_per_gpu=1),
@@ -142,5 +142,5 @@ lr_config = dict(policy='step', step=[40, 80])
 total_epochs = 100
 
 # runtime settings
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=10)
 work_dir = './work_dirs/timesformer_divST_8x32x1_15e_kinetics400_rgb'
