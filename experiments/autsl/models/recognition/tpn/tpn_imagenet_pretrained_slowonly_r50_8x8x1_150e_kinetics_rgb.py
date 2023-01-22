@@ -126,8 +126,8 @@ data = dict(
     val_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/train_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/train_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames', clip_len=8, frame_interval=8,
@@ -148,8 +148,8 @@ data = dict(
         ]),
     val=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/test_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/test_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames',
@@ -172,8 +172,8 @@ data = dict(
         ]),
     test=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/test_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/test_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames',
