@@ -28,7 +28,7 @@ model = dict(
     type='Recognizer3D',
     backbone=dict(
         type='TimeSformer',
-        pretrained=  # noqa: E251
+        pretrained=# noqa: E251
         'https://download.openmmlab.com/mmaction/recognition/timesformer/vit_base_patch16_224.pth',  # noqa: E501
         num_frames=8,
         img_size=224,
@@ -142,5 +142,5 @@ lr_config = dict(policy='step', step=[40, 80])
 total_epochs = 100
 
 # runtime settings
-checkpoint_config = dict(interval=10)
+checkpoint_config = dict(interval=100)
 work_dir = './work_dirs/timesformer_divST_8x32x1_15e_kinetics400_rgb'
