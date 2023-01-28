@@ -25,10 +25,10 @@ model = dict(
             mid_channels=(1024, 1024),
             out_channels=2048,
             downsample_scales=((1, 1, 1), (1, 1, 1))),
-        aux_head_cfg=dict(out_channels=2000, loss_weight=0.5)),
+        aux_head_cfg=dict(out_channels=400, loss_weight=0.5)),
     cls_head=dict(
         type='TPNHead',
-        num_classes=2000,
+        num_classes=400,
         in_channels=2048,
         spatial_type='avg',
         consensus=dict(type='AvgConsensus', dim=1),
@@ -43,7 +43,7 @@ log_config = dict(interval=10,
                       dict(type='WandbLoggerHook',
                            init_kwargs={
                                'entity': "cares",
-                               'project': "wlasl2000-model-ablation",
+                               'project': "autsl-model-ablation",
                                'group': "tpn",
                            },
                            log_artifact=True)
@@ -57,11 +57,11 @@ opencv_num_threads = 0
 mp_start_method = 'fork'
 # dataset settings
 dataset_type = 'RawframeDataset'
-data_root = 'data/wlasl/rawframes'
-data_root_val = 'data/wlasl/rawframes'
-ann_file_train = 'data/wlasl/train_annotations.txt'
-ann_file_val = 'data/wlasl/test_annotations.txt'
-ann_file_test = 'data/wlasl/test_annotations.txt'
+data_root = 'data/autsl/rawframes'
+data_root_val = 'data/autsl/rawframes'
+ann_file_train = 'data/autsl/train_annotations.txt'
+ann_file_val = 'data/autsl/test_annotations.txt'
+ann_file_test = 'data/autsl/test_annotations.txt'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False)
 train_pipeline = [
@@ -120,14 +120,14 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=24,
-    workers_per_gpu=4,
+    videos_per_gpu=8,
+    workers_per_gpu=8,
     test_dataloader=dict(videos_per_gpu=1),
     val_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/train_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/train_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames', clip_len=8, frame_interval=8,
@@ -148,8 +148,8 @@ data = dict(
         ]),
     val=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/test_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/test_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames',
@@ -172,8 +172,8 @@ data = dict(
         ]),
     test=dict(
         type='RawframeDataset',
-        ann_file='data/wlasl/test_annotations.txt',
-        data_prefix='data/wlasl/rawframes',
+        ann_file='data/autsl/test_annotations.txt',
+        data_prefix='data/autsl/rawframes',
         pipeline=[
             dict(
                 type='SampleFrames',

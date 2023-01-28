@@ -28,7 +28,7 @@ model = dict(
     type='Recognizer3D',
     backbone=dict(
         type='TimeSformer',
-        pretrained=  # noqa: E251
+        pretrained=# noqa: E251
         'https://download.openmmlab.com/mmaction/recognition/timesformer/vit_base_patch16_224.pth',  # noqa: E501
         num_frames=8,
         img_size=224,
@@ -99,7 +99,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs', 'label'])
 ]
 data = dict(
-    videos_per_gpu=2,
+    videos_per_gpu=12,
     workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     val_dataloader=dict(videos_per_gpu=1),

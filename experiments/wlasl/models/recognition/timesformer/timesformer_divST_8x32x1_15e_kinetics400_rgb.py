@@ -5,7 +5,7 @@ log_config = dict(interval=10,
                       dict(type='WandbLoggerHook',
                            init_kwargs={
                                'entity': "cares",
-                               'project': "wlasl-model-ablation",
+                               'project': "wlasl2000-model-ablation",
                                'group': "timeSformer",
                            },
                            log_artifact=True)
@@ -28,7 +28,7 @@ model = dict(
     type='Recognizer3D',
     backbone=dict(
         type='TimeSformer',
-        pretrained=  # noqa: E251
+        pretrained=# noqa: E251
         'https://download.openmmlab.com/mmaction/recognition/timesformer/vit_base_patch16_224.pth',  # noqa: E501
         num_frames=8,
         img_size=224,
@@ -39,7 +39,7 @@ model = dict(
         transformer_layers=None,
         attention_type='divided_space_time',
         norm_cfg=dict(type='LN', eps=1e-6)),
-    cls_head=dict(type='TimeSformerHead', num_classes=400, in_channels=768),
+    cls_head=dict(type='TimeSformerHead', num_classes=2000, in_channels=768),
     # model training and testing settings
     train_cfg=None,
     test_cfg=dict(average_clips='prob'))
@@ -99,7 +99,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs', 'label'])
 ]
 data = dict(
-    videos_per_gpu=2,
+    videos_per_gpu=12,
     workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     val_dataloader=dict(videos_per_gpu=1),
@@ -138,9 +138,9 @@ optimizer = dict(
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 
 # learning policy
-lr_config = dict(policy='step', step=[60, 120])
-total_epochs = 150
+lr_config = dict(policy='step', step=[40, 80])
+total_epochs = 100
 
 # runtime settings
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=100)
 work_dir = './work_dirs/timesformer_divST_8x32x1_15e_kinetics400_rgb'
