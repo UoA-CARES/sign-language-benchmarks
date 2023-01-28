@@ -1,13 +1,13 @@
 cd ..
 
-ython mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py  \
+python mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py  \
     --work-dir work_dirs/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb/0 \
     --validate --seed 0 --deterministic
 
-ython mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py \
+python mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py \
     --work-dir work_dirs/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb/1 \
     --validate --seed 1 --deterministic
 
-ython mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py  \
+python mmaction2/tools/train.py experiments/wlasl/models/recognition/tpn/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb.py  \
     --work-dir work_dirs/tpn_imagenet_pretrained_slowonly_r50_8x8x1_150e_kinetics_rgb/2 \
     --validate --seed 2 --deterministic
