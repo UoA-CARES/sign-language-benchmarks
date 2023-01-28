@@ -25,10 +25,10 @@ model = dict(
             mid_channels=(1024, 1024),
             out_channels=2048,
             downsample_scales=((1, 1, 1), (1, 1, 1))),
-        aux_head_cfg=dict(out_channels=400, loss_weight=0.5)),
+        aux_head_cfg=dict(out_channels=2000, loss_weight=0.5)),
     cls_head=dict(
         type='TPNHead',
-        num_classes=400,
+        num_classes=2000,
         in_channels=2048,
         spatial_type='avg',
         consensus=dict(type='AvgConsensus', dim=1),
@@ -36,14 +36,14 @@ model = dict(
         init_std=0.01),
     train_cfg=None,
     test_cfg=dict(average_clips='prob'))
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=50)
 log_config = dict(interval=10,
                   hooks=[
                       dict(type='TextLoggerHook'),
                       dict(type='WandbLoggerHook',
                            init_kwargs={
                                'entity': "cares",
-                               'project': "wlasl-model-ablation",
+                               'project': "wlasl2000-model-ablation",
                                'group': "tpn",
                            },
                            log_artifact=True)
@@ -55,6 +55,7 @@ resume_from = None
 workflow = [('train', 1)]
 opencv_num_threads = 0
 mp_start_method = 'fork'
+# dataset settings
 dataset_type = 'RawframeDataset'
 data_root = 'data/wlasl/rawframes'
 data_root_val = 'data/wlasl/rawframes'
@@ -119,8 +120,8 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8,
-    workers_per_gpu=8,
+    videos_per_gpu=24,
+    workers_per_gpu=4,
     test_dataloader=dict(videos_per_gpu=1),
     val_dataloader=dict(videos_per_gpu=1),
     train=dict(
