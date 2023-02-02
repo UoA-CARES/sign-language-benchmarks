@@ -126,7 +126,7 @@ cd ..
 ```
 This one is optional but to use the conda environment in Notebook, run:
 ```
-conda install ipykernel
+conda install ipykernel -y
 ipython kernel install --user --name=mmsign
 ```
 ## Setup
