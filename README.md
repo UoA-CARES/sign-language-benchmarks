@@ -2,7 +2,7 @@
 
 This is a repo that contains the setup for the [WLASL dataset](https://github.com/dxli94/WLASL) and [AUTSL dataset](https://paperswithcode.com/dataset/autsl) to be used with tools available with [MMAction2](https://github.com/open-mmlab/mmaction2). Clone recursively for mmaction2:
 ```
-git clone --recurse https://github.com/UoA-CARES/wlasl-summer-research.git
+git clone --recurse https://github.com/UoA-CARES/sign-language-summer-research.git
 ```
 
 <div align="center">
@@ -138,7 +138,7 @@ All the data-acquisition and extraction is handled by ```setup.sh```. From the `
 ```
 bash setup.sh
 ```
-For WLASL, subsets can be chosen by changing the name of the ```json``` variable inside ```setup.sh```. Options include ```nslt_100.json```, ```nslt_300.json```, ```nslt_1009.json```, and ```nslt_2000.json```. More details can be found [here](https://www.kaggle.com/datasets/sttaseen/wlasl2000-resized). 
+For WLASL, subsets can be chosen by changing the name of the ```json``` variable inside ```setup.sh```. Options include ```nslt_100.json```, ```nslt_300.json```, ```nslt_1000.json```, and ```nslt_2000.json```. More details can be found [here](https://www.kaggle.com/datasets/sttaseen/wlasl2000-resized). 
 **Note:** If on any other operating system than Linux/Mac, open the bash file and run each command one by one.
 
 This bash script will download the dataset from kaggle (Kaggle token needs to be set up for this), extract and store the dataset under the ```data``` directory.
