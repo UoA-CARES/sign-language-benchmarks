@@ -124,6 +124,11 @@ pip install -r requirements/build.txt
 pip install -v -e .  
 cd ..
 ```
+This one is optional but to use the conda environment in Notebook, run:
+```
+conda install ipykernel
+ipython kernel install --user --name=mmsign
+```
 ## Setup
 ### Setting up a symbolic link
 This step is optional. If you want to set up an external disk to store the dataset, open ```symbolic.sh``` and change the ```EXTERNALDRIVE``` variable from ```Sadat``` to your drive name. Then, run the script:
