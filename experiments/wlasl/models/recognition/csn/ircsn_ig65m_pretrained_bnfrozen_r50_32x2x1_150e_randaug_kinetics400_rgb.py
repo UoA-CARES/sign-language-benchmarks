@@ -27,7 +27,7 @@ log_config = dict(interval=10,
                            init_kwargs={
                                'entity': "cares",
                                'project': "wlasl-model-ablation",
-                               'group': "csn-randaug",
+                               'group': "csn-rat-rrc-am",
                            },
                            log_artifact=True)
                   ])
@@ -50,12 +50,8 @@ train_pipeline = [
     dict(type='SampleFrames', clip_len=32, frame_interval=2, num_clips=1),
     dict(type='RawFrameDecode'),
     dict(type='Resize', scale=(-1, 256)),
-    dict(
-        type='MultiScaleCrop',
-        input_size=224,
-        scales=(1, 0.8),
-        random_crop=False,
-        max_wh_scale_gap=0),
+    dict(type='pytorchvideo.AugMix'),
+    dict(type='RandomResizedCrop', area_range=(0.4,1.0)),
     dict(type='Resize', scale=(224, 224), keep_ratio=False),
     dict(type='RandAugment_T'),
     dict(
