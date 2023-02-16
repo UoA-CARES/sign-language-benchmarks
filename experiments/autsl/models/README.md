@@ -14,7 +14,6 @@ log_config = dict(
     hooks=[
         dict(type='TextLoggerHook'),
     ])
-    
 ```
 
 
