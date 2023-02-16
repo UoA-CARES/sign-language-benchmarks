@@ -1,4 +1,4 @@
-cd ..
+cd ../..
 
 python tools/wlasl/create_subset.py nslt_100.json 1 data/wlasl/wlasl-complete nslt_100_1.json
 python tools/wlasl/create_subset.py nslt_100.json 2 data/wlasl/wlasl-complete nslt_100_2.json

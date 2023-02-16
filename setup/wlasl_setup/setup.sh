@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ..
+cd ../..
 
 # Set parameters
 json="nslt_100.json"

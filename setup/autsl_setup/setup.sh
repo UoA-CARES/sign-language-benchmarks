@@ -1,4 +1,4 @@
-cd ..
+cd ../..
 
 n_workers=12
 
