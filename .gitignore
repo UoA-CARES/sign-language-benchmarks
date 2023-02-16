@@ -1,6 +1,6 @@
-wlasl/*
 work_dirs/*
 data
 wandb/*
 tools/wlasl/.ipynb_checkpoints
 build_report.txt
+.DS_Store
