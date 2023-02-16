@@ -12,15 +12,27 @@ Here, we ran an augmentation ablation study for different augments. The config f
   </div>
 </div>
 
-### Setup for Custom Augments
+#### Setup for Custom Augments
 For CutOut and RandAugment_T, run:
 ```
 bash copy_augs.sh
 ```
 This will copy the implemented augments into MMAction2 and initialise them.
 
+#### Rerunning the experiments
 
-### Our Results
+Make sure to change the wandb logger to text logger before running the configs using MMAction2: 
+
+```python
+log_config = dict(
+    interval=20,
+    hooks=[
+        dict(type='TextLoggerHook'),
+    ])
+    
+```
+
+#### Results
 
 |             |                                       |       Seed 0       |                    |       Seed 1       |                    |       Seed 2       |                    |                         |                         |
 |-------------|---------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|-------------------------|-------------------------|
