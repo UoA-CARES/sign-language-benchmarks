@@ -167,6 +167,14 @@ log_config = dict(interval=10, hooks=[
 ]
 )
 ```
+Since most configs are pre-setup with wandb, to undo them, replace the log_config with the following:
+```python
+log_config = dict(
+    interval=20,
+    hooks=[
+        dict(type='TextLoggerHook'),
+    ])
+```
 
 ## Training
 Start training by running the following template:
