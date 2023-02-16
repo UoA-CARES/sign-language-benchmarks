@@ -18,11 +18,10 @@ git clone --recurse https://github.com/UoA-CARES/sign-language-summer-research.g
 ## Directory
 **After** downloading and extracting the dataset, the directory should look like below:
 ```
-wlasl-summer-research
-├── auto_setup.sh
+sign-language-summer-research
 ├── data
-│   └── autsl
-│       └── ...
+│   ├── autsl
+│   │   └── ...
 │   └── wlasl
 │       ├── rawframes
 │       │   ├── test
@@ -43,20 +42,25 @@ wlasl-summer-research
 │       ├── wlasl2000-resized.zip
 │       └── wlasl-complete
 │           └── ...
-├── LICENSE
+├── setup
+│   └── autsl
+│       └── ...
+│   └── wlasl
+│       ├── setup.sh
+│       └── ...
 ├── mmaction2
 │   └── ...
 ├── experiments
-│   ├── models
-│   │   ├── c3d
-│   │   │    └── c3d_16x16x1_sports1m_wlasl100_rgb.py
+│   ├── wlasl
+│   │   ├── augmentations
+│   │   │    └── ...
 │   │   └── ...
-│   └── ...
+│   └── autsl
+│       └── ...
 ├── README.md
-├── symbolic.sh
 ├── tools
-│   └── autsl
-│       └── ...
+│   ├── autsl
+│   │    └── ...
 │   └── wlasl
 │       ├── build_labels.py
 │       ├── create_annotations.ipynb
@@ -67,7 +71,8 @@ wlasl-summer-research
 └── work_dirs
     └── ...
 ```
-```data/wlasl/wlasl2000-resized.zip``` is the dataset downloaded from kaggle. It is unzipped and stored in ```data/wlasl/wlasl-complete```. The dataset is prepared using the scripts under ```tools``` and ```mmaction2```. These are automatically run by ```setup.sh```.
+
+In-depth information about how to set up each dataset can be found in the ```README.md``` in their respective ```setup/<dataset>``` folder.
 
 ## Requirements
 ### Setting up a conda environment
@@ -139,7 +144,7 @@ This will create set up a symbolic link called data in the current to point to t
 
 ### Downloading and extracting the dataset
 In order to download the dataset, an existing [kaggle token](https://www.kaggle.com/docs/api#:~:text=From%20the%20site%20header%2C%20click,Create%20New%20API%20Token%E2%80%9D%20button.) needs to be set up.
-All the data-acquisition and extraction is handled by ```setup.sh```. From the ```<dataset>_setup``` directory of the repo, run:
+All the data-acquisition and extraction is handled by ```setup.sh```. From the ```setup/<dataset>``` directory of the repo, run:
 ```
 bash setup.sh
 ```
