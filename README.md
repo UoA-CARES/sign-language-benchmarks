@@ -135,13 +135,6 @@ conda install ipykernel -y
 ipython kernel install --user --name=mmsign
 ```
 ## Setup
-### Setting up a symbolic link
-This step is optional. If you want to set up an external disk to store the dataset, open ```symbolic.sh``` and change the ```EXTERNALDRIVE``` variable from ```Sadat``` to your drive name. Then, run the script:
-```
-bash symbolic.sh
-```
-This will create set up a symbolic link called data in the current to point to the ```EXTERNALDRIVE/<dataset>/data```.
-
 ### Downloading and extracting the dataset
 In order to download the dataset, an existing [kaggle token](https://www.kaggle.com/docs/api#:~:text=From%20the%20site%20header%2C%20click,Create%20New%20API%20Token%E2%80%9D%20button.) needs to be set up.
 All the data-acquisition and extraction is handled by ```setup.sh```. From the ```setup/<dataset>``` directory of the repo, run:
