@@ -10,4 +10,4 @@ unzip vitpose-checkpoint.zip
 
 # Run the extract script
 cd ..
-python extract_pose.py
+python pose.py
