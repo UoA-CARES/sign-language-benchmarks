@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../..
+cd ../../..
 
 
 # Download the dataset
