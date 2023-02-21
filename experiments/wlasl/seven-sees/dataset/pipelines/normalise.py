@@ -46,7 +46,7 @@ class Normalise:
 
         n = len(img_array)
         c, h, w = img_array[0].shape
-        img_ = np.empty((n, c, h, w))
+        img_ = np.empty((n, c, h, w), dtype=np.float32)
 
         for i, img in enumerate(img_array):
             img_[i] = self.normalise(img)
