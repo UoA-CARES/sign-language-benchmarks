@@ -1,0 +1,9 @@
+./test_viz
+./train_viz
+./val_viz
+*.zip
+*.pt
+*.pth
+test
+train
+val
