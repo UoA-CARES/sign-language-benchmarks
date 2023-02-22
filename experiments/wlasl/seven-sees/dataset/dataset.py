@@ -78,7 +78,7 @@ class MultiModalDataset(Dataset):
                                             )
 
         self.train_transform = torchvision.transforms.Compose([torchvision.transforms.RandomResizedCrop(size=(224), scale=(0.4, 1.0)),
-                                                               torchvision.transforms.RandomHorizontalFlip(p=0)]
+                                                               torchvision.transforms.RandomHorizontalFlip(p=0.5)]
                                        )
 
         self.test_transform = torchvision.transforms.Compose(
