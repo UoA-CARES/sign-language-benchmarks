@@ -97,6 +97,7 @@ def build_neck(cfg):
     """Build neck."""
     return NECKS.build(cfg)
 
+
 def confusion_matrix(y_pred, y_real, normalize=None):
     """Compute confusion matrix.
 
@@ -663,7 +664,6 @@ def average_precision_at_temporal_iou(ground_truth,
     return ap
 
 
-
 class BaseWeightedLoss(nn.Module, metaclass=ABCMeta):
     """Base class for loss.
 
@@ -703,6 +703,7 @@ class BaseWeightedLoss(nn.Module, metaclass=ABCMeta):
         else:
             ret *= self.loss_weight
         return ret
+
 
 class CrossEntropyLoss(BaseWeightedLoss):
     """Cross Entropy Loss.
@@ -777,6 +778,7 @@ class CrossEntropyLoss(BaseWeightedLoss):
             loss_cls = F.cross_entropy(cls_score, label, **kwargs)
 
         return loss_cls
+
 
 class AvgConsensus(nn.Module):
     """Average consensus module.
@@ -887,7 +889,6 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
         return losses
 
 
-
 class I3DHead(BaseHead):
     """Classification head for I3D.
 
@@ -906,6 +907,7 @@ class I3DHead(BaseHead):
     def __init__(self,
                  num_classes,
                  in_channels,
+                 spatial_type='avg',
                  loss_cls=CrossEntropyLoss(loss_weight=1.0),
                  dropout_ratio=0.5,
                  init_std=0.01,
@@ -914,6 +916,9 @@ class I3DHead(BaseHead):
 
         self.dropout_ratio = dropout_ratio
         self.init_std = init_std
+        self.spatial_type = spatial_type
+        if self.spatial_type == 'avg':
+            self.avg_pool = nn.AdaptiveAvgPool3d((1, 1, 1))
         if self.dropout_ratio != 0:
             self.dropout = nn.Dropout(p=self.dropout_ratio)
         else:
@@ -935,6 +940,8 @@ class I3DHead(BaseHead):
         Returns:
             torch.Tensor: The classification scores for input samples.
         """
+        if self.avg_pool is not None:
+            x = self.avg_pool(x)
         # [N, in_channels, 1, 1, 1]
         if self.dropout is not None:
             x = self.dropout(x)

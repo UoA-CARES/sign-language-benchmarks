@@ -4,12 +4,12 @@ import torch.nn as nn
 import wandb
 import numpy as np
 
-from dataset.transforms import transform
 from dataset.dataset import MultiModalDataset
 from mmcv_model.mmcv_csn import ResNet3dCSN
-from mmcv_model.i3d_head import I3DHead
+from model.rgb_head import RGBHead
 from mmcv_model.cls_autoencoder import EncoderDecoder
 from mmcv_model.scheduler import GradualWarmupScheduler
+from mmaction.datasets import build_dataset
 
 
 def top_k_accuracy(scores, labels, topk=(1, )):
@@ -47,9 +47,9 @@ def train_one_epoch(epoch_index, interval=5):
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
     for i, (rgb, targets) in enumerate(train_loader):
-        rgb, targets = rgb.to(device), targets.to(device)
-
         targets = targets.reshape(-1, )
+
+        rgb, targets = rgb.to(device), targets.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
@@ -93,9 +93,9 @@ def validate():
 
     with torch.inference_mode():
         for i, (rgb, vtargets) in enumerate(test_loader):
-            rgb, vtargets = rgb.to(device), vtargets.to(device)
-
             vtargets = vtargets.reshape(-1, )
+
+            rgb, vtargets = rgb.to(device), vtargets.to(device)
 
             voutputs = model(rgb)
 
@@ -129,26 +129,78 @@ if __name__ == '__main__':
 
     os.makedirs(work_dir, exist_ok=True)
 
-    transforms_train = transform(mode='train')
-    transforms_test = transform(mode='test')
-
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                       root_dir='data/wlasl/rawframes',
                                       clip_len=32,
                                       resolution=224,
-                                      transforms=transforms_train,
                                       frame_interval=1,
                                       num_clips=1
                                       )
+
+    # # Set up dataset
+    # train_cfg = dict(
+    #     type='RawframeDataset',
+    #     ann_file='data/wlasl/train_annotations.txt',
+    #     data_prefix='data/wlasl/rawframes',
+    #     pipeline=[
+    #         dict(
+    #             type='SampleFrames',
+    #             clip_len=32,
+    #             frame_interval=2,
+    #             num_clips=1),
+    #         dict(type='RawFrameDecode'),
+    #         dict(type='Resize', scale=(-1, 256)),
+    #         dict(type='RandomResizedCrop', area_range=(0.4, 1.0)),
+    #         dict(type='Resize', scale=(224, 224), keep_ratio=False),
+    #         dict(type='Flip', flip_ratio=0.5),
+    #         dict(
+    #             type='Normalize',
+    #             mean=[123.675, 116.28, 103.53],
+    #             std=[58.395, 57.12, 57.375],
+    #             to_bgr=False),
+    #         dict(type='FormatShape', input_format='NCTHW'),
+    #         dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
+    #         dict(type='ToTensor', keys=['imgs', 'label'])
+    #     ])
+
+    # train_dataset = build_dataset(train_cfg)
 
     test_dataset = MultiModalDataset(ann_file='data/wlasl/test_annotations.txt',
                                      root_dir='data/wlasl/rawframes',
                                      clip_len=32,
                                      resolution=224,
-                                     transforms=transforms_test,
+                                     test_mode=True,
                                      frame_interval=1,
                                      num_clips=1
                                      )
+
+    # test_cfg = dict(
+    #     type='RawframeDataset',
+    #     ann_file='data/wlasl/test_annotations.txt',
+    #     data_prefix='data/wlasl/rawframes',
+    #     test_mode=True,
+    #     pipeline=[
+    #         dict(
+    #                 type='SampleFrames',
+    #                 clip_len=32,
+    #                 frame_interval=2,
+    #                 num_clips=1,
+    #                 test_mode=True),
+    #         dict(type='RawFrameDecode'),
+    #         dict(type='Resize', scale=(-1, 256)),
+    #         dict(type='CenterCrop', crop_size=224),
+    #         dict(
+    #             type='Normalize',
+    #             mean=[123.675, 116.28, 103.53],
+    #             std=[58.395, 57.12, 57.375],
+    #             to_bgr=False),
+    #         dict(type='FormatShape', input_format='NCTHW'),
+    #         dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
+    #         dict(type='ToTensor', keys=['imgs'])
+    #     ])
+
+    # # Building the datasets
+    # test_dataset = build_dataset(test_cfg)
 
     # Setting up dataloaders
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
@@ -179,9 +231,8 @@ if __name__ == '__main__':
 
     encoder.init_weights()
 
-    decoder = I3DHead(num_classes=400,
+    decoder = RGBHead(num_classes=400,
                       in_channels=2048,
-                      spatial_type='avg',
                       dropout_ratio=0.5,
                       init_std=0.01)
 
