@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
     # Configs
     work_dir = 'work_dirs/jack-slr-rgb/'
-    batch_size = 8
+    batch_size = 2
 
     os.makedirs(work_dir, exist_ok=True)
 

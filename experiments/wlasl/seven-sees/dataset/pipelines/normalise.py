@@ -21,10 +21,13 @@ class Normalise:
 
 
 
-        self.mean = np.float64(mean).reshape(-1, 1, 1)
-        self.std = np.float64(std).reshape(-1, 1, 1)
-        # self.mean = np.array(mean, dtype=np.float32)
-        # self.std = np.array(std, dtype=np.float32)
+        # self.mean = np.float64(mean).reshape(-1, 1, 1)
+        # self.std = np.float64(std).reshape(-1, 1, 1)
+        # self.mean = np.array(mean, dtype=np.float64).reshape(-1, 1, 1)
+        # self.std = np.array(std, dtype=np.float64).reshape(-1, 1, 1)
+
+        self.mean = np.array(mean).reshape(-1, 1, 1)
+        self.std = np.array(std).reshape(-1, 1, 1)
 
     def normalise(self, image):
         """Perform normalise on a single frame.
@@ -51,7 +54,7 @@ class Normalise:
 
         n = len(img_array)
         c, h, w = img_array[0].shape
-        img_ = np.empty((n, c, h, w), dtype=np.float64)
+        img_ = np.empty((n, c, h, w), dtype=np.float32)
 
         for i, img in enumerate(img_array):
             img_[i] = self.normalise(img)

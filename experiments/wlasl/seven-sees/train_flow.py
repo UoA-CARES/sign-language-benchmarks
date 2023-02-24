@@ -138,7 +138,8 @@ if __name__ == '__main__':
                                       resolution=224,
                                       frame_interval=1,
                                       modalities=('rgb', 'flow'),
-                                      num_clips=1
+                                      num_clips=1,
+                                      test_mode=False
                                       )
 
     # # Set up dataset

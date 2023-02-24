@@ -62,7 +62,6 @@ class MultiModalDataset(Dataset):
         self.resolution = resolution
         self.modalities = modalities
         
-        # self.normalise = Normalise(mean=[0.4831, 0.4542, 0.4044], std=[0.2281, 0.2231, 0.2231])
         self.normalise = Normalise(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         # self.normalise = Normalise(mean=[0.3937640611877602, 0.39371875227753367, 0.3737589959892329], std=[0.29009996720411807, 0.27808741624937966, 0.253218506866794])
         
