@@ -2,6 +2,7 @@
 
 import numpy as np
 import torch
+import mmcv
 
 
 class Normalise:
@@ -18,8 +19,12 @@ class Normalise:
                  std
                  ):
 
-        self.mean = np.array(mean).reshape(-1, 1, 1)
-        self.std = np.array(std).reshape(-1, 1, 1)
+
+
+        self.mean = np.float64(mean).reshape(-1, 1, 1)
+        self.std = np.float64(std).reshape(-1, 1, 1)
+        # self.mean = np.array(mean, dtype=np.float32)
+        # self.std = np.array(std, dtype=np.float32)
 
     def normalise(self, image):
         """Perform normalise on a single frame.
@@ -46,10 +51,11 @@ class Normalise:
 
         n = len(img_array)
         c, h, w = img_array[0].shape
-        img_ = np.empty((n, c, h, w), dtype=np.float32)
+        img_ = np.empty((n, c, h, w), dtype=np.float64)
 
         for i, img in enumerate(img_array):
             img_[i] = self.normalise(img)
+            # img_[i] = mmcv.imnormalize_(img, self.mean, self.std, False)
 
         out = torch.tensor(img_)
 

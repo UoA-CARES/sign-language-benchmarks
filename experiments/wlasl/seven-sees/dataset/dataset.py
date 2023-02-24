@@ -62,24 +62,28 @@ class MultiModalDataset(Dataset):
         self.resolution = resolution
         self.modalities = modalities
         
-        self.normalise = Normalise(mean=[0.4831, 0.4542, 0.4044], std=[0.2281, 0.2231, 0.2231])
+        # self.normalise = Normalise(mean=[0.4831, 0.4542, 0.4044], std=[0.2281, 0.2231, 0.2231])
+        self.normalise = Normalise(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        # self.normalise = Normalise(mean=[0.3937640611877602, 0.39371875227753367, 0.3737589959892329], std=[0.29009996720411807, 0.27808741624937966, 0.253218506866794])
+        
 
         self.video_infos = self.load_annotations()
         self.read_pose = ReadPose()
         self.sample_frames = SampleFrames(clip_len=clip_len,
                                         frame_interval=frame_interval,
-                                        num_clips=num_clips)
+                                        num_clips=num_clips,
+                                        test_mode=self.test_mode)
 
         self.img2tensorTransforms = torchvision.transforms.Compose(
                                                 [
-                                                    torchvision.transforms.Resize((self.resolution,self.resolution)),
                                                     torchvision.transforms.ToTensor(),
                                                 ]
                                             )
 
         self.train_transform = torchvision.transforms.Compose([torchvision.transforms.Resize(size=(256)),
-                                                               torchvision.transforms.RandomResizedCrop(size=(224), scale=(0.4, 1.0)),
-                                                               torchvision.transforms.RandomHorizontalFlip(p=0.5)]
+                                                            #    torchvision.transforms.RandomResizedCrop(size=(224), scale=(0.4, 1.0)),
+                                                            #    torchvision.transforms.RandomHorizontalFlip(p=0.5)
+                                                            ]
                                        )
 
         self.test_transform = torchvision.transforms.Compose(
@@ -161,6 +165,9 @@ class MultiModalDataset(Dataset):
                     rgb_frame = Image.open(
                         osp.join(video_path, self.rgb_prefix.format(frame)))
 
+                    # rgb_frame = cv2.imread(osp.join(video_path, self.rgb_prefix.format(frame)), 1)
+                    # rgb_frame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGR2RGB)
+
                 if 'flow' in self.modalities:
                     flow_frame = Image.open(
                         osp.join(video_path, self.flow_prefix.format(frame)))
@@ -241,6 +248,8 @@ class MultiModalDataset(Dataset):
     def __getitem__(self, idx):
         #['rgb','depth', 'flow', 'pose', 'body_bbox', 'head', 'right_hand','left_hand']
         results = self.load_video(idx=idx)
+
+        rgb = results['rgb']
         rgb = self.to_3dtensor(results['rgb'])
 
 
@@ -249,6 +258,7 @@ class MultiModalDataset(Dataset):
         else:
             rgb = self.train_transform(rgb)
 
+ 
         rgb = self.normalise(rgb)
         
         
