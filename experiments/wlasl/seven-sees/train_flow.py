@@ -253,32 +253,32 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
-    # rgb_backbone.init_weights()
-    # flow_backbone.init_weights()
+    rgb_backbone.init_weights()
+    flow_backbone.init_weights()
 
     neck = MultiModalNeck()
 
-    # head = SimpleHead(num_classes=400,
-    #                   in_channels=4096,
-    #                   dropout_ratio=0.5,
-    #                   init_std=0.01)
-
     head = SimpleHead(num_classes=400,
-                      in_channels=2048,
+                      in_channels=4096,
                       dropout_ratio=0.5,
                       init_std=0.01)
 
-    # head.init_weights()
+    # head = SimpleHead(num_classes=400,
+    #                   in_channels=2048,
+    #                   dropout_ratio=0.5,
+    #                   init_std=0.01)
+
+    head.init_weights()
 
     model = FlowAutoencoder(rgb_backbone=rgb_backbone,
                             flow_backbone=flow_backbone,
                             neck=neck,
                             head=head)
 
-    # Load model checkpoint
-    print("Loading latest checkpoint...")
-    checkpoint = torch.load(work_dir+'latest.pth')
-    model.load_state_dict(checkpoint)
+    # # Load model checkpoint
+    # print("Loading latest checkpoint...")
+    # checkpoint = torch.load(work_dir+'latest.pth')
+    # model.load_state_dict(checkpoint)
 
     # Specify optimizer
     optimizer = torch.optim.SGD(
@@ -288,19 +288,17 @@ if __name__ == '__main__':
     loss_cls = nn.CrossEntropyLoss()
 
     # Specify total epochs
-    epochs = 100
+    epochs = 150
 
     # Specify learning rate scheduler
     lr_scheduler = torch.optim.lr_scheduler.StepLR(
         optimizer, step_size=120, gamma=0.1)
 
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer, milestones=[40, 80], gamma=0.1)
 
-    # scheduler_steplr = torch.optim.lr_scheduler.MultiStepLR(
-    #     optimizer, milestones=[34, 84], gamma=0.1)
-    # scheduler = GradualWarmupScheduler(
-    #     optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
+    scheduler_steplr = torch.optim.lr_scheduler.MultiStepLR(
+        optimizer, milestones=[64, 104], gamma=0.1)
+    scheduler = GradualWarmupScheduler(
+        optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
 
     # Specify Loss
     loss_fn = nn.CrossEntropyLoss()
