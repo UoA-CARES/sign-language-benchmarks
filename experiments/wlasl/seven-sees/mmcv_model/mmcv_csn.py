@@ -417,7 +417,7 @@ class ResNet3d(nn.Module):
                  in_channels=3,
                  num_stages=4,
                  base_channels=64,
-                 out_indices=(0, 1, 2, 3,),
+                 out_indices=(3, ),
                  spatial_strides=(1, 2, 2, 2),
                  temporal_strides=(1, 1, 1, 1),
                  dilations=(1, 1, 1, 1),

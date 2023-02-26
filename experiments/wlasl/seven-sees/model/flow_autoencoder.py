@@ -12,11 +12,13 @@ class FlowAutoencoder(nn.Module):
         self.neck = neck
         self.head = head
 
-    def forward(self, rgb, flow):
-        rgb_out = self.rgb_backbone(rgb)
-        flow_out = self.flow_backbone(flow)
-        neck_out = self.neck(rgb=rgb_out,
-                             flow=flow_out
+    def forward(self, rgb=None, flow=None):
+        if rgb is not None:
+            rgb = self.rgb_backbone(rgb)
+        if flow is not None:
+            flow = self.flow_backbone(flow)
+        neck_out = self.neck(rgb=rgb,
+                             flow=flow
                              )
         cls_score = self.head(neck_out)
 

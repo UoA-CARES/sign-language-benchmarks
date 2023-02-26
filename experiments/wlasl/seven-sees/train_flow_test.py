@@ -47,20 +47,18 @@ def train_one_epoch(epoch_index, interval=5):
     # Here, we use enumerate(training_loader) instead of
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
-    for i, (rgb, flow, targets) in enumerate(train_loader):
+    for i, (rgb, _, targets) in enumerate(train_loader):
         targets = targets.reshape(-1, )
 
         # rgb, targets = rgb.to(device), targets.to(device)
 
-        rgb, flow, targets = rgb.to(device), flow.to(
-            device), targets.to(device)
+        rgb, targets = rgb.to(device), targets.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
         # Make predictions for this batch
-        outputs = model(rgb=rgb,
-                        flow=flow)
+        outputs = model(rgb=rgb)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -97,16 +95,14 @@ def validate():
     print('Evaluating top_k_accuracy...')
 
     with torch.inference_mode():
-        for i, (rgb, flow, vtargets) in enumerate(test_loader):
+        for i, (rgb, _, vtargets) in enumerate(test_loader):
             vtargets = vtargets.reshape(-1, )
 
-            rgb, flow, vtargets = rgb.to(device), flow.to(
-                device), vtargets.to(device)
+            rgb, vtargets = rgb.to(device), vtargets.to(device)
 
             # rgb, vtargets = rgb.to(device), vtargets.to(device)
 
-            voutputs = model(rgb=rgb,
-                             flow=flow)
+            voutputs = model(rgb)
 
             vloss = loss_fn(voutputs, vtargets)
             running_vloss += vloss
@@ -134,7 +130,7 @@ if __name__ == '__main__':
 
     # Configs
     work_dir = 'work_dirs/jack-slr-rgb/'
-    batch_size = 4
+    batch_size = 8
 
     os.makedirs(work_dir, exist_ok=True)
 
@@ -253,8 +249,8 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
-    # rgb_backbone.init_weights()
-    # flow_backbone.init_weights()
+    rgb_backbone.init_weights()
+    flow_backbone.init_weights()
 
     neck = MultiModalNeck()
 
@@ -275,14 +271,14 @@ if __name__ == '__main__':
                             neck=neck,
                             head=head)
 
-    # Load model checkpoint
-    print("Loading latest checkpoint...")
-    checkpoint = torch.load(work_dir+'latest.pth')
-    model.load_state_dict(checkpoint)
+    # # Load model checkpoint
+    # print("Loading latest checkpoint...")
+    # checkpoint = torch.load(work_dir+'latest.pth')
+    # model.load_state_dict(checkpoint)
 
     # Specify optimizer
     optimizer = torch.optim.SGD(
-        model.parameters(), lr=0.000125, momentum=0.9, weight_decay=0.00001)
+        model.parameters(), lr=0.0000125, momentum=0.9, weight_decay=0.00001)
 
     # Specify Loss
     loss_cls = nn.CrossEntropyLoss()
@@ -294,13 +290,10 @@ if __name__ == '__main__':
     lr_scheduler = torch.optim.lr_scheduler.StepLR(
         optimizer, step_size=120, gamma=0.1)
 
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer, milestones=[40, 80], gamma=0.1)
-
-    # scheduler_steplr = torch.optim.lr_scheduler.MultiStepLR(
-    #     optimizer, milestones=[34, 84], gamma=0.1)
-    # scheduler = GradualWarmupScheduler(
-    #     optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
+    scheduler_steplr = torch.optim.lr_scheduler.MultiStepLR(
+        optimizer, milestones=[34, 84], gamma=0.1)
+    scheduler = GradualWarmupScheduler(
+        optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
 
     # Specify Loss
     loss_fn = nn.CrossEntropyLoss()

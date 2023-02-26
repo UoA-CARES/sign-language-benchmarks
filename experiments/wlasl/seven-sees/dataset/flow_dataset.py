@@ -62,7 +62,8 @@ class MultiModalDataset(Dataset):
         self.resolution = resolution
         self.modalities = modalities
         
-        self.normalise = Normalise(mean=[0.4831, 0.4542, 0.4044], std=[0.2281, 0.2231, 0.2231])
+        self.normalise = Normalise(
+            mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         self.flow_normalise = Normalise(mean=[0.9444415, 0.9504853, 0.9530699], std=[
                               0.1113386, 0.1044944, 0.1007349])
 
@@ -74,7 +75,6 @@ class MultiModalDataset(Dataset):
 
         self.img2tensorTransforms = torchvision.transforms.Compose(
                                                 [
-                                                    torchvision.transforms.Resize((self.resolution,self.resolution)),
                                                     torchvision.transforms.ToTensor(),
                                                 ]
                                             )
