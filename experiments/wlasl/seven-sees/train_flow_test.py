@@ -123,14 +123,14 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="flow")
+               group="flow", name="rgb_head_init")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
     work_dir = 'work_dirs/jack-slr-rgb/'
-    batch_size = 8
+    batch_size = 3
 
     os.makedirs(work_dir, exist_ok=True)
 
@@ -264,7 +264,7 @@ if __name__ == '__main__':
                       dropout_ratio=0.5,
                       init_std=0.01)
 
-    # head.init_weights()
+    head.init_weights()
 
     model = FlowAutoencoder(rgb_backbone=rgb_backbone,
                             flow_backbone=flow_backbone,

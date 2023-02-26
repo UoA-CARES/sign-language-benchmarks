@@ -11,6 +11,10 @@ from mmcv_model.cls_autoencoder import EncoderDecoder
 from mmcv_model.scheduler import GradualWarmupScheduler
 from mmaction.datasets import build_dataset
 
+from model.multimodal_neck import MultiModalNeck
+from model.simple_head import SimpleHead
+from model.flow_autoencoder import FlowAutoencoder
+
 
 def top_k_accuracy(scores, labels, topk=(1, )):
     """Calculate top k accuracy score.
@@ -118,7 +122,7 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="rgb-only")
+               group="rgb-only", name="multimodal-model")
 
     # Set up device agnostic code
     device = 'cuda'
@@ -215,30 +219,57 @@ if __name__ == '__main__':
                                               num_workers=4,
                                               pin_memory=True)
 
-    # set up model, loss, optimizer and scheduler
-    # Create a CSN model
-    encoder = ResNet3dCSN(
-        pretrained2d=False,
-        # pretrained=None,
-        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
-        depth=50,
-        with_pool2=False,
-        bottleneck_mode='ir',
-        norm_eval=True,
-        zero_init_residual=False,
-        bn_frozen=True
+    # Default model
+    # # Create a CSN model
+    # encoder = ResNet3dCSN(
+    #     pretrained2d=False,
+    #     # pretrained=None,
+    #     pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+    #     depth=50,
+    #     with_pool2=False,
+    #     bottleneck_mode='ir',
+    #     norm_eval=True,
+    #     zero_init_residual=False,
+    #     bn_frozen=True
+    # )
+
+    # encoder.init_weights()
+
+    # decoder = RGBHead(num_classes=400,
+    #                   in_channels=2048,
+    #                   dropout_ratio=0.5,
+    #                   init_std=0.01)
+
+    # decoder.init_weights()
+
+    # model = EncoderDecoder(encoder, decoder)
+
+    # Custom multimodal model
+    rgb_backbone = ResNet3dCSN(
+    pretrained2d=False,
+    # pretrained=None,
+    pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+    depth=50,
+    with_pool2=False,
+    bottleneck_mode='ir',
+    norm_eval=True,
+    zero_init_residual=False,
+    bn_frozen=True
     )
 
-    encoder.init_weights()
+    rgb_backbone.init_weights()
 
-    decoder = RGBHead(num_classes=400,
-                      in_channels=2048,
-                      dropout_ratio=0.5,
-                      init_std=0.01)
-
-    decoder.init_weights()
-
-    model = EncoderDecoder(encoder, decoder)
+    neck = MultiModalNeck()
+    head = SimpleHead(num_classes=400,
+                        in_channels=2048,
+                        dropout_ratio=0.5,
+                        init_std=0.01)
+    
+    head.init_weights()
+    
+    model = FlowAutoencoder(rgb_backbone=rgb_backbone,
+                            neck=neck,
+                            head=head)
 
     # # Load model checkpoint
     # checkpoint = torch.load(work_dir+'latest.pth')
