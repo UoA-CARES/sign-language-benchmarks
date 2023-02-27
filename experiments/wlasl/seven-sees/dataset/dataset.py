@@ -63,7 +63,9 @@ class MultiModalDataset(Dataset):
         self.modalities = modalities
         
         self.normalise = Normalise(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-        # self.normalise = Normalise(mean=[0.3937640611877602, 0.39371875227753367, 0.3737589959892329], std=[0.29009996720411807, 0.27808741624937966, 0.253218506866794])
+        
+        self.flow_normalise = Normalise(mean=[0.9444415, 0.9504853, 0.9530699], std=[
+            0.1113386, 0.1044944, 0.1007349])
         
 
         self.video_infos = self.load_annotations()
@@ -250,16 +252,22 @@ class MultiModalDataset(Dataset):
 
         rgb = results['rgb']
         rgb = self.to_3dtensor(results['rgb'])
+        flow = self.to_3dtensor(results['flow'])
+
+        x = torch.cat((rgb.squeeze(), flow.squeeze()), dim=1)
 
 
         if self.test_mode:
-            rgb = self.test_transform(rgb)
+            x = self.test_transform(x)
         else:
-            rgb = self.train_transform(rgb)
+            x = self.train_transform(x)
+
+        rgb = x[:, 0:32, :, :]
+        flow = x[:, 32:64, :, :]
 
  
         rgb = self.normalise(rgb)
-        
+        flow = self.flow_normalise(flow)
         
         
         # body_bbox = self.to_3dtensor(results['body_bbox'])
@@ -275,6 +283,6 @@ class MultiModalDataset(Dataset):
         
         label = torch.tensor(results['label'])
     
-        return rgb, label
+        return rgb, flow, label
 
         
