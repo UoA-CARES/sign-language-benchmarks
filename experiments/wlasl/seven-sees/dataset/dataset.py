@@ -116,9 +116,9 @@ class MultiModalDataset(Dataset):
         pose_frames = dict()
         with open(osp.join(video_path, 'pose.txt'), 'r') as fin:
             for line in fin:
-                pose_values, head, lhand, rhand, bodybbox, imgpath = self.read_pose(line)
+                pose_values, face, lhand, rhand, bodybbox, imgpath = self.read_pose(line)
                 pose_frames[int(imgpath[4:9])] = dict(keypoints=pose_values,
-                                        head=head,
+                                        face=face,
                                         left_hand=lhand,
                                         right_hand=rhand,
                                         body_bbox=bodybbox,
@@ -165,9 +165,6 @@ class MultiModalDataset(Dataset):
                 if 'rgb' in self.modalities:
                     rgb_frame = Image.open(
                         osp.join(video_path, self.rgb_prefix.format(frame)))
-
-                    # rgb_frame = cv2.imread(osp.join(video_path, self.rgb_prefix.format(frame)), 1)
-                    # rgb_frame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGR2RGB)
 
                 if 'flow' in self.modalities:
                     flow_frame = Image.open(
@@ -246,32 +243,99 @@ class MultiModalDataset(Dataset):
         tensor = torch.tensor(points)
         return tensor
 
-    def __getitem__(self, idx):
-        #['rgb','depth', 'flow', 'pose', 'body_bbox', 'head', 'right_hand','left_hand']
-        results = self.load_video(idx=idx)
+    # TODO: Crop the hands and the faces using the bounding box values
+    def crop_pose(self, results):
+        rgbcrop =[]
+
+        assert 'rgb' in self.modalities
+        assert 'pose' in self.modalities
 
         rgb = results['rgb']
-        rgb = self.to_3dtensor(results['rgb'])
-        flow = self.to_3dtensor(results['flow'])
+        for i, frame in enumerate(rgb):
+            img =  np.array(frame).copy() 
+            bodybbox = results['pose'][i]['body_bbox']
+            img = img[int(bodybbox[0]):int(bodybbox[2]), int(bodybbox[1]):int(bodybbox[3])]
+            rgbcrop.append(Image.fromarray(img))
+            
+        results['rgbcrop']= rgbcrop
+        return results
 
-        x = torch.cat((rgb.squeeze(), flow.squeeze()), dim=1)
+    def __getitem__(self, idx):
+        #['rgb','depth', 'flow', 'pose', 'body_bbox', 'face', 'right_hand','left_hand']
+        results = self.load_video(idx=idx)
+        modality_list = []
+        output = dict()
+        
+        if 'rgb' in self.modalities:
+            rgb = self.to_3dtensor(results['rgb']).squeeze()
+        else:
+            rgb = torch.FloatTensor(3,32,256,256)
+
+        if 'flow' in self.modalities:
+            flow = self.to_3dtensor(results['flow']).squeeze()
+        else:
+            flow = torch.FloatTensor(3,32,256,256)
+
+        if 'depth' in self.modalities:
+            depth = self.to_3dtensor(results['depth'])
+            # Since depth is only 1 channel copy it over 3 times
+            depth = torch.cat((depth, depth, depth), dim=0)
+        else:
+            depth = torch.FloatTensor(3,32,256,256)
+
+        # if 'face' in self.modalities:
+        #     face = self.to_3dtensor(results['face']).squeeze()
+        # else:
+        #     face = torch.FloatTensor(3,32,256,256)
+
+
+        modality_list.append(rgb)
+        modality_list.append(flow)
+        modality_list.append(depth)
+        # modality_list.append(face)
+
+
+        combined_tensor = torch.cat(modality_list, dim=1)
 
 
         if self.test_mode:
-            x = self.test_transform(x)
+            combined_tensor = self.test_transform(combined_tensor)
         else:
-            x = self.train_transform(x)
+            combined_tensor = self.train_transform(combined_tensor)
 
-        rgb = x[:, 0:32, :, :]
-        flow = x[:, 32:64, :, :]
+        if 'rgb' in self.modalities:
+            rgb = combined_tensor[:, 0:32, :, :]
+            rgb = self.normalise(rgb)
+            output['rgb'] = rgb
+
+        if 'flow' in self.modalities:
+            flow = combined_tensor[:, 32:64, :, :]
+            flow = self.flow_normalise(flow)
+            output['flow'] = flow
+
+        if 'depth' in self.modalities:
+            depth = combined_tensor[:, 64:96, :, :]
+            # TODO: Find depth normalise values
+            depth = self.flow_normalise(depth)
+            output['depth'] = depth
+
+        # if 'face' in self.modalities:
+        #     face = combined_tensor[:, 32:64, :, :]
+        #     # face = self.flow_normalise(face)
+        #     output['face'] = face
+
+        
+
+        label = torch.tensor(results['label'])
+        output['label'] = label
 
  
-        rgb = self.normalise(rgb)
-        flow = self.flow_normalise(flow)
+        
+        
         
         
         # body_bbox = self.to_3dtensor(results['body_bbox'])
-        # head = self.to_3dtensor(results['head'])
+        # face = self.to_3dtensor(results['face'])
         # left_hand = self.to_3dtensor(results['left_hand'])
         # right_hand = self.to_3dtensor(results['right_hand'])
         # depth  =  self.to_3dtensor(results['depth'])
@@ -281,8 +345,7 @@ class MultiModalDataset(Dataset):
 
         
         
-        label = torch.tensor(results['label'])
-    
-        return rgb, flow, label
+
+        return output
 
         

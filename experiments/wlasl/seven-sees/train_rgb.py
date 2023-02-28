@@ -6,10 +6,7 @@ import numpy as np
 
 from dataset.dataset import MultiModalDataset
 from mmcv_model.mmcv_csn import ResNet3dCSN
-from model.rgb_head import RGBHead
-from mmcv_model.cls_autoencoder import EncoderDecoder
 from mmcv_model.scheduler import GradualWarmupScheduler
-from mmaction.datasets import build_dataset
 
 from model.multimodal_neck import MultiModalNeck
 from model.simple_head import SimpleHead
@@ -50,7 +47,7 @@ def train_one_epoch(epoch_index, interval=5):
     # Here, we use enumerate(training_loader) instead of
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
-    for i, (rgb, targets) in enumerate(train_loader):
+    for i, (rgb, _, targets) in enumerate(train_loader):
         targets = targets.reshape(-1, )
 
         rgb, targets = rgb.to(device), targets.to(device)
@@ -96,7 +93,7 @@ def validate():
     print('Evaluating top_k_accuracy...')
 
     with torch.inference_mode():
-        for i, (rgb, vtargets) in enumerate(test_loader):
+        for i, (rgb, _, vtargets) in enumerate(test_loader):
             vtargets = vtargets.reshape(-1, )
 
             rgb, vtargets = rgb.to(device), vtargets.to(device)
@@ -122,7 +119,7 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="rgb-only", name="multimodal-model")
+               group="flow", name="rgb-only-v2")
 
     # Set up device agnostic code
     device = 'cuda'
@@ -136,6 +133,7 @@ if __name__ == '__main__':
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                       root_dir='data/wlasl/rawframes',
                                       clip_len=32,
+                                      modalities=('rgb', 'flow'),
                                       resolution=224,
                                       frame_interval=1,
                                       num_clips=1
@@ -173,6 +171,7 @@ if __name__ == '__main__':
                                      root_dir='data/wlasl/rawframes',
                                      clip_len=32,
                                      resolution=224,
+                                     modalities=('rgb', 'flow'),
                                      test_mode=True,
                                      frame_interval=1,
                                      num_clips=1
@@ -246,27 +245,27 @@ if __name__ == '__main__':
 
     # Custom multimodal model
     rgb_backbone = ResNet3dCSN(
-    pretrained2d=False,
-    # pretrained=None,
-    pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
-    depth=50,
-    with_pool2=False,
-    bottleneck_mode='ir',
-    norm_eval=True,
-    zero_init_residual=False,
-    bn_frozen=True
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
     )
 
     rgb_backbone.init_weights()
 
     neck = MultiModalNeck()
     head = SimpleHead(num_classes=400,
-                        in_channels=2048,
-                        dropout_ratio=0.5,
-                        init_std=0.01)
-    
+                      in_channels=2048,
+                      dropout_ratio=0.5,
+                      init_std=0.01)
+
     head.init_weights()
-    
+
     model = FlowAutoencoder(rgb_backbone=rgb_backbone,
                             neck=neck,
                             head=head)
