@@ -1,2 +1,2 @@
-python train_flow_v2.py
-python train_flow_v3.py
+python rgb_only.py
+python flow_only.py
