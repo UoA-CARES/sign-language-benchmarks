@@ -58,7 +58,7 @@ def train_one_epoch(epoch_index, interval=5):
         optimizer.zero_grad()
 
         # Make predictions for this batch
-        outputs = model(flow)
+        outputs = model(flow=flow)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -103,7 +103,7 @@ def validate():
 
             flow, vtargets = flow.to(device), vtargets.to(device)
 
-            voutputs = model(flow)
+            voutputs = model(flow=flow)
 
             vloss = loss_fn(voutputs, vtargets)
             running_vloss += vloss
