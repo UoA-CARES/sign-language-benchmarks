@@ -1,4 +1,4 @@
- addict==2.4.0
+addict==2.4.0
 anyio==3.6.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
