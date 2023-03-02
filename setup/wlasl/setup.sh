@@ -3,7 +3,7 @@
 cd ../..
 
 # Set parameters
-json="nslt_2000.json"
+json="nslt_100.json"
 n_workers=12
 
 # Download the dataset
