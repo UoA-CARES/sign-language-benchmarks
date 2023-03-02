@@ -43,6 +43,7 @@ class MultiModalDataset(Dataset):
                 root_dir,
                 clip_len,
                 resolution=224,
+                input_resolution=256,
                 transforms=None,
                 frame_interval=1,
                 num_clips=1,
@@ -56,6 +57,7 @@ class MultiModalDataset(Dataset):
         self.root_dir = root_dir
         self.rgb_prefix = rgb_prefix
         self.flow_prefix = flow_prefix
+        self.input_resolution = input_resolution
         self.depth_prefix = depth_prefix
         self.test_mode = test_mode
         self.transforms = transforms
@@ -82,14 +84,14 @@ class MultiModalDataset(Dataset):
                                             )
 
         self.train_transform = torchvision.transforms.Compose([torchvision.transforms.Resize(size=(256)),
-                                                               torchvision.transforms.RandomResizedCrop(size=(224), scale=(0.4, 1.0)),
+                                                               torchvision.transforms.RandomResizedCrop(size=(self.resolution), scale=(0.4, 1.0)),
                                                                torchvision.transforms.RandomHorizontalFlip(p=0.5)
                                                             ]
                                        )
 
         self.test_transform = torchvision.transforms.Compose(
             [torchvision.transforms.Resize(size=(256)),
-            torchvision.transforms.CenterCrop(size=(224))])
+            torchvision.transforms.CenterCrop(size=(self.resolution))])
 
 
     def __len__(self):
@@ -145,7 +147,8 @@ class MultiModalDataset(Dataset):
         frame_indices = results['frame_inds']
         video_path = results['video_path']
 
-        pose_data = self.load_pose(video_path)
+        if 'pose' in self.modalities:
+            pose_data = self.load_pose(video_path)
 
         rgb_frames = []
         flow_frames = []
@@ -269,24 +272,24 @@ class MultiModalDataset(Dataset):
         if 'rgb' in self.modalities:
             rgb = self.to_3dtensor(results['rgb']).squeeze()
         else:
-            rgb = torch.FloatTensor(3,32,256,256)
+            rgb = torch.FloatTensor(3,32,self.input_resolution,self.input_resolution)
 
         if 'flow' in self.modalities:
             flow = self.to_3dtensor(results['flow']).squeeze()
         else:
-            flow = torch.FloatTensor(3,32,256,256)
+            flow = torch.FloatTensor(3,32,self.input_resolution,self.input_resolution)
 
         if 'depth' in self.modalities:
             depth = self.to_3dtensor(results['depth'])
             # Since depth is only 1 channel copy it over 3 times
             depth = torch.cat((depth, depth, depth), dim=0)
         else:
-            depth = torch.FloatTensor(3,32,256,256)
+            depth = torch.FloatTensor(3,32,self.input_resolution,self.input_resolution)
 
         # if 'face' in self.modalities:
         #     face = self.to_3dtensor(results['face']).squeeze()
         # else:
-        #     face = torch.FloatTensor(3,32,256,256)
+        #     face = torch.FloatTensor(3,32,self.input_resolution,self.input_resolution)
 
 
         modality_list.append(rgb)

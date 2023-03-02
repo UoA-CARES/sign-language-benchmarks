@@ -124,35 +124,35 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="pretraining", name="rgb-wlasl")
+               group="pretraining", name="rgb-autsl")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
-    work_dir = 'work_dirs/jack-slr-rgb-wlasl/'
+    work_dir = 'work_dirs/jack-slr-rgb-autsl/'
     batch_size = 10
 
     os.makedirs(work_dir, exist_ok=True)
 
-    train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
-                                      root_dir='data/wlasl/rawframes',
+    train_dataset = MultiModalDataset(ann_file='data/autsl/train_annotations.txt',
+                                      root_dir='data/autsl/rawframes',
                                       clip_len=32,
                                       modalities=('rgb'),
                                       resolution=224,
                                       frame_interval=1,
-                                      input_resolution=256,
+                                      input_resolution=512,
                                       num_clips=1
                                       )
 
-    test_dataset = MultiModalDataset(ann_file='data/wlasl/test_annotations.txt',
-                                     root_dir='data/wlasl/rawframes',
+    test_dataset = MultiModalDataset(ann_file='data/autsl/test_annotations.txt',
+                                     root_dir='data/autsl/rawframes',
                                      clip_len=32,
                                      resolution=224,
                                      modalities=('rgb'),
                                      test_mode=True,
                                      frame_interval=1,
-                                     input_resolution=256,
+                                     input_resolution=512,
                                      num_clips=1
                                      )
 

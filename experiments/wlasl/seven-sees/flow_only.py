@@ -48,17 +48,17 @@ def train_one_epoch(epoch_index, interval=5):
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
     for i, results in enumerate(train_loader):
-        rgb = results['rgb']
+        flow = results['flow']
         targets = results['label']
         targets = targets.reshape(-1, )
 
-        rgb, targets = rgb.to(device), targets.to(device)
+        flow, targets = flow.to(device), targets.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
         # Make predictions for this batch
-        outputs = model(rgb)
+        outputs = model(flow)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -96,14 +96,14 @@ def validate():
 
     with torch.inference_mode():
         for i, results in enumerate(test_loader):
-            rgb = results['rgb']
+            flow = results['flow']
             vtargets = results['label']
 
             vtargets = vtargets.reshape(-1, )
 
-            rgb, vtargets = rgb.to(device), vtargets.to(device)
+            flow, vtargets = flow.to(device), vtargets.to(device)
 
-            voutputs = model(rgb)
+            voutputs = model(flow)
 
             vloss = loss_fn(voutputs, vtargets)
             running_vloss += vloss
@@ -124,13 +124,13 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="pretraining", name="rgb-wlasl")
+               group="pretraining", name="flow-wlasl")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
-    work_dir = 'work_dirs/jack-slr-rgb-wlasl/'
+    work_dir = 'work_dirs/jack-slr-pretraining/flow'
     batch_size = 10
 
     os.makedirs(work_dir, exist_ok=True)
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                       root_dir='data/wlasl/rawframes',
                                       clip_len=32,
-                                      modalities=('rgb'),
+                                      modalities=('flow'),
                                       resolution=224,
                                       frame_interval=1,
                                       input_resolution=256,
@@ -149,7 +149,7 @@ if __name__ == '__main__':
                                      root_dir='data/wlasl/rawframes',
                                      clip_len=32,
                                      resolution=224,
-                                     modalities=('rgb'),
+                                     modalities=('flow'),
                                      test_mode=True,
                                      frame_interval=1,
                                      input_resolution=256,
@@ -171,7 +171,7 @@ if __name__ == '__main__':
                                               pin_memory=True)
 
     # Custom multimodal model
-    rgb_backbone = ResNet3dCSN(
+    flow_backbone = ResNet3dCSN(
         pretrained2d=False,
         # pretrained=None,
         pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
@@ -183,7 +183,7 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
-    rgb_backbone.init_weights()
+    flow_backbone.init_weights()
 
     neck = MultiModalNeck()
     head = SimpleHead(num_classes=400,
@@ -193,7 +193,7 @@ if __name__ == '__main__':
 
     head.init_weights()
 
-    model = FlowAutoencoder(rgb_backbone=rgb_backbone,
+    model = FlowAutoencoder(flow_backbone=flow_backbone,
                             neck=neck,
                             head=head)
 
