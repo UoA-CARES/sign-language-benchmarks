@@ -6,3 +6,4 @@ build_report.txt
 .DS_Store
 setup/wlasl/eda/.ipynb_checkpoints
 setup/autsl/eda/.ipynb_checkpoints
+*.pth
