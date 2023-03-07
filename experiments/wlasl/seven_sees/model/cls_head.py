@@ -5,16 +5,16 @@ class ClassifierHead(nn.Module):
     """Classification head for CSN.
     Args:
         num_classes (int): Number of classes to be classified.
-        in_features(int): Number of channels in input feature.
+        in_channels(int): Number of channels in input feature.
         init_std (float): Std value for Initiation. Default: 0.01.
         dropout_ratio (float): Probability of dropout layer. Default: 0.5.
     """
 
-    def __init__(self, in_features=2048, num_classes=400, init_std=0.01, dropout_ratio=0.1):
+    def __init__(self, in_channels=2048, num_classes=400, init_std=0.01, dropout_ratio=0.1):
         super(ClassifierHead, self).__init__()
         self.init_std = init_std
         self.dropout = nn.Dropout(p=dropout_ratio)
-        self.fc1 = nn.Linear(in_features, 5000)
+        self.fc1 = nn.Linear(in_channels, 5000)
         self.fc2 = nn.Linear(5000, 1000)
         self.fc3 = nn.Linear(1000, num_classes)
 
