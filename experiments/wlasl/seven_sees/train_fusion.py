@@ -6,10 +6,7 @@ import numpy as np
 
 from dataset.dataset import MultiModalDataset
 from mmcv_model.mmcv_csn import ResNet3dCSN
-from model.rgb_head import RGBHead
-from mmcv_model.cls_autoencoder import EncoderDecoder
 from mmcv_model.scheduler import GradualWarmupScheduler
-from mmaction.datasets import build_dataset
 
 from model.multimodal_neck import MultiModalNeck
 from model.simple_head import SimpleHead
@@ -50,17 +47,19 @@ def train_one_epoch(epoch_index, interval=5):
     # Here, we use enumerate(training_loader) instead of
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
-    for i, (rgb, flow, targets) in enumerate(train_loader):
+    for i, results in enumerate(train_loader):
+        rgb = results['rgb']
+        flow = results['flow']
+        targets = results['label']
         targets = targets.reshape(-1, )
 
-        rgb, flow, targets = rgb.to(device), flow.to(
-            device), targets.to(device)
+        rgb, flow, targets = rgb.to(device), flow.to(device), targets.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
         # Make predictions for this batch
-        outputs = model(rgb=rgb,
+        outputs = model(rgb=rgb, 
                         flow=flow)
 
         # Compute the loss and its gradients
@@ -97,12 +96,16 @@ def validate():
 
     print('Evaluating top_k_accuracy...')
 
+    model.eval()
     with torch.inference_mode():
-        for i, (rgb, flow, vtargets) in enumerate(test_loader):
+        for i, results in enumerate(test_loader):
+            rgb = results['rgb']
+            flow = results['flow']
+            vtargets = results['label']
+
             vtargets = vtargets.reshape(-1, )
 
-            rgb, flow, vtargets = rgb.to(device), flow.to(
-                device), vtargets.to(device)
+            rgb, flow, vtargets = rgb.to(device), flow.to(device), vtargets.to(device)
 
             voutputs = model(rgb=rgb,
                              flow=flow)
@@ -123,16 +126,21 @@ def validate():
 
 
 if __name__ == '__main__':
+    print('Loading rgb backbone checkpoint...')
+    rgb_checkpoint = torch.load('rgb_backbone.pth')
+    print('Loading flow backbone checkpoint...')
+    flow_checkpoint = torch.load('flow_backbone.pth')
+
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="flow", name="rgb+flow-v3")
+               group="fusion", name="late-one-fc")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
-    work_dir = 'work_dirs/jack-slr-rgb/'
+    work_dir = 'work_dirs/7sees-late-fusion/'
     batch_size = 1
 
     os.makedirs(work_dir, exist_ok=True)
@@ -143,36 +151,9 @@ if __name__ == '__main__':
                                       modalities=('rgb', 'flow'),
                                       resolution=224,
                                       frame_interval=1,
+                                      input_resolution=256,
                                       num_clips=1
                                       )
-
-    # # Set up dataset
-    # train_cfg = dict(
-    #     type='RawframeDataset',
-    #     ann_file='data/wlasl/train_annotations.txt',
-    #     data_prefix='data/wlasl/rawframes',
-    #     pipeline=[
-    #         dict(
-    #             type='SampleFrames',
-    #             clip_len=32,
-    #             frame_interval=2,
-    #             num_clips=1),
-    #         dict(type='RawFrameDecode'),
-    #         dict(type='Resize', scale=(-1, 256)),
-    #         dict(type='RandomResizedCrop', area_range=(0.4, 1.0)),
-    #         dict(type='Resize', scale=(224, 224), keep_ratio=False),
-    #         dict(type='Flip', flip_ratio=0.5),
-    #         dict(
-    #             type='Normalize',
-    #             mean=[123.675, 116.28, 103.53],
-    #             std=[58.395, 57.12, 57.375],
-    #             to_bgr=False),
-    #         dict(type='FormatShape', input_format='NCTHW'),
-    #         dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
-    #         dict(type='ToTensor', keys=['imgs', 'label'])
-    #     ])
-
-    # train_dataset = build_dataset(train_cfg)
 
     test_dataset = MultiModalDataset(ann_file='data/wlasl/test_annotations.txt',
                                      root_dir='data/wlasl/rawframes',
@@ -181,36 +162,10 @@ if __name__ == '__main__':
                                      modalities=('rgb', 'flow'),
                                      test_mode=True,
                                      frame_interval=1,
+                                     input_resolution=256,
                                      num_clips=1
                                      )
 
-    # test_cfg = dict(
-    #     type='RawframeDataset',
-    #     ann_file='data/wlasl/test_annotations.txt',
-    #     data_prefix='data/wlasl/rawframes',
-    #     test_mode=True,
-    #     pipeline=[
-    #         dict(
-    #                 type='SampleFrames',
-    #                 clip_len=32,
-    #                 frame_interval=2,
-    #                 num_clips=1,
-    #                 test_mode=True),
-    #         dict(type='RawFrameDecode'),
-    #         dict(type='Resize', scale=(-1, 256)),
-    #         dict(type='CenterCrop', crop_size=224),
-    #         dict(
-    #             type='Normalize',
-    #             mean=[123.675, 116.28, 103.53],
-    #             std=[58.395, 57.12, 57.375],
-    #             to_bgr=False),
-    #         dict(type='FormatShape', input_format='NCTHW'),
-    #         dict(type='Collect', keys=['imgs', 'label'], meta_keys=[]),
-    #         dict(type='ToTensor', keys=['imgs'])
-    #     ])
-
-    # # Building the datasets
-    # test_dataset = build_dataset(test_cfg)
 
     # Setting up dataloaders
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
@@ -225,31 +180,6 @@ if __name__ == '__main__':
                                               num_workers=4,
                                               pin_memory=True)
 
-    # Default model
-    # # Create a CSN model
-    # encoder = ResNet3dCSN(
-    #     pretrained2d=False,
-    #     # pretrained=None,
-    #     pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
-    #     depth=50,
-    #     with_pool2=False,
-    #     bottleneck_mode='ir',
-    #     norm_eval=True,
-    #     zero_init_residual=False,
-    #     bn_frozen=True
-    # )
-
-    # encoder.init_weights()
-
-    # decoder = RGBHead(num_classes=400,
-    #                   in_channels=2048,
-    #                   dropout_ratio=0.5,
-    #                   init_std=0.01)
-
-    # decoder.init_weights()
-
-    # model = EncoderDecoder(encoder, decoder)
-
     # Custom multimodal model
     rgb_backbone = ResNet3dCSN(
         pretrained2d=False,
@@ -263,6 +193,11 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
+    # rgb_backbone.init_weights()
+
+    rgb_backbone.load_state_dict(rgb_checkpoint)
+    del rgb_checkpoint
+
     flow_backbone = ResNet3dCSN(
         pretrained2d=False,
         # pretrained=None,
@@ -275,8 +210,20 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
-    rgb_backbone.init_weights()
-    flow_backbone.init_weights()
+    # flow_backbone.init_weights()
+
+    flow_backbone.load_state_dict(flow_checkpoint)
+    del flow_checkpoint
+
+    print('Backbones loaded successfully.')
+
+    # Freeze the backbones
+    for name, para in rgb_backbone.named_parameters():
+        para.requires_grad = False
+
+    for name, para in flow_backbone.named_parameters():
+        para.requires_grad = False
+
 
     neck = MultiModalNeck()
     head = SimpleHead(num_classes=400,
@@ -303,7 +250,7 @@ if __name__ == '__main__':
     loss_cls = nn.CrossEntropyLoss()
 
     # Specify total epochs
-    epochs = 150
+    epochs = 100
 
     # Specify learning rate scheduler
     lr_scheduler = torch.optim.lr_scheduler.StepLR(

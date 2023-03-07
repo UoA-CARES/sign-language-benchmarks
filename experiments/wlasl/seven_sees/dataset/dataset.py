@@ -84,7 +84,7 @@ class MultiModalDataset(Dataset):
                                             )
 
         self.train_transform = torchvision.transforms.Compose([torchvision.transforms.Resize(size=(256)),
-                                                               torchvision.transforms.RandomResizedCrop(size=(self.resolution), scale=(0.04, 1.0)),
+                                                               torchvision.transforms.RandomResizedCrop(size=(self.resolution), scale=(0.4, 1.0)),
                                                                torchvision.transforms.RandomHorizontalFlip(p=0.5)
                                                             ]
                                        )
@@ -308,7 +308,7 @@ class MultiModalDataset(Dataset):
 
         if 'rgb' in self.modalities:
             rgb = combined_tensor[:, 0:32, :, :]
-            # rgb = self.normalise(rgb)
+            rgb = self.normalise(rgb)
             output['rgb'] = rgb
 
         if 'flow' in self.modalities:
