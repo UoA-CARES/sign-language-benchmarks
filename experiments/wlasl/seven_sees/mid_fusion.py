@@ -368,16 +368,16 @@ optimizer = torch.optim.SGD(
 loss_cls = nn.CrossEntropyLoss()
 
 # Specify total epochs
-epochs = 100
+epochs = 100000
 
 # Specify learning rate scheduler
 lr_scheduler = torch.optim.lr_scheduler.StepLR(
     optimizer, step_size=120, gamma=0.1)
 
 scheduler_steplr = torch.optim.lr_scheduler.MultiStepLR(
-    optimizer, milestones=[34, 84], gamma=0.1)
+    optimizer, milestones=[400, 800], gamma=0.1)
 scheduler = GradualWarmupScheduler(
-    optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
+    optimizer, multiplier=1, total_epoch=50, after_scheduler=scheduler_steplr)
 
 # Specify Loss
 loss_fn = nn.CrossEntropyLoss()
