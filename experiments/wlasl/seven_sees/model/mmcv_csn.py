@@ -15,19 +15,16 @@ from mmcv.utils import get_logger
 
 def get_root_logger(log_file=None, log_level=logging.INFO):
     """Use ``get_logger`` method in mmcv to get the root logger.
-
     The logger will be initialized if it has not been initialized. By default a
     StreamHandler will be added. If ``log_file`` is specified, a FileHandler
     will also be added. The name of the root logger is the top-level package
     name, e.g., "mmaction".
-
     Args:
         log_file (str | None): The log filename. If specified, a FileHandler
             will be added to the root logger.
         log_level (int): The root logger level. Note that only the process of
             rank 0 is affected, while other processes will set the level to
             "Error" and be silent most of the time.
-
     Returns:
         :obj:`logging.Logger`: The root logger.
     """
@@ -36,7 +33,6 @@ def get_root_logger(log_file=None, log_level=logging.INFO):
 
 class BasicBlock3d(nn.Module):
     """BasicBlock 3d block for ResNet3D.
-
     Args:
         inplanes (int): Number of channels for the input in first conv3d layer.
         planes (int): Number of channels produced by some norm/conv3d layers.
@@ -175,7 +171,6 @@ class BasicBlock3d(nn.Module):
 
 class Bottleneck3d(nn.Module):
     """Bottleneck 3d block for ResNet3D.
-
     Args:
         inplanes (int): Number of channels for the input in first conv3d layer.
         planes (int): Number of channels produced by some norm/conv3d layers.
@@ -340,7 +335,6 @@ class Bottleneck3d(nn.Module):
 
 class ResNet3d(nn.Module):
     """ResNet 3d backbone.
-
     Args:
         depth (int): Depth of resnet, from {18, 34, 50, 101, 152}.
         pretrained (str | None): Name of pretrained model.
@@ -543,7 +537,6 @@ class ResNet3d(nn.Module):
                        with_cp=False,
                        **kwargs):
         """Build residual layer for ResNet3D.
-
         Args:
             block (nn.Module): Residual module to be built.
             inplanes (int): Number of channels for the input feature
@@ -576,7 +569,6 @@ class ResNet3d(nn.Module):
             with_cp (bool | None): Use checkpoint or not. Using checkpoint
                 will save some memory while slowing down the training speed.
                 Default: False.
-
         Returns:
             nn.Module: A residual layer for the given config.
         """
@@ -642,7 +634,6 @@ class ResNet3d(nn.Module):
     def _inflate_conv_params(conv3d, state_dict_2d, module_name_2d,
                              inflated_param_names):
         """Inflate a conv module from 2d to 3d.
-
         Args:
             conv3d (nn.Module): The destination conv3d module.
             state_dict_2d (OrderedDict): The state dict of pretrained 2d model.
@@ -670,7 +661,6 @@ class ResNet3d(nn.Module):
     def _inflate_bn_params(bn3d, state_dict_2d, module_name_2d,
                            inflated_param_names):
         """Inflate a norm module from 2d to 3d.
-
         Args:
             bn3d (nn.Module): The destination bn3d module.
             state_dict_2d (OrderedDict): The state dict of pretrained 2d model.
@@ -702,12 +692,10 @@ class ResNet3d(nn.Module):
     @staticmethod
     def _inflate_weights(self, logger):
         """Inflate the resnet2d parameters to resnet3d.
-
         The differences between resnet3d and resnet2d mainly lie in an extra
         axis of conv kernel. To utilize the pretrained parameters in 2d model,
         the weight of conv2d models should be inflated to fit in the shapes of
         the 3d counterpart.
-
         Args:
             logger (logging.Logger): The logger used to print
                 debugging information.
@@ -808,7 +796,6 @@ class ResNet3d(nn.Module):
     def _init_weights(self, pretrained=None):
         """Initiate the parameters either from existing checkpoint or from
         scratch.
-
         Args:
             pretrained (str | None): The path of the pretrained weight. Will
                 override the original `pretrained` if set. The arg is added to
@@ -850,10 +837,8 @@ class ResNet3d(nn.Module):
 
     def forward(self, x):
         """Defines the computation performed at every call.
-
         Args:
             x (torch.Tensor): The input data.
-
         Returns:
             torch.Tensor: The feature of the input
             samples extracted by the backbone.
@@ -889,11 +874,9 @@ class ResNet3d(nn.Module):
 
 class CSNBottleneck3d(Bottleneck3d):
     """Channel-Separated Bottleneck Block.
-
     This module is proposed in
     "Video Classification with Channel-Separated Convolutional Networks"
     Link: https://arxiv.org/pdf/1711.11248.pdf
-
     Args:
         inplanes (int): Number of channels for the input in first conv3d layer.
         planes (int): Number of channels produced by some norm/conv3d layers.
@@ -956,7 +939,6 @@ class CSNBottleneck3d(Bottleneck3d):
 
 class ResNet3dCSN(ResNet3d):
     """ResNet backbone for CSN.
-
     Args:
         depth (int): Depth of ResNetCSN, from {18, 34, 50, 101, 152}.
         pretrained (str | None): Name of pretrained model.
