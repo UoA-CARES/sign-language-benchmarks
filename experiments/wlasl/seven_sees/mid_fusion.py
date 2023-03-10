@@ -253,7 +253,7 @@ device = 'cuda'
 
 # Configs
 work_dir = 'work_dirs/7sees-v2/'
-batch_size = 1
+batch_size = 8
 
 os.makedirs(work_dir, exist_ok=True)
 
