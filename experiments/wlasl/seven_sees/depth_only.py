@@ -58,7 +58,7 @@ def train_one_epoch(epoch_index, interval=5):
         optimizer.zero_grad()
 
         # Make predictions for this batch
-        outputs = model(depth)
+        outputs = model(rgb=depth)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -103,7 +103,7 @@ def validate():
 
             depth, vtargets = depth.to(device), vtargets.to(device)
 
-            voutputs = model(depth)
+            voutputs = model(rgb=depth)
 
             vloss = loss_fn(voutputs, vtargets)
             running_vloss += vloss
@@ -193,7 +193,7 @@ if __name__ == '__main__':
 
     head.init_weights()
 
-    model = FlowAutoencoder(depth_backbone=depth_backbone,
+    model = FlowAutoencoder(rgb_backbone=depth_backbone,
                             neck=neck,
                             head=head)
 
