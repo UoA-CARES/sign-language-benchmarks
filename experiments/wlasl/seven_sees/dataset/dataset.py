@@ -212,10 +212,16 @@ class MultiModalDataset(Dataset):
 
         if 'pose' in self.modalities:
             results['pose'] = pose_frames
-            results = self.crop_part(results)
+            results = self.crop_part(results, 'body_bbox')
 
         if 'face' in self.modalities:
             results = self.crop_part(results, 'face')
+
+        if 'left_hand' in self.modalities:
+            results = self.crop_part(results, 'left_hand')
+
+        if 'right_hand' in self.modalities:
+            results = self.crop_part(results, 'right_hand')
 
         return results
         
@@ -254,52 +260,63 @@ class MultiModalDataset(Dataset):
         tensor = torch.tensor(points)
         return tensor
     
-    def crop_part(self, results, part='body_bbox'):
-        w,h = results['rgb'][0].size
+    def crop_part(self, results, part):
         cropped_part = []
         for i in range(len(results['pose'])): 
-            if part =='body_bbox':
-                img = results['rgb'][i]
-            else:
-                img = results['body_bbox'][i]
-                
-            img =  np.array(img, np.uint8)
-            
-            x0, y0, x1, y1 = [int(value) for value in results['pose'][i][part]]
-            
-            pad = False
-            
+
+            # Add padding
+            img = results['body_bbox'][i] if part!='body_bbox' else results['rgb'][i]
+            w, h = img.size
+            img = np.array(img, dtype=np.uint8)
+
+            x0, y0, x1, y1 = [int(value) for value in results['pose'][0][part]]
+            pad_left=0
+            pad_right=0
+            pad_up=0
+            pad_down=0
+
+            if(x0<0):
+                pad_left=-x0
+            if(x1>w):
+                pad_right=x1-w
+            if(y0<0):
+                pad_up=-y0
+            if(y1>h):
+                pad_down=y1-h
+
+            x0=pad_left
+            x1=w+pad_left
+            y0=pad_up
+            y1=h+pad_up
+
+            padded = np.zeros((h+pad_up+pad_down, w+pad_left+pad_right, 3), dtype=np.uint8)
+            padded[y0:y1, x0:x1] = img
+
+            # Crop the image
+            x0, y0, x1, y1 = [int(value) for value in results['pose'][0][part]]
+
             if x0<0:
                 x0=0
-                pad=True
-            if x1>w:
-                x1=w
-                pad=True
+                
             if y0<0:
                 y0=0
-                pad=True
-            if y1>h:
-                y0=h
-                pad=True
-            
-                
-            img = img[x0:x1, y0:y1]
 
-            if img.shape[0]==0 or img.shape[1]==0:
-                pad = True
-            
-            if pad:
-                pad_image = np.zeros((h,w,3), np.uint8)
-                pad_image[x0:x1, y0:y1] = img
-                
-                img = pad_image    
-            
-            print(img.shape)
-            img = Image.fromarray(img)
-
-            if part != 'body_bbox':
+            # Erroneous data
+            if x1<=x0 or y1<=y0:
+                img = Image.fromarray(padded)
                 img = self.resize(img)
+                cropped_part.append(img)
+                continue
 
+            
+            if part=='face':
+                # TODO: Fix the coords for head in the preprocess
+                img = Image.fromarray(padded[x0:x1, y0:y1])
+            else:
+                # This is the correct crop for all the other modalities
+                img = Image.fromarray(padded[y0:y1, x0:x1])
+    
+            img = self.resize(img)
             cropped_part.append(img)
         
         results[part] = cropped_part
@@ -332,7 +349,17 @@ class MultiModalDataset(Dataset):
         if 'face' in self.modalities:
             face = self.to_3dtensor(results['face']).squeeze()
         else:
-            face = torch.FloatTensor(3,32,self.input_resolution,self.input_resolution)
+            face = torch.FloatTensor(3,32,self.resolution,self.resolution)
+
+        if 'left_hand' in self.modalities:
+            left_hand = self.to_3dtensor(results['left_hand']).squeeze()
+        else:
+            left_hand = torch.FloatTensor(3,32,self.resolution,self.resolution)
+
+        if 'right_hand' in self.modalities:
+            right_hand = self.to_3dtensor(results['right_hand']).squeeze()
+        else:
+            right_hand = torch.FloatTensor(3,32,self.resolution,self.resolution)
 
 
         modality_list.append(rgb)
@@ -342,14 +369,19 @@ class MultiModalDataset(Dataset):
 
         combined_tensor = torch.cat(modality_list, dim=1)
 
-
+        # Do split based crops
         if self.test_mode:
             combined_tensor = self.test_transform(combined_tensor)
         else:
             combined_tensor = self.train_transform(combined_tensor)
-
+    
+        # Don't need crops for face and the hands
         combined_tensor = torch.cat([combined_tensor, face], dim=1)
+        combined_tensor = torch.cat([combined_tensor, left_hand], dim=1)
+        combined_tensor = torch.cat([combined_tensor, right_hand], dim=1)
 
+        
+    
         if 'rgb' in self.modalities:
             rgb = combined_tensor[:, 0:32, :, :]
             rgb = self.normalise(rgb)
@@ -370,26 +402,18 @@ class MultiModalDataset(Dataset):
             face = self.normalise(face)
             output['face'] = face
 
-        
+        if 'left_hand' in self.modalities:
+            left_hand = combined_tensor[:, 128:160, :, :]
+            left_hand = self.normalise(left_hand)
+            output['left_hand'] = left_hand
+
+        if 'right_hand' in self.modalities:
+            right_hand = combined_tensor[:, 160:192, :, :]
+            right_hand = self.normalise(right_hand)
+            output['right_hand'] = right_hand
 
         label = torch.tensor(results['label'])
         output['label'] = label
-
- 
-        
-        
-        
-        
-        # body_bbox = self.to_3dtensor(results['body_bbox'])
-        # face = self.to_3dtensor(results['face'])
-        # left_hand = self.to_3dtensor(results['left_hand'])
-        # right_hand = self.to_3dtensor(results['right_hand'])
-        # depth  =  self.to_3dtensor(results['depth'])
-        # flow  =  self.to_3dtensor(results['flow'])
-        
-        # pose =self.pose2tensor(results['pose'])
-
-        
 
         return output
 
