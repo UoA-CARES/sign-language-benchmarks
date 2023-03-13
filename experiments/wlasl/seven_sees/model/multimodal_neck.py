@@ -16,7 +16,7 @@ class MultiModalNeck(nn.Module):
                 face=None,
                 left_hand=None,
                 right_hand=None,
-                pose=None):
+                skeleton=None):
 
         out = torch.tensor([]).to(self.device)
 
@@ -46,7 +46,9 @@ class MultiModalNeck(nn.Module):
                 self.avg_pool(right_hand[-1]), start_dim=1)
             out = torch.concat((out, right_hand), dim=1)
 
-        if pose is not None:
-            out = torch.concat((out, pose), dim=1)
+        if skeleton is not None:
+            skeleton = torch.flatten(
+                self.avg_pool(skeleton[-1]), start_dim=1)
+            out = torch.concat((out, skeleton), dim=1)
 
         return out

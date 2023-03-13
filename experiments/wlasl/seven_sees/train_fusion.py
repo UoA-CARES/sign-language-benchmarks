@@ -10,7 +10,7 @@ from mmcv_model.scheduler import GradualWarmupScheduler
 
 from model.multimodal_neck import MultiModalNeck
 from model.simple_head import SimpleHead
-from model.flow_autoencoder import FlowAutoencoder
+from model.multimodal_model import MultiModalModel
 
 
 def top_k_accuracy(scores, labels, topk=(1, )):
@@ -50,17 +50,27 @@ def train_one_epoch(epoch_index, interval=5):
     for i, results in enumerate(train_loader):
         rgb = results['rgb']
         flow = results['flow']
+        depth = results['depth']
+        face = results['face']
+        skeleton = results['skeleton']
+        left_hand = results['left_hand']
+        right_hand = results['right_hand']
         targets = results['label']
         targets = targets.reshape(-1, )
 
-        rgb, flow, targets = rgb.to(device), flow.to(device), targets.to(device)
+        rgb, flow, depth, face, skeleton, left_hand, right_hand, targets = rgb.to(device), flow.to(device), depth.to(device), face.to(device), skeleton.to(device), left_hand.to(device), right_hand.to(device), targets.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
         # Make predictions for this batch
         outputs = model(rgb=rgb, 
-                        flow=flow)
+                        flow=flow,
+                        depth=depth,
+                        left_hand=left_hand,
+                        right_hand=right_hand,
+                        face=face,
+                        skeleton=skeleton)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -99,16 +109,30 @@ def validate():
     model.eval()
     with torch.inference_mode():
         for i, results in enumerate(test_loader):
+
             rgb = results['rgb']
             flow = results['flow']
+            depth = results['depth']
+            face = results['face']
+            skeleton = results['skeleton']
+            left_hand = results['left_hand']
+            right_hand = results['right_hand']
             vtargets = results['label']
-
             vtargets = vtargets.reshape(-1, )
 
-            rgb, flow, vtargets = rgb.to(device), flow.to(device), vtargets.to(device)
+            rgb, flow, depth, face, skeleton, left_hand, right_hand, vtargets = rgb.to(device), flow.to(device), depth.to(device), face.to(device), skeleton.to(device), left_hand.to(device), right_hand.to(device), vtargets.to(device)
 
-            voutputs = model(rgb=rgb,
-                             flow=flow)
+            # Zero your gradients for every batch!
+            optimizer.zero_grad()
+
+            # Make predictions for this batch
+            voutputs = model(rgb=rgb, 
+                            flow=flow,
+                            depth=depth,
+                            left_hand=left_hand,
+                            right_hand=right_hand,
+                            face=face,
+                            skeleton=skeleton)
 
             vloss = loss_fn(voutputs, vtargets)
             running_vloss += vloss
@@ -130,25 +154,35 @@ if __name__ == '__main__':
     rgb_checkpoint = torch.load('rgb_backbone.pth')
     print('Loading flow backbone checkpoint...')
     flow_checkpoint = torch.load('flow_backbone.pth')
+    print('Loading depth backbone checkpoint...')
+    depth_checkpoint = torch.load('depth_backbone.pth')
+    print('Loading face backbone checkpoint...')
+    face_checkpoint = torch.load('face_backbone.pth')
+    print('Loading right_hand backbone checkpoint...')
+    right_hand_checkpoint = torch.load('right_hand_backbone.pth')
+    print('Loading left_hand backbone checkpoint...')
+    left_hand_checkpoint = torch.load('left_hand_backbone.pth')
+    print('Loading skeleton backbone checkpoint...')
+    skeleton_checkpoint = torch.load('skeleton_backbone.pth')
 
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="fusion", name="late-one-fc")
+               group="fusion", name="all-one-fc")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
     work_dir = 'work_dirs/7sees-late-fusion/'
-    batch_size = 1
+    batch_size = 10
 
     os.makedirs(work_dir, exist_ok=True)
 
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                       root_dir='data/wlasl/rawframes',
                                       clip_len=32,
-                                      modalities=('rgb', 'flow'),
+                                      modalities=('rgb', 'flow', 'skeleton', 'pose', 'depth', 'face', 'left_hand', 'right_hand'),
                                       resolution=224,
                                       frame_interval=1,
                                       input_resolution=256,
@@ -159,7 +193,7 @@ if __name__ == '__main__':
                                      root_dir='data/wlasl/rawframes',
                                      clip_len=32,
                                      resolution=224,
-                                     modalities=('rgb', 'flow'),
+                                     modalities=('rgb', 'flow', 'skeleton', 'pose', 'depth', 'face', 'left_hand', 'right_hand'),
                                      test_mode=True,
                                      frame_interval=1,
                                      input_resolution=256,
@@ -193,10 +227,89 @@ if __name__ == '__main__':
         bn_frozen=True
     )
 
-    # rgb_backbone.init_weights()
-
     rgb_backbone.load_state_dict(rgb_checkpoint)
     del rgb_checkpoint
+
+    # Custom multimodal model
+    depth_backbone = ResNet3dCSN(
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
+    )
+
+    depth_backbone.load_state_dict(depth_checkpoint)
+    del depth_checkpoint
+
+    # Custom multimodal model
+    face_backbone = ResNet3dCSN(
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
+    )
+
+    face_backbone.load_state_dict(face_checkpoint)
+    del face_checkpoint
+
+    # Custom multimodal model
+    left_hand_backbone = ResNet3dCSN(
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
+    )
+
+    left_hand_backbone.load_state_dict(left_hand_checkpoint)
+    del left_hand_checkpoint
+
+
+    # Custom multimodal model
+    right_hand_backbone = ResNet3dCSN(
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
+    )
+
+    right_hand_backbone.load_state_dict(right_hand_checkpoint)
+    del right_hand_checkpoint
+
+    # Custom multimodal model
+    skeleton_backbone = ResNet3dCSN(
+        pretrained2d=False,
+        # pretrained=None,
+        pretrained='https://download.openmmlab.com/mmaction/recognition/csn/ircsn_from_scratch_r50_ig65m_20210617-ce545a37.pth',
+        depth=50,
+        with_pool2=False,
+        bottleneck_mode='ir',
+        norm_eval=True,
+        zero_init_residual=False,
+        bn_frozen=True
+    )
+
+    skeleton_backbone.load_state_dict(skeleton_checkpoint)
+    del skeleton_checkpoint
 
     flow_backbone = ResNet3dCSN(
         pretrained2d=False,
@@ -224,17 +337,37 @@ if __name__ == '__main__':
     for name, para in flow_backbone.named_parameters():
         para.requires_grad = False
 
+    for name, para in depth_backbone.named_parameters():
+        para.requires_grad = False
+
+    for name, para in skeleton_backbone.named_parameters():
+        para.requires_grad = False
+
+    for name, para in right_hand_backbone.named_parameters():
+        para.requires_grad = False
+
+    for name, para in left_hand_backbone.named_parameters():
+        para.requires_grad = False
+
+    for name, para in skeleton_backbone.named_parameters():
+        para.requires_grad = False
+
 
     neck = MultiModalNeck()
     head = SimpleHead(num_classes=400,
-                      in_channels=4096,
+                      in_channels=2048*7,
                       dropout_ratio=0.5,
                       init_std=0.01)
 
     head.init_weights()
 
-    model = FlowAutoencoder(rgb_backbone=rgb_backbone,
+    model = MultiModalModel(rgb_backbone=rgb_backbone,
                             flow_backbone=flow_backbone,
+                            depth_backbone=depth_backbone,
+                            right_hand_backbone=right_hand_backbone,
+                            left_hand_backbone=left_hand_backbone,
+                            face_backbone=face_backbone,
+                            skeleton_backbone=skeleton_backbone,
                             neck=neck,
                             head=head)
 
