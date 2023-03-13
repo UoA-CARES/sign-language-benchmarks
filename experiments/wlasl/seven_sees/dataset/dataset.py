@@ -132,6 +132,44 @@ class MultiModalDataset(Dataset):
                 
 
         return pose_frames
+    
+    def load_landmarks(self, results):
+        assert 'rgb', 'pose' in self.modalities
+
+        frames = []
+
+        for i, img in enumerate(results['body_bbox']):
+            img =  np.array(img)[:, :, ::-1].copy()
+            keypoints = results['pose'][i]['keypoints']
+
+            # for j in keypoints:
+            #     img = cv2.circle(img, (int(keypoints[j]['x']), int(keypoints[j]['y'])), radius=1, color=(0, 0, 255), thickness=2)
+
+            # Draw lines on the torso and arms
+            left_shoulder = (int(keypoints['left_shoulder']['x']), int(keypoints['left_shoulder']['y']))
+            right_shoulder = (int(keypoints['right_shoulder']['x']), int(keypoints['right_shoulder']['y']))
+            left_hip = (int(keypoints['left_hip']['x']), int(keypoints['left_hip']['y']))
+            right_hip = (int(keypoints['right_hip']['x']), int(keypoints['right_hip']['y']))
+            left_elbow = (int(keypoints['left_elbow']['x']), int(keypoints['left_elbow']['y']))
+            right_elbow = (int(keypoints['right_elbow']['x']), int(keypoints['right_elbow']['y']))
+            left_wrist = (int(keypoints['left_wrist']['x']), int(keypoints['left_wrist']['y']))
+            right_wrist = (int(keypoints['right_wrist']['x']), int(keypoints['right_wrist']['y']))
+
+            img = cv2.line(img, left_shoulder, right_shoulder, color=(255, 255, 255), thickness=2)
+            img = cv2.line(img, left_shoulder, left_hip, color=(255, 255, 255), thickness=2)
+            img = cv2.line(img, left_hip, right_hip, color=(255, 255, 255), thickness=2)
+            img = cv2.line(img, right_hip, right_shoulder, color=(255, 255, 255), thickness=2)
+
+            img = cv2.line(img, left_shoulder, left_elbow, color=(0, 255, 0), thickness=2)
+            img = cv2.line(img, left_elbow, left_wrist, color=(255, 255, 0), thickness=2)
+            img = cv2.line(img, right_shoulder, right_elbow, color=(0, 255, 0), thickness=2)
+            img = cv2.line(img, right_elbow, right_wrist, color=(255, 255, 0), thickness=2)
+
+            frames.append(self.resize(Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))))
+
+        results['skeleton'] = frames
+
+        return results
 
     def load_video(self, idx):
         """Load a video at a particular index and return rgb, flow, depth and 
@@ -222,6 +260,9 @@ class MultiModalDataset(Dataset):
 
         if 'right_hand' in self.modalities:
             results = self.crop_part(results, 'right_hand')
+        
+        if 'skeleton' in self.modalities:
+            results = self.load_landmarks(results)
 
         return results
         
@@ -270,6 +311,21 @@ class MultiModalDataset(Dataset):
             img = np.array(img, dtype=np.uint8)
 
             x0, y0, x1, y1 = [int(value) for value in results['pose'][0][part]]
+
+            if part=='body_bbox':
+                try:
+                    x0 = 0 if x0<0 else x0
+                    x1 = 0 if x0<0 else x1
+                    y0 = 0 if x0<0 else y0
+                    y1 = 0 if x0<0 else y1
+                    img = img[x0:x1, y0:y1]
+                except:
+                    pass
+
+                img = self.resize(Image.fromarray(img))
+                cropped_part.append(img)
+                continue
+            
             pad_left=0
             pad_right=0
             pad_up=0
@@ -301,20 +357,17 @@ class MultiModalDataset(Dataset):
             if y0<0:
                 y0=0
 
-            # Erroneous data
-            if x1<=x0 or y1<=y0:
+            try:
+                if part=='face':
+                    # TODO: Fix the coords for head in the preprocess
+                    img = Image.fromarray(padded[x0:x1, y0:y1])
+                else:
+                    # This is the correct crop for all the other modalities
+                    img = Image.fromarray(padded[y0:y1, x0:x1])
+            except:
+                # Erroneous data -> Give full frame
                 img = Image.fromarray(padded)
-                img = self.resize(img)
-                cropped_part.append(img)
-                continue
 
-            
-            if part=='face':
-                # TODO: Fix the coords for head in the preprocess
-                img = Image.fromarray(padded[x0:x1, y0:y1])
-            else:
-                # This is the correct crop for all the other modalities
-                img = Image.fromarray(padded[y0:y1, x0:x1])
     
             img = self.resize(img)
             cropped_part.append(img)
@@ -361,6 +414,11 @@ class MultiModalDataset(Dataset):
         else:
             right_hand = torch.FloatTensor(3,32,self.resolution,self.resolution)
 
+        if 'skeleton' in self.modalities:
+            skeleton = self.to_3dtensor(results['skeleton']).squeeze()
+        else:
+            skeleton = torch.FloatTensor(3,32,self.resolution,self.resolution)
+
 
         modality_list.append(rgb)
         modality_list.append(flow)
@@ -375,10 +433,11 @@ class MultiModalDataset(Dataset):
         else:
             combined_tensor = self.train_transform(combined_tensor)
     
-        # Don't need crops for face and the hands
+        # Don't need crops for face, the hands and skeleton
         combined_tensor = torch.cat([combined_tensor, face], dim=1)
         combined_tensor = torch.cat([combined_tensor, left_hand], dim=1)
         combined_tensor = torch.cat([combined_tensor, right_hand], dim=1)
+        combined_tensor = torch.cat([combined_tensor, skeleton], dim=1)
 
         
     
@@ -411,6 +470,11 @@ class MultiModalDataset(Dataset):
             right_hand = combined_tensor[:, 160:192, :, :]
             right_hand = self.normalise(right_hand)
             output['right_hand'] = right_hand
+
+        if 'skeleton' in self.modalities:
+            skeleton = combined_tensor[:, 192:224, :, :]
+            skeleton = self.normalise(skeleton)
+            output['skeleton'] = skeleton
 
         label = torch.tensor(results['label'])
         output['label'] = label

@@ -48,7 +48,7 @@ def train_one_epoch(epoch_index, interval=5):
     # iter(training_loader) so that we can track the batch
     # index and do some intra-epoch reporting
     for i, results in enumerate(train_loader):
-        rgb = results['right_hand']
+        rgb = results['skeleton']
         targets = results['label']
         targets = targets.reshape(-1, )
 
@@ -98,7 +98,7 @@ def validate():
     
     with torch.inference_mode():
         for i, results in enumerate(test_loader):
-            rgb = results['right_hand']
+            rgb = results['skeleton']
             vtargets = results['label']
 
             vtargets = vtargets.reshape(-1, )
@@ -126,13 +126,13 @@ if __name__ == '__main__':
     os.chdir('../../..')
 
     wandb.init(entity="cares", project="jack-slr",
-               group="pretraining", name="right_hand-wlasl")
+               group="pretraining", name="skeleton-wlasl")
 
     # Set up device agnostic code
     device = 'cuda'
 
     # Configs
-    work_dir = 'work_dirs/jack-slr-pretraining/right_hand'
+    work_dir = 'work_dirs/jack-slr-pretraining/skeleton'
     batch_size = 10
 
     os.makedirs(work_dir, exist_ok=True)
@@ -140,7 +140,7 @@ if __name__ == '__main__':
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                       root_dir='data/wlasl/rawframes',
                                       clip_len=32,
-                                      modalities=('rgb', 'pose', 'right_hand'),
+                                      modalities=('rgb', 'pose', 'skeleton'),
                                       resolution=224,
                                       frame_interval=1,
                                       input_resolution=256,
@@ -151,7 +151,7 @@ if __name__ == '__main__':
                                      root_dir='data/wlasl/rawframes',
                                      clip_len=32,
                                      resolution=224,
-                                     modalities=('rgb', 'pose', 'right_hand'),
+                                     modalities=('rgb', 'pose', 'skeleton'),
                                      test_mode=True,
                                      frame_interval=1,
                                      input_resolution=256,

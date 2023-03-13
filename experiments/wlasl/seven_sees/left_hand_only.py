@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     # Configs
     work_dir = 'work_dirs/jack-slr-pretraining/left_hand'
-    batch_size = 4
+    batch_size = 10
 
     os.makedirs(work_dir, exist_ok=True)
 
