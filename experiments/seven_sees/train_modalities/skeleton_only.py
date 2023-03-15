@@ -123,10 +123,12 @@ def validate():
 
 
 if __name__ == '__main__':
+    checkpoint = torch.load('skeleton.pth')
+
     os.chdir('../../..')
 
-    wandb.init(entity="cares", project="jack-slr",
-               group="pretraining", name="skeleton-wlasl")
+    # wandb.init(entity="cares", project="jack-slr",
+    #            group="pretraining", name="skeleton-wlasl")
 
     # Set up device agnostic code
     device = 'cuda'
@@ -199,9 +201,10 @@ if __name__ == '__main__':
                             neck=neck,
                             head=head)
 
-    # # Load model checkpoint
-    # checkpoint = torch.load(work_dir+'latest.pth')
-    # model.load_state_dict(checkpoint)
+    # Load model checkpoint
+    
+    model.load_state_dict(checkpoint)
+    print('Model loaded successfully...')
 
     # Specify optimizer
     optimizer = torch.optim.SGD(
@@ -226,37 +229,43 @@ if __name__ == '__main__':
     loss_fn = nn.CrossEntropyLoss()
 
     # Setup wandb
-    wandb.watch(model, log_freq=10)
+    # wandb.watch(model, log_freq=10)
 
     # Train Loop
 
     # Transfer model to device
     model.to(device)
 
-    for epoch in range(epochs):
-        # Turn on gradient tracking and do a forward pass
-        model.train(True)
-        avg_loss, learning_rate = train_one_epoch(epoch+1)
+    avg_vloss, top1_acc, top5_acc = validate()
 
-        # Turn off  gradients for reporting
-        model.train(False)
+    print(
+        f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, val_loss: {avg_vloss:.5}')
 
-        avg_vloss, top1_acc, top5_acc = validate()
 
-        print(
-            f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}, val_loss: {avg_vloss:.5}')
+    # for epoch in range(epochs):
+    #     # Turn on gradient tracking and do a forward pass
+    #     model.train(True)
+    #     avg_loss, learning_rate = train_one_epoch(epoch+1)
 
-        # Track best performance, and save the model's state
-        model_path = work_dir + f'epoch_{epoch+1}.pth'
-        print(f'Saving checkpoint at {epoch+1} epochs...')
-        torch.save(model.state_dict(), model_path)
+    #     # Turn off  gradients for reporting
+    #     model.train(False)
 
-        # Adjust learning rate
-        scheduler.step()
+    #     avg_vloss, top1_acc, top5_acc = validate()
 
-        # Track wandb
-        wandb.log({'train/loss': avg_loss,
-                   'train/learning_rate': learning_rate,
-                   'val/loss': avg_vloss,
-                   'val/top1_accuracy': top1_acc,
-                   'val/top5_accuracy': top5_acc})
+    #     print(
+    #         f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}, val_loss: {avg_vloss:.5}')
+
+    #     # Track best performance, and save the model's state
+    #     model_path = work_dir + f'epoch_{epoch+1}.pth'
+    #     print(f'Saving checkpoint at {epoch+1} epochs...')
+    #     torch.save(model.state_dict(), model_path)
+
+    #     # Adjust learning rate
+    #     scheduler.step()
+
+    #     # Track wandb
+    #     wandb.log({'train/loss': avg_loss,
+    #                'train/learning_rate': learning_rate,
+    #                'val/loss': avg_vloss,
+    #                'val/top1_accuracy': top1_acc,
+    #                'val/top5_accuracy': top5_acc})

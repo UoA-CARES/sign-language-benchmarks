@@ -35,9 +35,7 @@ class Sees7(nn.Module):
         
 
         if self.head is None:
-            cls_score = (1/7)*stream['rgb'] + (1/7)*stream['flow'] + (1/7)*stream['depth']
-            + (1/7)*stream['skeleton'] + (1/7)*stream['face'] + (1/7)*stream['left_hand']
-            + (1/7)*stream['right_hand']
+            cls_score = stream['right_hand'] + stream['left_hand'] + stream['skeleton'] 
         else:
             cls_score = self.head(stream)
 

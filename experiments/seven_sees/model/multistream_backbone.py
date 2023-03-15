@@ -104,6 +104,9 @@ class MultiStreamBackbone(nn.Module):
         
         if skeleton_checkpoint is not None:
             self.skeleton_stream.load_state_dict(torch.load(skeleton_checkpoint))
+            print('Skeleton checkpoint loaded successfully...')
+        else:
+            print('Skeleton not loaded...')
 
         face_backbone = ResNet3dCSN(pretrained2d=False,
                                       pretrained=None,
