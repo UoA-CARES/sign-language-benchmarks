@@ -1,0 +1,6 @@
+
+Evaluating top_k_accuracy...
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 251, in <module>
+    f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}, val_loss: {avg_vloss:.5}')
+NameError: name 'avg_loss' is not defined
