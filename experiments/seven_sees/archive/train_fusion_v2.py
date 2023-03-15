@@ -206,7 +206,7 @@ if __name__ == '__main__':
     rgb_stream.load_state_dict(rgb_checkpoint)
     del rgb_checkpoint
 
-        # Custom multimodal model
+    # Custom multimodal model
     flow_backbone = ResNet3dCSN(
         pretrained2d=False,
         pretrained=None,
