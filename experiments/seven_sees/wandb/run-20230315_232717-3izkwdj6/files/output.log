@@ -1,0 +1,2066 @@
+
+Evaluating top_k_accuracy...
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
