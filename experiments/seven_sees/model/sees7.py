@@ -10,7 +10,13 @@ class Sees7(nn.Module):
         
         super(Sees7, self).__init__()
         self.multistream_backbone = multistream_backbone
-
+        self.rgbWeight = 0
+        self.flowWeight = 0
+        self.depthWeight = 0
+        self.poseWeight = 0
+        self.faceWeight = 0
+        self.leftHandWeight = 1
+        self.rightHandWeight = 1
         # TODO: Use a head to find the weights for each modality
         self.head = head
         
@@ -35,9 +41,9 @@ class Sees7(nn.Module):
         
 
         if self.head is None:
-            cls_score = (1/7)*stream['rgb'] + (1/7)*stream['flow'] + (1/7)*stream['depth']
-            + (1/7)*stream['skeleton'] + (1/7)*stream['face'] + (1/7)*stream['left_hand']
-            + (1/7)*stream['right_hand']
+            cls_score = self.rgbWeight*(1/7)*stream['rgb'] + self.flowWeight*(1/7)*stream['flow'] + self.depthWeight * (1/7)*stream['depth']
+            + self.poseWeight * (1/7)*stream['skeleton'] + self.faceWeight* (1/7)*stream['face'] + self.leftHandWeight * (1/7)*stream['left_hand']
+            + self.rightHandWeight * (1/7)*stream['right_hand']
         else:
             cls_score = self.head(stream)
 

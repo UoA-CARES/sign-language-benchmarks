@@ -157,10 +157,11 @@ if __name__=='__main__':
 
     # Freeze the backbones
     for name, para in multistream.named_parameters():
-        para.requires_grad = False
+        if("fc" not in name):
+            para.requires_grad = False
 
-    model = Sees7(multistream_backbone=multistream,
-                  head=OneNeuronHead(num_modalities=7))
+    model = Sees7(multistream_backbone=multistream)#,
+                  #head=OneNeuronHead(num_modalities=7))
     model.to(device)
 
     
@@ -245,7 +246,8 @@ if __name__=='__main__':
 
         # Freeze the backbones
         for name, para in model.multistream_backbone.named_parameters():
-            para.requires_grad = False
+            if("fc" not in name):
+                para.requires_grad = False
 
         avg_loss, learning_rate = train_one_epoch(epoch+1)
 
@@ -264,7 +266,7 @@ if __name__=='__main__':
 
         # Adjust learning rate
         scheduler.step()
-
+    
         # Track wandb
         wandb.log({'train/loss': avg_loss,
                 'train/learning_rate': learning_rate,
