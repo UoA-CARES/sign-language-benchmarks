@@ -1,0 +1,41 @@
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([7, 400])
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7efe49820040>
+Traceback (most recent call last):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/multiprocessing/popen_fork.py", line 44, in wait
+    if not wait([self.sentinel], timeout):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 247, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 65, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 42, in forward
+    cls_score = self.head(stream)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/one_neuron_head.py", line 47, in forward
+    return self.fc_cls(x.permute(1,0)).permute(1,0)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (400x49 and 7x1)

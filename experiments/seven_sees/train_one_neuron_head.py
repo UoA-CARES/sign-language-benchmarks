@@ -56,8 +56,6 @@ def train_one_epoch(epoch_index, interval=5):
         depth, face, skeleton = depth.to(device), face.to(device), skeleton.to(device)
         left_hand, right_hand = left_hand.to(device), right_hand.to(device)
 
-            
-
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
@@ -122,7 +120,7 @@ def validate():
             left_hand, right_hand = left_hand.to(device), right_hand.to(device)
 
             voutputs = model(rgb=rgb,
-                             flow=flow,
+                            flow=flow,
                             depth=depth,
                             left_hand=left_hand,
                             right_hand=right_hand,
@@ -157,14 +155,13 @@ if __name__=='__main__':
                                     right_hand_checkpoint='./right_hand.pth'
                                     )
     
-    one_neuron_head = OneNeuronHead(num_modalities=7)
-    
+
     # Freeze the backbones
     for name, para in multistream.named_parameters():
         para.requires_grad = False
 
     model = Sees7(multistream_backbone=multistream,
-                  head=one_neuron_head)
+                  head=OneNeuronHead(num_modalities=7))
     model.to(device)
 
     
@@ -241,30 +238,37 @@ if __name__=='__main__':
     # Specify Loss
     loss_fn = nn.CrossEntropyLoss()
     
-    for epoch in range(epochs):
-        # Turn on gradient tracking and do a forward pass
-        model.train(True)
-        avg_loss, learning_rate = train_one_epoch(epoch+1)
+    validate()
+    
+    # for epoch in range(epochs):
+    #     # Turn on gradient tracking and do a forward pass
+    #     model.train(True)
 
-        # Turn off  gradients for reporting
-        model.train(False)
+    #     # Freeze the backbones
+    #     for name, para in model.multistream_backbone.named_parameters():
+    #         para.requires_grad = False
 
-        top1_acc, top5_acc = validate()
+    #     avg_loss, learning_rate = train_one_epoch(epoch+1)
 
-        print(
-            f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}')
+    #     # Turn off  gradients for reporting
+    #     model.train(False)
 
-        # Track best performance, and save the model's state
-        model_path = work_dir + f'epoch_{epoch+1}.pth'
-        print(f'Saving checkpoint at {epoch+1} epochs...')
-        torch.save(model.state_dict(), model_path)
+    #     top1_acc, top5_acc = validate()
 
-        # Adjust learning rate
-        scheduler.step()
+    #     print(
+    #         f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}')
 
-        # Track wandb
-        wandb.log({'train/loss': avg_loss,
-                'train/learning_rate': learning_rate,
-                'val/top1_accuracy': top1_acc,
-                'val/top5_accuracy': top5_acc})
+    #     # Track best performance, and save the model's state
+    #     model_path = work_dir + f'epoch_{epoch+1}.pth'
+    #     print(f'Saving checkpoint at {epoch+1} epochs...')
+    #     torch.save(model.state_dict(), model_path)
+
+    #     # Adjust learning rate
+    #     scheduler.step()
+
+    #     # Track wandb
+    #     wandb.log({'train/loss': avg_loss,
+    #             'train/learning_rate': learning_rate,
+    #             'val/top1_accuracy': top1_acc,
+    #             'val/top5_accuracy': top5_acc})
 

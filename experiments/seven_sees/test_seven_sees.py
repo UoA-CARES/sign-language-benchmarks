@@ -6,7 +6,6 @@ import numpy as np
 from model.multistream_backbone import MultiStreamBackbone
 from model.sees7 import Sees7
 from dataset.dataset import MultiModalDataset
-from model.one_neuron_head import OneNeuronHead
 
 def top_k_accuracy(scores, labels, topk=(1, )):
     """Calculate top k accuracy score.
