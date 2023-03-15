@@ -167,6 +167,7 @@ if __name__=='__main__':
     # Build the dataloaders
     os.chdir('../../')
     work_dir = 'work_dirs/sees7/'
+    os.makedirs(work_dir, exist_ok=True)
     batch_size = 1
 
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
