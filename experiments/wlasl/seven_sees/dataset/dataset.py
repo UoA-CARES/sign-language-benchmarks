@@ -138,7 +138,7 @@ class MultiModalDataset(Dataset):
 
         frames = []
 
-        for i, img in enumerate(results['body_bbox']):
+        for i, img in enumerate(results['body_bbox']): 
             img =  np.array(img)[:, :, ::-1].copy()
             keypoints = results['pose'][i]['keypoints']
 
