@@ -61,12 +61,12 @@ def train_one_epoch(epoch_index, interval=5):
 
         # Make predictions for this batch
         outputs = model(rgb=rgb,
-                            flow=flow,
-                            depth=depth,
-                            left_hand=left_hand,
-                            right_hand=right_hand,
-                            face=face,
-                            skeleton=skeleton)
+                        flow=flow,
+                        depth=depth,
+                        left_hand=left_hand,
+                        right_hand=right_hand,
+                        face=face,
+                        skeleton=skeleton)
 
         # Compute the loss and its gradients
         loss = loss_fn(outputs, targets)
@@ -96,7 +96,6 @@ def validate():
         top1_acc (float): Top-1 accuracy in decimal.
         top5_acc (float): Top-5 accuracy in decimal.
     """
-    running_vloss = 0.0
     running_vacc = np.zeros(2)
 
     print('Evaluating top_k_accuracy...')
@@ -168,7 +167,7 @@ if __name__=='__main__':
     # Build the dataloaders
     os.chdir('../../')
     work_dir = 'work_dirs/sees7/'
-    batch_size = 7
+    batch_size = 1
 
     train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                     root_dir='data/wlasl/rawframes',
@@ -220,7 +219,7 @@ if __name__=='__main__':
                                             num_workers=4,
                                             pin_memory=True)
     
-    epochs = 100
+    epochs = 400
 
     # Specify optimizer
     optimizer = torch.optim.SGD(
@@ -238,37 +237,36 @@ if __name__=='__main__':
     # Specify Loss
     loss_fn = nn.CrossEntropyLoss()
     
-    validate()
-    
-    # for epoch in range(epochs):
-    #     # Turn on gradient tracking and do a forward pass
-    #     model.train(True)
 
-    #     # Freeze the backbones
-    #     for name, para in model.multistream_backbone.named_parameters():
-    #         para.requires_grad = False
+    for epoch in range(epochs):
+        # Turn on gradient tracking and do a forward pass
+        model.train(True)
 
-    #     avg_loss, learning_rate = train_one_epoch(epoch+1)
+        # Freeze the backbones
+        for name, para in model.multistream_backbone.named_parameters():
+            para.requires_grad = False
 
-    #     # Turn off  gradients for reporting
-    #     model.train(False)
+        avg_loss, learning_rate = train_one_epoch(epoch+1)
 
-    #     top1_acc, top5_acc = validate()
+        # Turn off  gradients for reporting
+        model.train(False)
 
-    #     print(
-    #         f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}')
+        top1_acc, top5_acc = validate()
 
-    #     # Track best performance, and save the model's state
-    #     model_path = work_dir + f'epoch_{epoch+1}.pth'
-    #     print(f'Saving checkpoint at {epoch+1} epochs...')
-    #     torch.save(model.state_dict(), model_path)
+        print(
+            f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}')
 
-    #     # Adjust learning rate
-    #     scheduler.step()
+        # Track best performance, and save the model's state
+        model_path = work_dir + f'epoch_{epoch+1}.pth'
+        print(f'Saving checkpoint at {epoch+1} epochs...')
+        torch.save(model.state_dict(), model_path)
 
-    #     # Track wandb
-    #     wandb.log({'train/loss': avg_loss,
-    #             'train/learning_rate': learning_rate,
-    #             'val/top1_accuracy': top1_acc,
-    #             'val/top5_accuracy': top5_acc})
+        # Adjust learning rate
+        scheduler.step()
+
+        # Track wandb
+        wandb.log({'train/loss': avg_loss,
+                'train/learning_rate': learning_rate,
+                'val/top1_accuracy': top1_acc,
+                'val/top5_accuracy': top5_acc})
 

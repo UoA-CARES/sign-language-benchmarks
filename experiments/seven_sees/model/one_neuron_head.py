@@ -37,11 +37,6 @@ class OneNeuronHead(nn.Module):
         for modality in stream:
             list_.append(stream[modality])
 
-        for key in stream:
-            print(key)
-
-        print(list_[0].shape)
-        
         x = torch.cat(list_, dim=0)
         
         return self.fc_cls(x.permute(1,0)).permute(1,0)

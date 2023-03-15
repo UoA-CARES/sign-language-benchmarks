@@ -1,0 +1,157 @@
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 5.0079
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 4.9009
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 4.7856
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 250, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 43, in train_one_epoch
+    for i, results in enumerate(train_loader):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1272, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
