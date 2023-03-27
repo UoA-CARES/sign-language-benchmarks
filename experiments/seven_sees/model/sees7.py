@@ -1,5 +1,5 @@
 import torch.nn as nn
-
+import torch
 class Sees7(nn.Module):
     """Multimodal Model Seven-Sees.
     """
@@ -10,15 +10,21 @@ class Sees7(nn.Module):
         
         super(Sees7, self).__init__()
         self.multistream_backbone = multistream_backbone
-        self.rgbWeight = 0
-        self.flowWeight = 0
-        self.depthWeight = 0
-        self.poseWeight = 0
-        self.faceWeight = 0
-        self.leftHandWeight = 1
-        self.rightHandWeight = 1
+
+        faceWeight = 0.0
+        skeletonWeight = 1
+        depthWeigth = 0.0
+        flowWeight = 0.0
+        rgbWeight = 0
+        lefthandWeight = 0.0
+        righthandWeight = 0.0
+        
+        self.modalityWeights = {'rgb':rgbWeight, 'flow': flowWeight, 'depth':depthWeigth, 'skeleton': skeletonWeight, 'face': faceWeight, 'left_hand': lefthandWeight, 'right_hand': righthandWeight}
+       
+        encoder_layer = nn.TransformerEncoderLayer(d_model=400*7, nhead=8, dim_feedforward = 100)
+        self.transformerEncoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
         # TODO: Use a head to find the weights for each modality
-        self.head = head
+        self.head = None#self.transformerEncoder
         
     def forward(self,
                 rgb=None,
@@ -40,11 +46,19 @@ class Sees7(nn.Module):
                                            left_hand=left_hand)
         
 
-        if self.head is None:
-            cls_score = self.rgbWeight*(1/7)*stream['rgb'] + self.flowWeight*(1/7)*stream['flow'] + self.depthWeight * (1/7)*stream['depth']
-            + self.poseWeight * (1/7)*stream['skeleton'] + self.faceWeight* (1/7)*stream['face'] + self.leftHandWeight * (1/7)*stream['left_hand']
-            + self.rightHandWeight * (1/7)*stream['right_hand']
-        else:
-            cls_score = self.head(stream)
+        
+        nonZeroModalities  = []
+        for modality in self.modalityWeights: #loop modalities
+            if( self.modalityWeights[modality] > 0): #check weighting not 0
+                weightedScore = stream[modality] * self.modalityWeights[modality] #multiply classification prediction by weight
+                nonZeroModalities.append(weightedScore)
 
+        cls_score = nonZeroModalities[0]
+        for i in range(1,len(nonZeroModalities)):
+            cls_score+= nonZeroModalities[i] 
+            #cls_score = torch.concat([cls_score, nonZeroModalities[i]],dim=1)
+
+        if self.head is not None:
+            cls_score = self.head(cls_score)
+        
         return cls_score
