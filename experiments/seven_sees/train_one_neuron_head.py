@@ -157,11 +157,12 @@ if __name__=='__main__':
 
     # Freeze the backbones
     for name, para in multistream.named_parameters():
-        if("fc" not in name):
+        #print(name)
+        if("fc" not in name and "layer4" not in name):
             para.requires_grad = False
 
-    model = Sees7(multistream_backbone=multistream)#,
-                  #head=OneNeuronHead(num_modalities=7))
+    predHead = nn.Sequential(nn.Linear(400,100), nn.Softmax())
+    model = Sees7(multistream_backbone=multistream,   head = None)
     model.to(device)
 
     
@@ -220,9 +221,9 @@ if __name__=='__main__':
                                             shuffle=True,
                                             num_workers=4,
                                             pin_memory=True)
-    
+    train_dataset.visualise(key = 'skeleton')
     epochs = 400
-
+    freezeNames = ["skeleton_stream"]
     # Specify optimizer
     optimizer = torch.optim.SGD(
         model.parameters(), lr=0.000125, momentum=0.9, weight_decay=0.00001)
@@ -238,7 +239,9 @@ if __name__=='__main__':
 
     # Specify Loss
     loss_fn = nn.CrossEntropyLoss()
-    
+    model.train(False)
+
+  
 
     for epoch in range(epochs):
         # Turn on gradient tracking and do a forward pass
@@ -246,7 +249,12 @@ if __name__=='__main__':
 
         # Freeze the backbones
         for name, para in model.multistream_backbone.named_parameters():
-            if("fc" not in name):
+            #print(name)
+            freeze = True
+            for freezeName in freezeNames:
+                if(freezeName in name ):
+                    freeze = False
+            if(freeze):
                 para.requires_grad = False
 
         avg_loss, learning_rate = train_one_epoch(epoch+1)
