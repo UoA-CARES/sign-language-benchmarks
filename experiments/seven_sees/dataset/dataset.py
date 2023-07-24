@@ -139,7 +139,11 @@ class MultiModalDataset(Dataset):
         frames = []
 
         for i, img in enumerate(results['body_bbox']): 
-            img =  np.array(img)[:, :, ::-1].copy()
+            #img =  np.array(img)[:, :, ::-1].copy()
+            w,h= img.size
+            img = np.zeros([h,w,3],dtype=np.uint8)
+            #img.fill(255) # or img[:] = 255
+ 
             keypoints = results['pose'][i]['keypoints']
 
             # for j in keypoints:
@@ -268,9 +272,10 @@ class MultiModalDataset(Dataset):
         
 
 
-    def visualise(self, idx=0, key = 'body_bbox'):
+    def visualise(self, idx=0, key = 'rgb'):
         results = self.load_video(idx=idx)
-        results = self.transforms(results)  
+        
+        
         for i in range(len(results[key])): 
             img = results[key][i]
             img =  np.array(img)[:, :, ::-1].copy() 
@@ -278,8 +283,9 @@ class MultiModalDataset(Dataset):
                 keypoints = results['pose'][i]['keypoints']
                 for j in keypoints:
                     img = cv2.circle(img, (int(keypoints[j]['x']), int(keypoints[j]['y'])), radius=1, color=(0, 0, 255), thickness=1)
-            cv2.imshow("", img)
-            cv2.waitKey(0)
+            #cv2.imshow("", img)
+            #cv2.waitKey(0)
+            cv2.imwrite("viz.jpg",img)
 
     def to_3dtensor(self, images):
         image_tensors = []
