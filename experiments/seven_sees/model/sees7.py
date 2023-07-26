@@ -5,21 +5,17 @@ class Sees7(nn.Module):
     """
 
     def __init__(self,
+                modality_weights, # dict with weights
                 multistream_backbone=None,
-                head=None):
+                head=None,
+                ):
         
         super(Sees7, self).__init__()
         self.multistream_backbone = multistream_backbone
 
-        faceWeight = 0.0
-        skeletonWeight = 1
-        depthWeigth = 0.0
-        flowWeight = 0.0
-        rgbWeight = 0
-        lefthandWeight = 0.0
-        righthandWeight = 0.0
         
-        self.modalityWeights = {'rgb':rgbWeight, 'flow': flowWeight, 'depth':depthWeigth, 'skeleton': skeletonWeight, 'face': faceWeight, 'left_hand': lefthandWeight, 'right_hand': righthandWeight}
+        self.modalityWeights = modality_weights
+        # self.modalityWeights = {'rgb':rgbWeight, 'flow': flowWeight, 'depth':depthWeigth, 'skeleton': skeletonWeight, 'face': faceWeight, 'left_hand': lefthandWeight, 'right_hand': righthandWeight}
        
         encoder_layer = nn.TransformerEncoderLayer(d_model=400*7, nhead=8, dim_feedforward = 100)
         self.transformerEncoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
