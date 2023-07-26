@@ -119,8 +119,8 @@ pip install -r requirements.txt
 ```
 Install mmcv:
 ```
-pip install -U openmim
-mim install mmcv
+pip install openmim
+mim install mmcv-full
 ```
 Assuming current directory is the root of the repository, install mmaction2 from source:
 ```
