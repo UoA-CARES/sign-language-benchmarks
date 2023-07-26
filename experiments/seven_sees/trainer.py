@@ -16,6 +16,9 @@ class Trainer():
         self.modality_weights = modality_weights
         self.epochs = epochs
         self.batch_size = batch_size
+        self.best_top_1 = 0
+        self.best_top_5 = 0
+        self.lowest_vloss = 1000.
 
         self.device = 'cuda'
 
@@ -94,7 +97,7 @@ class Trainer():
                                                 num_workers=4,
                                                 pin_memory=True)
 
-        test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset,
+        self.test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset,
                                                 batch_size=1,
                                                 shuffle=True,
                                                 num_workers=4,
@@ -222,7 +225,7 @@ class Trainer():
 
                 vtargets = vtargets.reshape(-1, )
 
-                rgb, flow, vtargets = rgb.to(self.device), flow.to(self.device), vtargets.to(self.evice)
+                rgb, flow, vtargets = rgb.to(self.device), flow.to(self.device), vtargets.to(self.device)
                 depth, face, skeleton = depth.to(self.device), face.to(self.device), skeleton.to(self.device)
                 left_hand, right_hand = left_hand.to(self.device), right_hand.to(self.device)
 
@@ -233,6 +236,8 @@ class Trainer():
                                 right_hand=right_hand,
                                 face=face,
                                 skeleton=skeleton)
+                
+                loss = self.loss_fn(voutputs, vtargets)
 
 
                 running_vacc += self.top_k_accuracy(voutputs.detach().cpu().numpy(),
@@ -241,8 +246,19 @@ class Trainer():
         acc = running_vacc/len(self.test_loader)
         top1_acc = acc[0].item()
         top5_acc = acc[1].item()
+        
+        # Store the best
+        if self.best_top_1 < top1_acc:
+            self.best_top_1 = top1_acc
 
-        return (top1_acc, top5_acc)
+        if self.best_top_5 < top5_acc:
+            self.best_top_5 = top5_acc
+
+        if self.lowest_vloss > loss.item():
+            self.lowest_vloss = loss.item()
+
+
+        return (self.best_top_1, self.best_top_5, self.lowest_vloss)
 
     def train(self):
         self.model.train(False)
@@ -266,7 +282,7 @@ class Trainer():
             # Turn off  gradients for reporting
             self.model.train(False)
 
-            top1_acc, top5_acc = self.validate()
+            top1_acc, top5_acc, _ = self.validate()
 
             print(
                 f'top1_acc: {top1_acc:.4}, top5_acc: {top5_acc:.4}, train_loss: {avg_loss:.5}')
@@ -285,8 +301,5 @@ class Trainer():
             #         'val/top1_accuracy': top1_acc,
             #         'val/top5_accuracy': top5_acc})
 
-            return dict({'train/loss': avg_loss,
-                    'train/learning_rate': learning_rate,
-                    'val/top1_accuracy': top1_acc,
-                    'val/top5_accuracy': top5_acc})
+            
 
