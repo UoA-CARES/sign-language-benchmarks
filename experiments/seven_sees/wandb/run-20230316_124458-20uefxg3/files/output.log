@@ -1,0 +1,47 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 5.9915
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 5.9915
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 5.9915
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 5.9915
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 5.9915
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 34, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 198, in forward
+    stream['right_hand'] = self.right_hand_stream(rgb=right_hand)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 870, in forward
+    x = res_layer(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 332, in forward
+    out = _inner_forward(x)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 320, in _inner_forward
+    out = self.conv2(out)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 207, in forward
+    x = self.conv(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1182, in __getattr__
+    modules = self.__dict__['_modules']
+KeyboardInterrupt

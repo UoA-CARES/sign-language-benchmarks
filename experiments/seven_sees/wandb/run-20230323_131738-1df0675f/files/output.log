@@ -1,0 +1,179 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 0.0061593
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 2.8871e-05
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 2.0504e-06
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 2.3388e-05
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 1.5497e-05
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 0.015062
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 0.00019549
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 0.20771
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 5.0732e-05
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 7.9473e-05
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 0.00043852
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 0.00012359
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 0.78176
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 0.03825
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 1.6451e-06
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 0.14771
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 0.00038597
+Epoch [1][90/1780], lr: 0.00000e+00, loss: 0.31634
+Epoch [1][95/1780], lr: 0.00000e+00, loss: 0.061674
+Epoch [1][100/1780], lr: 0.00000e+00, loss: 0.001815
+Epoch [1][105/1780], lr: 0.00000e+00, loss: 0.25006
+Epoch [1][110/1780], lr: 0.00000e+00, loss: 2.3244e-05
+Epoch [1][115/1780], lr: 0.00000e+00, loss: 2.8133e-06
+Epoch [1][120/1780], lr: 0.00000e+00, loss: 0.0043162
+Epoch [1][125/1780], lr: 0.00000e+00, loss: 5.6504e-06
+Epoch [1][130/1780], lr: 0.00000e+00, loss: 4.5485e-05
+Epoch [1][135/1780], lr: 0.00000e+00, loss: 1.4305e-07
+Epoch [1][140/1780], lr: 0.00000e+00, loss: 0.021278
+Epoch [1][145/1780], lr: 0.00000e+00, loss: 3.0041e-06
+Epoch [1][150/1780], lr: 0.00000e+00, loss: 0.16922
+Epoch [1][155/1780], lr: 0.00000e+00, loss: 0.00069858
+Epoch [1][160/1780], lr: 0.00000e+00, loss: 1.4741
+Epoch [1][165/1780], lr: 0.00000e+00, loss: 0.10451
+Epoch [1][170/1780], lr: 0.00000e+00, loss: 0.00078148
+Epoch [1][175/1780], lr: 0.00000e+00, loss: 0.048027
+Epoch [1][180/1780], lr: 0.00000e+00, loss: 8.8215e-07
+Epoch [1][185/1780], lr: 0.00000e+00, loss: 1.0156e-05
+Epoch [1][190/1780], lr: 0.00000e+00, loss: 2.8372e-06
+Epoch [1][195/1780], lr: 0.00000e+00, loss: 9.608e-06
+Epoch [1][200/1780], lr: 0.00000e+00, loss: 0.0010069
+Epoch [1][205/1780], lr: 0.00000e+00, loss: 0.0046999
+Epoch [1][210/1780], lr: 0.00000e+00, loss: 0.035744
+Epoch [1][215/1780], lr: 0.00000e+00, loss: 0.011026
+Epoch [1][220/1780], lr: 0.00000e+00, loss: 0.061723
+Epoch [1][225/1780], lr: 0.00000e+00, loss: 0.00012385
+Epoch [1][230/1780], lr: 0.00000e+00, loss: 0.1548
+Epoch [1][235/1780], lr: 0.00000e+00, loss: 0.027172
+Epoch [1][240/1780], lr: 0.00000e+00, loss: 1.6689e-07
+Epoch [1][245/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][250/1780], lr: 0.00000e+00, loss: 5.0306e-06
+Epoch [1][255/1780], lr: 0.00000e+00, loss: 5.4836e-07
+Epoch [1][260/1780], lr: 0.00000e+00, loss: 2.0233
+Epoch [1][265/1780], lr: 0.00000e+00, loss: 4.0744e-05
+Epoch [1][270/1780], lr: 0.00000e+00, loss: 4.5032e-05
+Epoch [1][275/1780], lr: 0.00000e+00, loss: 0.055749
+Epoch [1][280/1780], lr: 0.00000e+00, loss: 6.4373e-07
+Epoch [1][285/1780], lr: 0.00000e+00, loss: 0.37658
+Epoch [1][290/1780], lr: 0.00000e+00, loss: 3.6308e-05
+Epoch [1][295/1780], lr: 0.00000e+00, loss: 0.00040915
+Epoch [1][300/1780], lr: 0.00000e+00, loss: 4.1099e-05
+Epoch [1][305/1780], lr: 0.00000e+00, loss: 0.0001004
+Epoch [1][310/1780], lr: 0.00000e+00, loss: 2.0265e-06
+Epoch [1][315/1780], lr: 0.00000e+00, loss: 2.4319e-06
+Epoch [1][320/1780], lr: 0.00000e+00, loss: 0.011817
+Epoch [1][325/1780], lr: 0.00000e+00, loss: 1.1682e-06
+Epoch [1][330/1780], lr: 0.00000e+00, loss: 1.2201
+Epoch [1][335/1780], lr: 0.00000e+00, loss: 9.5367e-08
+Epoch [1][340/1780], lr: 0.00000e+00, loss: 0.0022147
+Epoch [1][345/1780], lr: 0.00000e+00, loss: 1.6689e-07
+Epoch [1][350/1780], lr: 0.00000e+00, loss: 3.7738e-05
+Epoch [1][355/1780], lr: 0.00000e+00, loss: 0.50968
+Epoch [1][360/1780], lr: 0.00000e+00, loss: 0.002301
+Epoch [1][365/1780], lr: 0.00000e+00, loss: 0.08914
+Epoch [1][370/1780], lr: 0.00000e+00, loss: 0.00025595
+Epoch [1][375/1780], lr: 0.00000e+00, loss: 4.8369e-05
+Epoch [1][380/1780], lr: 0.00000e+00, loss: 0.0026825
+Epoch [1][385/1780], lr: 0.00000e+00, loss: 1.8525e-05
+Epoch [1][390/1780], lr: 0.00000e+00, loss: 6.5626e-05
+Epoch [1][395/1780], lr: 0.00000e+00, loss: 7.6022e-05
+Epoch [1][400/1780], lr: 0.00000e+00, loss: 1.9073e-07
+Epoch [1][405/1780], lr: 0.00000e+00, loss: 0.00032111
+Epoch [1][410/1780], lr: 0.00000e+00, loss: 1.4471e-05
+Epoch [1][415/1780], lr: 0.00000e+00, loss: 9.5367e-08
+Epoch [1][420/1780], lr: 0.00000e+00, loss: 7.764e-05
+Epoch [1][425/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][430/1780], lr: 0.00000e+00, loss: 0.00043176
+Epoch [1][435/1780], lr: 0.00000e+00, loss: 0.054194
+Epoch [1][440/1780], lr: 0.00000e+00, loss: 0.0016882
+Epoch [1][445/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][450/1780], lr: 0.00000e+00, loss: 0.02752
+Epoch [1][455/1780], lr: 0.00000e+00, loss: 4.5299e-07
+Epoch [1][460/1780], lr: 0.00000e+00, loss: 5.123e-05
+Epoch [1][465/1780], lr: 0.00000e+00, loss: 3.8693e-05
+Epoch [1][470/1780], lr: 0.00000e+00, loss: 1.9312e-06
+Epoch [1][475/1780], lr: 0.00000e+00, loss: 0.28949
+Epoch [1][480/1780], lr: 0.00000e+00, loss: 0.0016089
+Epoch [1][485/1780], lr: 0.00000e+00, loss: 0.0079075
+Epoch [1][490/1780], lr: 0.00000e+00, loss: 0.06079
+Epoch [1][495/1780], lr: 0.00000e+00, loss: 0.00011076
+Epoch [1][500/1780], lr: 0.00000e+00, loss: 9.5367e-07
+Epoch [1][505/1780], lr: 0.00000e+00, loss: 9.5583e-05
+Epoch [1][510/1780], lr: 0.00000e+00, loss: 4.7684e-08
+Epoch [1][515/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][520/1780], lr: 0.00000e+00, loss: 0.0001252
+Epoch [1][525/1780], lr: 0.00000e+00, loss: 0.28424
+Epoch [1][530/1780], lr: 0.00000e+00, loss: 9.2983e-07
+Epoch [1][535/1780], lr: 0.00000e+00, loss: 0.00018729
+Epoch [1][540/1780], lr: 0.00000e+00, loss: 0.10741
+Epoch [1][545/1780], lr: 0.00000e+00, loss: 0.00052398
+Epoch [1][550/1780], lr: 0.00000e+00, loss: 0.0016432
+Epoch [1][555/1780], lr: 0.00000e+00, loss: 6.0319e-06
+Epoch [1][560/1780], lr: 0.00000e+00, loss: 0.0037465
+Epoch [1][565/1780], lr: 0.00000e+00, loss: 5.9365e-06
+Epoch [1][570/1780], lr: 0.00000e+00, loss: 1.0729e-06
+Epoch [1][575/1780], lr: 0.00000e+00, loss: 0.043675
+Epoch [1][580/1780], lr: 0.00000e+00, loss: 2.9014e-05
+Epoch [1][585/1780], lr: 0.00000e+00, loss: 0.00076366
+Epoch [1][590/1780], lr: 0.00000e+00, loss: 0.0131
+Epoch [1][595/1780], lr: 0.00000e+00, loss: 0.016263
+Epoch [1][600/1780], lr: 0.00000e+00, loss: 6.8701e-05
+Epoch [1][605/1780], lr: 0.00000e+00, loss: 1.1247
+Epoch [1][610/1780], lr: 0.00000e+00, loss: 7.1526e-07
+Epoch [1][615/1780], lr: 0.00000e+00, loss: 7.0941e-05
+Epoch [1][620/1780], lr: 0.00000e+00, loss: 0.011319
+Epoch [1][625/1780], lr: 0.00000e+00, loss: 7.1763e-06
+Epoch [1][630/1780], lr: 0.00000e+00, loss: 4.2029e-05
+Epoch [1][635/1780], lr: 0.00000e+00, loss: 0.24393
+Epoch [1][640/1780], lr: 0.00000e+00, loss: 0.00027224
+Epoch [1][645/1780], lr: 0.00000e+00, loss: 6.0081e-06
+Epoch [1][650/1780], lr: 0.00000e+00, loss: 0.15536
+Epoch [1][655/1780], lr: 0.00000e+00, loss: 0.013603
+Epoch [1][660/1780], lr: 0.00000e+00, loss: 1.3913
+Epoch [1][665/1780], lr: 0.00000e+00, loss: 2.0432e-05
+Epoch [1][670/1780], lr: 0.00000e+00, loss: 7.1525e-07
+Epoch [1][675/1780], lr: 0.00000e+00, loss: 0.00065539
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 256, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 40, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 196, in forward
+    stream['left_hand'] = self.left_hand_stream(rgb=left_hand)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 870, in forward
+    x = res_layer(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 332, in forward
+    out = _inner_forward(x)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 319, in _inner_forward
+    out = self.conv1(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 207, in forward
+    x = self.conv(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/wrappers.py", line 80, in forward
+    return super().forward(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 592, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 587, in _conv_forward
+    return F.conv3d(
+KeyboardInterrupt

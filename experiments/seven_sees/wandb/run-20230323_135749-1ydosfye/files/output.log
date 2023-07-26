@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 224, in <module>
+    train_dataset.visualise(key = 'skeleton')
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 276, in visualise
+    results = self.load_video(idx=idx)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 269, in load_video
+    results = self.load_landmarks(results)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 143, in load_landmarks
+    w,h= img.size
+TypeError: cannot unpack non-iterable int object

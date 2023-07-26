@@ -1,0 +1,84 @@
+/home/myuser1/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+/home/myuser1/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+/home/myuser1/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+/home/myuser1/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 7.7103
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 7.97
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 7.5025
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 12.284
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 8.8654
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 5.924
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 7.8184
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 8.1632
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 12.04
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 6.2103
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 7.9126
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 8.6613
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 11.666
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 8.1021
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 15.473
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 10.229
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 7.2195
+Epoch [1][90/1780], lr: 0.00000e+00, loss: 5.7338
+Epoch [1][95/1780], lr: 0.00000e+00, loss: 5.7666
+Epoch [1][100/1780], lr: 0.00000e+00, loss: 5.7744
+Epoch [1][105/1780], lr: 0.00000e+00, loss: 8.3152
+Epoch [1][110/1780], lr: 0.00000e+00, loss: 6.715
+Epoch [1][115/1780], lr: 0.00000e+00, loss: 8.6563
+Epoch [1][120/1780], lr: 0.00000e+00, loss: 9.1955
+Epoch [1][125/1780], lr: 0.00000e+00, loss: 11.139
+Epoch [1][130/1780], lr: 0.00000e+00, loss: 7.9317
+Epoch [1][135/1780], lr: 0.00000e+00, loss: 7.553
+Epoch [1][140/1780], lr: 0.00000e+00, loss: 5.7101
+Epoch [1][145/1780], lr: 0.00000e+00, loss: 6.2839
+Epoch [1][150/1780], lr: 0.00000e+00, loss: 10.187
+Epoch [1][155/1780], lr: 0.00000e+00, loss: 9.645
+Epoch [1][160/1780], lr: 0.00000e+00, loss: 8.0479
+Epoch [1][165/1780], lr: 0.00000e+00, loss: 7.5228
+Epoch [1][170/1780], lr: 0.00000e+00, loss: 7.8503
+Epoch [1][175/1780], lr: 0.00000e+00, loss: 7.8909
+Epoch [1][180/1780], lr: 0.00000e+00, loss: 7.3288
+Epoch [1][185/1780], lr: 0.00000e+00, loss: 10.541
+Epoch [1][190/1780], lr: 0.00000e+00, loss: 8.5594
+Epoch [1][195/1780], lr: 0.00000e+00, loss: 12.606
+Epoch [1][200/1780], lr: 0.00000e+00, loss: 5.5421
+Epoch [1][205/1780], lr: 0.00000e+00, loss: 11.271
+Epoch [1][210/1780], lr: 0.00000e+00, loss: 6.2056
+Epoch [1][215/1780], lr: 0.00000e+00, loss: 8.5509
+Epoch [1][220/1780], lr: 0.00000e+00, loss: 6.2573
+Epoch [1][225/1780], lr: 0.00000e+00, loss: 7.3442
+Epoch [1][230/1780], lr: 0.00000e+00, loss: 7.7524
+Epoch [1][235/1780], lr: 0.00000e+00, loss: 7.1589
+Epoch [1][240/1780], lr: 0.00000e+00, loss: 7.8924
+Epoch [1][245/1780], lr: 0.00000e+00, loss: 6.5431
+Epoch [1][250/1780], lr: 0.00000e+00, loss: 9.5761
+Epoch [1][255/1780], lr: 0.00000e+00, loss: 5.1274
+Epoch [1][260/1780], lr: 0.00000e+00, loss: 8.8649
+Epoch [1][265/1780], lr: 0.00000e+00, loss: 6.3016
+Epoch [1][270/1780], lr: 0.00000e+00, loss: 13.042
+Epoch [1][275/1780], lr: 0.00000e+00, loss: 8.4335
+Epoch [1][280/1780], lr: 0.00000e+00, loss: 9.5627
+Epoch [1][285/1780], lr: 0.00000e+00, loss: 10.333
+Epoch [1][290/1780], lr: 0.00000e+00, loss: 9.1276
+Epoch [1][295/1780], lr: 0.00000e+00, loss: 6.143
+Epoch [1][300/1780], lr: 0.00000e+00, loss: 10.078
+Epoch [1][305/1780], lr: 0.00000e+00, loss: 8.0351
+Epoch [1][310/1780], lr: 0.00000e+00, loss: 13.869
+Epoch [1][315/1780], lr: 0.00000e+00, loss: 10.662
+Epoch [1][320/1780], lr: 0.00000e+00, loss: 7.9868
+Epoch [1][325/1780], lr: 0.00000e+00, loss: 8.8156
+Epoch [1][330/1780], lr: 0.00000e+00, loss: 7.781
+Epoch [1][335/1780], lr: 0.00000e+00, loss: 7.0717
+Epoch [1][340/1780], lr: 0.00000e+00, loss: 9.1337
+Epoch [1][345/1780], lr: 0.00000e+00, loss: 4.4681
+Epoch [1][350/1780], lr: 0.00000e+00, loss: 11.153
+Epoch [1][355/1780], lr: 0.00000e+00, loss: 8.2458
+Epoch [1][360/1780], lr: 0.00000e+00, loss: 10.482
+Epoch [1][365/1780], lr: 0.00000e+00, loss: 5.5502
+Epoch [1][370/1780], lr: 0.00000e+00, loss: 6.0036
+Epoch [1][375/1780], lr: 0.00000e+00, loss: 9.908
+Epoch [1][380/1780], lr: 0.00000e+00, loss: 6.9922

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 224, in <module>
+    train_dataset.visualise()
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 273, in visualise
+    results = self.load_video(idx=idx)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 266, in load_video
+    results = self.load_landmarks(results)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 159, in load_landmarks
+    img = cv2.line(img, left_shoulder, right_shoulder, color=(255, 255, 255), thickness=2)
+cv2.error: OpenCV(4.6.0) :-1: error: (-5:Bad argument) in function 'line'
+> Overload resolution failed:
+>  - img is not a numpy array, neither a scalar
+>  - Expected Ptr<cv::UMat> for argument 'img'

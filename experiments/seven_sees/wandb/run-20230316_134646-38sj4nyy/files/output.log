@@ -1,0 +1,13 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 0.0004262
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 0.00092239
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 2.1027e-05
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 0.0041047
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 9.5367e-08
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 6.5564e-06
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 0.0021316
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 83, in train_one_epoch
+    running_loss += loss.item()
+KeyboardInterrupt

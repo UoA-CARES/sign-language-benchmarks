@@ -1,0 +1,14 @@
+/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py:141: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 72, in train_one_epoch
+    loss = loss_fn(outputs, targets)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/loss.py", line 1163, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/functional.py", line 2996, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+ValueError: Expected input batch_size (7) to match target batch_size (1).
