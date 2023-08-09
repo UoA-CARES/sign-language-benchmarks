@@ -1,0 +1,95 @@
+{
+    "os": "Linux-5.14.0-1058-oem-x86_64-with-glibc2.10",
+    "python": "3.8.0",
+    "heartbeatAt": "2023-08-09T00:39:13.710619",
+    "startedAt": "2023-08-09T00:39:12.702674",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "gridsearch.py",
+    "codePath": "experiments/seven_sees/gridsearch.py",
+    "git": {
+        "remote": "https://github.com/UoA-CARES/sign-language-benchmarks.git",
+        "commit": "0c0085b3026cd09ef2d00fed4dcb64df4e6cb3e8"
+    },
+    "email": "sttaseen@gmail.com",
+    "root": "/home/myuser1/Desktop/sign-language-benchmarks",
+    "host": "Precision-3640",
+    "username": "myuser1",
+    "executable": "/home/myuser1/miniconda3/envs/mmsign/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "cpu_freq": {
+        "current": 2602.6603,
+        "min": 800.0,
+        "max": 5200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 826.603,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        }
+    ],
+    "disk": {
+        "total": 937.3305015563965,
+        "used": 857.0759658813477
+    },
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080",
+            "memory_total": 10737418240
+        }
+    ],
+    "memory": {
+        "total": 31.078872680664062
+    }
+}

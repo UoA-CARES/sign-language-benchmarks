@@ -12,7 +12,7 @@ from mmcv_model.scheduler import GradualWarmupScheduler
 
 
 class Trainer():
-    def __init__(self, modality_weights, epochs=1, batch_size=1):
+    def __init__(self, modality_weights=None, epochs=1, batch_size=1):
         self.modality_weights = modality_weights
         self.epochs = epochs
         self.batch_size = batch_size
@@ -22,36 +22,13 @@ class Trainer():
 
         self.device = 'cuda'
 
-        # wandb.init(entity="cares", project="jack-slr",
-        #         group="average", name="late-one-fc")
-
-
-        # Building the model
-        self.multistream = MultiStreamBackbone(rgb_checkpoint='./rgb.pth',
-                                        flow_checkpoint='./flow.pth',
-                                        depth_checkpoint='./depth.pth',
-                                        skeleton_checkpoint='./skeleton.pth',
-                                        face_checkpoint='./face.pth',
-                                        left_hand_checkpoint='./left_hand.pth',
-                                        right_hand_checkpoint='./right_hand.pth'
-                                        )
-
-
-        # Freeze the backbones
-        for name, para in self.multistream.named_parameters():
-            #print(name)
-            if("fc" not in name and "layer4" not in name):
-                para.requires_grad = False
-
-        predHead = nn.Sequential(nn.Linear(400,100), nn.Softmax())
-        self.model = Sees7(modality_weights=self.modality_weights,multistream_backbone=self.multistream, head=None)
-        self.model.to(self.device)
-
+        if self.modality_weights is not None:
+            self.set_weights(self.modality_weights)
 
         # Build the dataloaders
         os.chdir('../../')
-        work_dir = 'work_dirs/sees7/'
-        os.makedirs(work_dir, exist_ok=True)
+        self.work_dir = 'work_dirs/sees7/'
+        os.makedirs(self.work_dir, exist_ok=True)
 
         self.train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
                                         root_dir='data/wlasl/rawframes',
@@ -105,6 +82,35 @@ class Trainer():
 
         self.train_dataset.visualise(key = 'skeleton')
         self.freezeNames = ["skeleton_stream"]
+
+        # Specify Loss
+        self.loss_fn = nn.CrossEntropyLoss()
+
+        # os.chdir('experiments/seven_sees/')
+
+    def set_weights(self, modality_weights):
+        self.modality_weights = modality_weights
+
+        # Building the model
+        self.multistream = MultiStreamBackbone(rgb_checkpoint='experiments/seven_sees/rgb.pth',
+                                        flow_checkpoint='experiments/seven_sees/flow.pth',
+                                        depth_checkpoint='experiments/seven_sees/depth.pth',
+                                        skeleton_checkpoint='experiments/seven_sees/skeleton.pth',
+                                        face_checkpoint='experiments/seven_sees/face.pth',
+                                        left_hand_checkpoint='experiments/seven_sees/left_hand.pth',
+                                        right_hand_checkpoint='experiments/seven_sees/right_hand.pth'
+                                        )
+
+
+        # Freeze the backbones
+        for name, para in self.multistream.named_parameters():
+            #print(name)
+            if("fc" not in name and "layer4" not in name):
+                para.requires_grad = False
+
+        self.model = Sees7(modality_weights=self.modality_weights,multistream_backbone=self.multistream, head=None)
+        self.model.to(self.device)
+
         # Specify optimizer
         self.optimizer = torch.optim.SGD(
             self.model.parameters(), lr=0.000125, momentum=0.9, weight_decay=0.00001)
@@ -117,9 +123,6 @@ class Trainer():
             self.optimizer, milestones=[34, 84], gamma=0.1)
         self.scheduler = GradualWarmupScheduler(
             self.optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
-
-        # Specify Loss
-        self.loss_fn = nn.CrossEntropyLoss()
 
     def top_k_accuracy(self, scores, labels, topk=(1, )):
         """Calculate top k accuracy score.
@@ -261,6 +264,9 @@ class Trainer():
         return (self.best_top_1, self.best_top_5, self.lowest_vloss)
 
     def train(self):
+        wandb.init(entity="cares", project="7Sees-Grid-Search",
+        group="hands-pose", name=str(self.modality_weights))
+
         self.model.train(False)
 
         for epoch in range(self.epochs):
@@ -296,10 +302,12 @@ class Trainer():
             self.scheduler.step()
         
             # Track wandb
-            # wandb.log({'train/loss': avg_loss,
-            #         'train/learning_rate': learning_rate,
-            #         'val/top1_accuracy': top1_acc,
-            #         'val/top5_accuracy': top5_acc})
+            wandb.log({'train/loss': avg_loss,
+                    'train/learning_rate': learning_rate,
+                    'val/top1_accuracy': top1_acc,
+                    'val/top5_accuracy': top5_acc})
+            
+    wandb.finish()
 
             
 
