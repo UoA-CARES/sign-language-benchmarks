@@ -1,0 +1,14 @@
+
+Evaluating top_k_accuracy...
+top1_acc: 0.8411, top5_acc: 0.9612
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 0.00046447
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 7.6294e-07
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 257, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 83, in train_one_epoch
+    running_loss += loss.item()
+KeyboardInterrupt

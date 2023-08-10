@@ -1,0 +1,40 @@
+
+Evaluating top_k_accuracy...
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 243, in <module>
+    top1_acc, top5_acc = validate()
+  File "train_one_neuron_head.py", line 121, in validate
+    voutputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 38, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 196, in forward
+    stream['left_hand'] = self.left_hand_stream(rgb=left_hand)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 870, in forward
+    x = res_layer(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 332, in forward
+    out = _inner_forward(x)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 319, in _inner_forward
+    out = self.conv1(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 211, in forward
+    x = self.activate(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1105, in _call_impl
+    forward_call = (self._slow_forward if torch._C._get_tracing_state() else self.forward)
+KeyboardInterrupt

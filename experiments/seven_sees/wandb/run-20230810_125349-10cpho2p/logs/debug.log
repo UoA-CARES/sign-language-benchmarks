@@ -1,0 +1,39 @@
+2023-08-10 12:53:49,879 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Configure stats pid to 3655
+2023-08-10 12:53:49,879 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from /home/sadat/.config/wandb/settings
+2023-08-10 12:53:49,879 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/settings
+2023-08-10 12:53:49,879 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'experiments/seven_sees/gridsearch.py', 'program': 'gridsearch.py'}
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:_log_setup():476] Logging user logs to /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230810_125349-10cpho2p/logs/debug.log
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:_log_setup():477] Logging internal logs to /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230810_125349-10cpho2p/logs/debug-internal.log
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:init():516] calling init triggers
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {}
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:init():569] starting backend
+2023-08-10 12:53:49,880 INFO    MainThread:3655 [wandb_init.py:init():573] setting up manager
+2023-08-10 12:53:49,883 INFO    MainThread:3655 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-08-10 12:53:49,886 INFO    MainThread:3655 [wandb_init.py:init():580] backend started and connected
+2023-08-10 12:53:49,889 INFO    MainThread:3655 [wandb_init.py:init():658] updated telemetry
+2023-08-10 12:53:49,918 INFO    MainThread:3655 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-08-10 12:53:50,635 INFO    MainThread:3655 [wandb_run.py:_on_init():2000] communicating current version
+2023-08-10 12:53:55,635 INFO    MainThread:3655 [wandb_run.py:_on_init():2004] got version response None
+2023-08-10 12:53:55,635 INFO    MainThread:3655 [wandb_init.py:init():728] starting run threads in backend
+2023-08-10 12:53:56,958 INFO    MainThread:3655 [wandb_run.py:_console_start():1980] atexit reg
+2023-08-10 12:53:56,958 INFO    MainThread:3655 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2023-08-10 12:53:56,958 INFO    MainThread:3655 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2023-08-10 12:53:56,959 INFO    MainThread:3655 [wandb_run.py:_redirect():1925] Redirects installed.
+2023-08-10 12:53:56,959 INFO    MainThread:3655 [wandb_init.py:init():765] run started, returning control to user process
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Configure stats pid to 3655
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from /home/sadat/.config/wandb/settings
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/settings
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'experiments/seven_sees/gridsearch.py', 'program': 'gridsearch.py'}
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_init.py:_log_setup():476] Logging user logs to /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230810_125359-2qrh29mf/logs/debug.log
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_init.py:_log_setup():477] Logging internal logs to /home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230810_125359-2qrh29mf/logs/debug-internal.log
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_init.py:init():516] calling init triggers
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {}
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_init.py:init():535] re-initializing run, found existing run on stack: 10cpho2p
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_run.py:_finish():1746] finishing run cares/7Sees-Grid-Search/10cpho2p
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_run.py:_atexit_cleanup():1949] got exitcode: 0
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_run.py:_restore():1932] restore
+2023-08-10 12:53:59,671 INFO    MainThread:3655 [wandb_run.py:_restore():1938] restore done

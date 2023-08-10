@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 247, in <module>
+    for name, para in model.multistream.named_parameters():
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'Sees7' object has no attribute 'multistream'

@@ -1,0 +1,407 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 10.207
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 10.271
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 8.5771
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 11.292
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 9.1709
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 12.184
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 11.338
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 12.469
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 9.936
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 9.4994
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 8.3387
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 11.358
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 10.144
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 11.442
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 11.381
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 11.06
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 12.197
+Epoch [1][90/1780], lr: 0.00000e+00, loss: 8.5
+Epoch [1][95/1780], lr: 0.00000e+00, loss: 9.7433
+Epoch [1][100/1780], lr: 0.00000e+00, loss: 10.956
+Epoch [1][105/1780], lr: 0.00000e+00, loss: 10.421
+Epoch [1][110/1780], lr: 0.00000e+00, loss: 9.8408
+Epoch [1][115/1780], lr: 0.00000e+00, loss: 8.5159
+Epoch [1][120/1780], lr: 0.00000e+00, loss: 9.6551
+Epoch [1][125/1780], lr: 0.00000e+00, loss: 7.3994
+Epoch [1][130/1780], lr: 0.00000e+00, loss: 11.432
+Epoch [1][135/1780], lr: 0.00000e+00, loss: 8.2323
+Epoch [1][140/1780], lr: 0.00000e+00, loss: 13.055
+Epoch [1][145/1780], lr: 0.00000e+00, loss: 9.2041
+Epoch [1][150/1780], lr: 0.00000e+00, loss: 12.203
+Epoch [1][155/1780], lr: 0.00000e+00, loss: 9.5636
+Epoch [1][160/1780], lr: 0.00000e+00, loss: 12.798
+Epoch [1][165/1780], lr: 0.00000e+00, loss: 11.685
+Epoch [1][170/1780], lr: 0.00000e+00, loss: 13.7
+Epoch [1][175/1780], lr: 0.00000e+00, loss: 10.014
+Epoch [1][180/1780], lr: 0.00000e+00, loss: 9.9447
+Epoch [1][185/1780], lr: 0.00000e+00, loss: 10.615
+Epoch [1][190/1780], lr: 0.00000e+00, loss: 8.9129
+Epoch [1][195/1780], lr: 0.00000e+00, loss: 10.536
+Epoch [1][200/1780], lr: 0.00000e+00, loss: 13.266
+Epoch [1][205/1780], lr: 0.00000e+00, loss: 17.574
+Epoch [1][210/1780], lr: 0.00000e+00, loss: 11.439
+Epoch [1][215/1780], lr: 0.00000e+00, loss: 9.388
+Epoch [1][220/1780], lr: 0.00000e+00, loss: 9.1494
+Epoch [1][225/1780], lr: 0.00000e+00, loss: 13.146
+Epoch [1][230/1780], lr: 0.00000e+00, loss: 14.371
+Epoch [1][235/1780], lr: 0.00000e+00, loss: 11.742
+Epoch [1][240/1780], lr: 0.00000e+00, loss: 12.093
+Epoch [1][245/1780], lr: 0.00000e+00, loss: 12.114
+Epoch [1][250/1780], lr: 0.00000e+00, loss: 11.203
+Epoch [1][255/1780], lr: 0.00000e+00, loss: 10.808
+Epoch [1][260/1780], lr: 0.00000e+00, loss: 9.4189
+Epoch [1][265/1780], lr: 0.00000e+00, loss: 9.0493
+Epoch [1][270/1780], lr: 0.00000e+00, loss: 10.774
+Epoch [1][275/1780], lr: 0.00000e+00, loss: 9.4216
+Epoch [1][280/1780], lr: 0.00000e+00, loss: 9.5808
+Epoch [1][285/1780], lr: 0.00000e+00, loss: 10.072
+Epoch [1][290/1780], lr: 0.00000e+00, loss: 11.339
+Epoch [1][295/1780], lr: 0.00000e+00, loss: 9.5105
+Epoch [1][300/1780], lr: 0.00000e+00, loss: 11.883
+Epoch [1][305/1780], lr: 0.00000e+00, loss: 10.858
+Epoch [1][310/1780], lr: 0.00000e+00, loss: 10.466
+Epoch [1][315/1780], lr: 0.00000e+00, loss: 9.146
+Epoch [1][320/1780], lr: 0.00000e+00, loss: 11.092
+Epoch [1][325/1780], lr: 0.00000e+00, loss: 13.131
+Epoch [1][330/1780], lr: 0.00000e+00, loss: 9.5866
+Epoch [1][335/1780], lr: 0.00000e+00, loss: 11.643
+Epoch [1][340/1780], lr: 0.00000e+00, loss: 12.311
+Epoch [1][345/1780], lr: 0.00000e+00, loss: 13.759
+Epoch [1][350/1780], lr: 0.00000e+00, loss: 11.299
+Epoch [1][355/1780], lr: 0.00000e+00, loss: 10.229
+Epoch [1][360/1780], lr: 0.00000e+00, loss: 10.624
+Epoch [1][365/1780], lr: 0.00000e+00, loss: 11.416
+Epoch [1][370/1780], lr: 0.00000e+00, loss: 12.864
+Epoch [1][375/1780], lr: 0.00000e+00, loss: 7.0328
+Epoch [1][380/1780], lr: 0.00000e+00, loss: 8.574
+Epoch [1][385/1780], lr: 0.00000e+00, loss: 13.294
+Epoch [1][390/1780], lr: 0.00000e+00, loss: 10.902
+Epoch [1][395/1780], lr: 0.00000e+00, loss: 12.086
+Epoch [1][400/1780], lr: 0.00000e+00, loss: 8.8236
+Epoch [1][405/1780], lr: 0.00000e+00, loss: 13.495
+Epoch [1][410/1780], lr: 0.00000e+00, loss: 9.4723
+Epoch [1][415/1780], lr: 0.00000e+00, loss: 12.139
+Epoch [1][420/1780], lr: 0.00000e+00, loss: 11.012
+Epoch [1][425/1780], lr: 0.00000e+00, loss: 10.557
+Epoch [1][430/1780], lr: 0.00000e+00, loss: 12.003
+Epoch [1][435/1780], lr: 0.00000e+00, loss: 14.611
+Epoch [1][440/1780], lr: 0.00000e+00, loss: 7.0982
+Epoch [1][445/1780], lr: 0.00000e+00, loss: 10.607
+Epoch [1][450/1780], lr: 0.00000e+00, loss: 11.652
+Epoch [1][455/1780], lr: 0.00000e+00, loss: 11.18
+Epoch [1][460/1780], lr: 0.00000e+00, loss: 8.8756
+Epoch [1][465/1780], lr: 0.00000e+00, loss: 11.082
+Epoch [1][470/1780], lr: 0.00000e+00, loss: 11.211
+Epoch [1][475/1780], lr: 0.00000e+00, loss: 12.059
+Epoch [1][480/1780], lr: 0.00000e+00, loss: 13.026
+Epoch [1][485/1780], lr: 0.00000e+00, loss: 11.706
+Epoch [1][490/1780], lr: 0.00000e+00, loss: 8.3798
+Epoch [1][495/1780], lr: 0.00000e+00, loss: 12.458
+Epoch [1][500/1780], lr: 0.00000e+00, loss: 12.863
+Epoch [1][505/1780], lr: 0.00000e+00, loss: 10.168
+Epoch [1][510/1780], lr: 0.00000e+00, loss: 12.94
+Epoch [1][515/1780], lr: 0.00000e+00, loss: 9.9394
+Epoch [1][520/1780], lr: 0.00000e+00, loss: 10.512
+Epoch [1][525/1780], lr: 0.00000e+00, loss: 10.427
+Epoch [1][530/1780], lr: 0.00000e+00, loss: 9.425
+Epoch [1][535/1780], lr: 0.00000e+00, loss: 7.7073
+Epoch [1][540/1780], lr: 0.00000e+00, loss: 11.49
+Epoch [1][545/1780], lr: 0.00000e+00, loss: 8.3817
+Epoch [1][550/1780], lr: 0.00000e+00, loss: 10.929
+Epoch [1][555/1780], lr: 0.00000e+00, loss: 10.452
+Epoch [1][560/1780], lr: 0.00000e+00, loss: 11.348
+Epoch [1][565/1780], lr: 0.00000e+00, loss: 10.005
+Epoch [1][570/1780], lr: 0.00000e+00, loss: 11.414
+Epoch [1][575/1780], lr: 0.00000e+00, loss: 8.1867
+Epoch [1][580/1780], lr: 0.00000e+00, loss: 12.7
+Epoch [1][585/1780], lr: 0.00000e+00, loss: 10.232
+Epoch [1][590/1780], lr: 0.00000e+00, loss: 11.083
+Epoch [1][595/1780], lr: 0.00000e+00, loss: 12.411
+Epoch [1][600/1780], lr: 0.00000e+00, loss: 12.412
+Epoch [1][605/1780], lr: 0.00000e+00, loss: 11.542
+Epoch [1][610/1780], lr: 0.00000e+00, loss: 11.205
+Epoch [1][615/1780], lr: 0.00000e+00, loss: 10.211
+Epoch [1][620/1780], lr: 0.00000e+00, loss: 10.209
+Epoch [1][625/1780], lr: 0.00000e+00, loss: 14.562
+Epoch [1][630/1780], lr: 0.00000e+00, loss: 8.4925
+Epoch [1][635/1780], lr: 0.00000e+00, loss: 10.393
+Epoch [1][640/1780], lr: 0.00000e+00, loss: 10.883
+Epoch [1][645/1780], lr: 0.00000e+00, loss: 12.226
+Epoch [1][650/1780], lr: 0.00000e+00, loss: 8.7325
+Epoch [1][655/1780], lr: 0.00000e+00, loss: 13.637
+Epoch [1][660/1780], lr: 0.00000e+00, loss: 11.406
+Epoch [1][665/1780], lr: 0.00000e+00, loss: 12.054
+Epoch [1][670/1780], lr: 0.00000e+00, loss: 10.935
+Epoch [1][675/1780], lr: 0.00000e+00, loss: 9.4953
+Epoch [1][680/1780], lr: 0.00000e+00, loss: 11.849
+Epoch [1][685/1780], lr: 0.00000e+00, loss: 10.837
+Epoch [1][690/1780], lr: 0.00000e+00, loss: 12.195
+Epoch [1][695/1780], lr: 0.00000e+00, loss: 12.498
+Epoch [1][700/1780], lr: 0.00000e+00, loss: 10.108
+Epoch [1][705/1780], lr: 0.00000e+00, loss: 11.236
+Epoch [1][710/1780], lr: 0.00000e+00, loss: 10.229
+Epoch [1][715/1780], lr: 0.00000e+00, loss: 11.892
+Epoch [1][720/1780], lr: 0.00000e+00, loss: 12.47
+Epoch [1][725/1780], lr: 0.00000e+00, loss: 10.849
+Epoch [1][730/1780], lr: 0.00000e+00, loss: 9.1026
+Epoch [1][735/1780], lr: 0.00000e+00, loss: 14.015
+Epoch [1][740/1780], lr: 0.00000e+00, loss: 9.8622
+Epoch [1][745/1780], lr: 0.00000e+00, loss: 9.3435
+Epoch [1][750/1780], lr: 0.00000e+00, loss: 9.4957
+Epoch [1][755/1780], lr: 0.00000e+00, loss: 10.901
+Epoch [1][760/1780], lr: 0.00000e+00, loss: 10.496
+Epoch [1][765/1780], lr: 0.00000e+00, loss: 8.6344
+Epoch [1][770/1780], lr: 0.00000e+00, loss: 11.458
+Epoch [1][775/1780], lr: 0.00000e+00, loss: 10.923
+Epoch [1][780/1780], lr: 0.00000e+00, loss: 11.095
+Epoch [1][785/1780], lr: 0.00000e+00, loss: 12.736
+Epoch [1][790/1780], lr: 0.00000e+00, loss: 11.615
+Epoch [1][795/1780], lr: 0.00000e+00, loss: 9.9604
+Epoch [1][800/1780], lr: 0.00000e+00, loss: 9.7576
+Epoch [1][805/1780], lr: 0.00000e+00, loss: 11.661
+Epoch [1][810/1780], lr: 0.00000e+00, loss: 9.8125
+Epoch [1][815/1780], lr: 0.00000e+00, loss: 12.84
+Epoch [1][820/1780], lr: 0.00000e+00, loss: 10.738
+Epoch [1][825/1780], lr: 0.00000e+00, loss: 10.238
+Epoch [1][830/1780], lr: 0.00000e+00, loss: 14.918
+Epoch [1][835/1780], lr: 0.00000e+00, loss: 12.583
+Epoch [1][840/1780], lr: 0.00000e+00, loss: 9.5847
+Epoch [1][845/1780], lr: 0.00000e+00, loss: 10.752
+Epoch [1][850/1780], lr: 0.00000e+00, loss: 11.165
+Epoch [1][855/1780], lr: 0.00000e+00, loss: 11.928
+Epoch [1][860/1780], lr: 0.00000e+00, loss: 10.544
+Epoch [1][865/1780], lr: 0.00000e+00, loss: 11.755
+Epoch [1][870/1780], lr: 0.00000e+00, loss: 12.582
+Epoch [1][875/1780], lr: 0.00000e+00, loss: 8.8193
+Epoch [1][880/1780], lr: 0.00000e+00, loss: 8.6302
+Epoch [1][885/1780], lr: 0.00000e+00, loss: 9.7292
+Epoch [1][890/1780], lr: 0.00000e+00, loss: 10.363
+Epoch [1][895/1780], lr: 0.00000e+00, loss: 11.791
+Epoch [1][900/1780], lr: 0.00000e+00, loss: 11.055
+Epoch [1][905/1780], lr: 0.00000e+00, loss: 13.486
+Epoch [1][910/1780], lr: 0.00000e+00, loss: 8.8709
+Epoch [1][915/1780], lr: 0.00000e+00, loss: 13.183
+Epoch [1][920/1780], lr: 0.00000e+00, loss: 14.387
+Epoch [1][925/1780], lr: 0.00000e+00, loss: 16.152
+Epoch [1][930/1780], lr: 0.00000e+00, loss: 8.9298
+Epoch [1][935/1780], lr: 0.00000e+00, loss: 9.391
+Epoch [1][940/1780], lr: 0.00000e+00, loss: 9.3442
+Epoch [1][945/1780], lr: 0.00000e+00, loss: 10.712
+Epoch [1][950/1780], lr: 0.00000e+00, loss: 15.168
+Epoch [1][955/1780], lr: 0.00000e+00, loss: 8.8583
+Epoch [1][960/1780], lr: 0.00000e+00, loss: 11.211
+Epoch [1][965/1780], lr: 0.00000e+00, loss: 11.477
+Epoch [1][970/1780], lr: 0.00000e+00, loss: 12.128
+Epoch [1][975/1780], lr: 0.00000e+00, loss: 10.455
+Epoch [1][980/1780], lr: 0.00000e+00, loss: 8.8939
+Epoch [1][985/1780], lr: 0.00000e+00, loss: 12.318
+Epoch [1][990/1780], lr: 0.00000e+00, loss: 12.165
+Epoch [1][995/1780], lr: 0.00000e+00, loss: 8.3976
+Epoch [1][1000/1780], lr: 0.00000e+00, loss: 8.5668
+Epoch [1][1005/1780], lr: 0.00000e+00, loss: 11.783
+Epoch [1][1010/1780], lr: 0.00000e+00, loss: 11.942
+Epoch [1][1015/1780], lr: 0.00000e+00, loss: 10.482
+Epoch [1][1020/1780], lr: 0.00000e+00, loss: 9.5835
+Epoch [1][1025/1780], lr: 0.00000e+00, loss: 10.46
+Epoch [1][1030/1780], lr: 0.00000e+00, loss: 12.498
+Epoch [1][1035/1780], lr: 0.00000e+00, loss: 11.254
+Epoch [1][1040/1780], lr: 0.00000e+00, loss: 10.836
+Epoch [1][1045/1780], lr: 0.00000e+00, loss: 14.525
+Epoch [1][1050/1780], lr: 0.00000e+00, loss: 15.236
+Epoch [1][1055/1780], lr: 0.00000e+00, loss: 8.7703
+Epoch [1][1060/1780], lr: 0.00000e+00, loss: 8.1649
+Epoch [1][1065/1780], lr: 0.00000e+00, loss: 12.635
+Epoch [1][1070/1780], lr: 0.00000e+00, loss: 10.02
+Epoch [1][1075/1780], lr: 0.00000e+00, loss: 12.621
+Epoch [1][1080/1780], lr: 0.00000e+00, loss: 11.834
+Epoch [1][1085/1780], lr: 0.00000e+00, loss: 10.983
+Epoch [1][1090/1780], lr: 0.00000e+00, loss: 13.507
+Epoch [1][1095/1780], lr: 0.00000e+00, loss: 11.656
+Epoch [1][1100/1780], lr: 0.00000e+00, loss: 10.498
+Epoch [1][1105/1780], lr: 0.00000e+00, loss: 9.2685
+Epoch [1][1110/1780], lr: 0.00000e+00, loss: 12.959
+Epoch [1][1115/1780], lr: 0.00000e+00, loss: 11.854
+Epoch [1][1120/1780], lr: 0.00000e+00, loss: 13.313
+Epoch [1][1125/1780], lr: 0.00000e+00, loss: 11.574
+Epoch [1][1130/1780], lr: 0.00000e+00, loss: 15.775
+Epoch [1][1135/1780], lr: 0.00000e+00, loss: 10.913
+Epoch [1][1140/1780], lr: 0.00000e+00, loss: 11.2
+Epoch [1][1145/1780], lr: 0.00000e+00, loss: 12.03
+Epoch [1][1150/1780], lr: 0.00000e+00, loss: 11.898
+Epoch [1][1155/1780], lr: 0.00000e+00, loss: 15.065
+Epoch [1][1160/1780], lr: 0.00000e+00, loss: 10.418
+Epoch [1][1165/1780], lr: 0.00000e+00, loss: 8.901
+Epoch [1][1170/1780], lr: 0.00000e+00, loss: 8.1823
+Epoch [1][1175/1780], lr: 0.00000e+00, loss: 12.876
+Epoch [1][1180/1780], lr: 0.00000e+00, loss: 10.07
+Epoch [1][1185/1780], lr: 0.00000e+00, loss: 8.9589
+Epoch [1][1190/1780], lr: 0.00000e+00, loss: 11.473
+Epoch [1][1195/1780], lr: 0.00000e+00, loss: 10.12
+Epoch [1][1200/1780], lr: 0.00000e+00, loss: 8.6409
+Epoch [1][1205/1780], lr: 0.00000e+00, loss: 10.423
+Epoch [1][1210/1780], lr: 0.00000e+00, loss: 10.227
+Epoch [1][1215/1780], lr: 0.00000e+00, loss: 13.913
+Epoch [1][1220/1780], lr: 0.00000e+00, loss: 11.72
+Epoch [1][1225/1780], lr: 0.00000e+00, loss: 8.0032
+Epoch [1][1230/1780], lr: 0.00000e+00, loss: 9.7162
+Epoch [1][1235/1780], lr: 0.00000e+00, loss: 12.743
+Epoch [1][1240/1780], lr: 0.00000e+00, loss: 9.3283
+Epoch [1][1245/1780], lr: 0.00000e+00, loss: 11.115
+Epoch [1][1250/1780], lr: 0.00000e+00, loss: 9.4207
+Epoch [1][1255/1780], lr: 0.00000e+00, loss: 10.709
+Epoch [1][1260/1780], lr: 0.00000e+00, loss: 7.4148
+Epoch [1][1265/1780], lr: 0.00000e+00, loss: 12.042
+Epoch [1][1270/1780], lr: 0.00000e+00, loss: 11.129
+Epoch [1][1275/1780], lr: 0.00000e+00, loss: 10.364
+Epoch [1][1280/1780], lr: 0.00000e+00, loss: 10.709
+Epoch [1][1285/1780], lr: 0.00000e+00, loss: 15.285
+Epoch [1][1290/1780], lr: 0.00000e+00, loss: 11.682
+Epoch [1][1295/1780], lr: 0.00000e+00, loss: 12.347
+Epoch [1][1300/1780], lr: 0.00000e+00, loss: 10.378
+Epoch [1][1305/1780], lr: 0.00000e+00, loss: 13.275
+Epoch [1][1310/1780], lr: 0.00000e+00, loss: 14.382
+Epoch [1][1315/1780], lr: 0.00000e+00, loss: 8.5288
+Epoch [1][1320/1780], lr: 0.00000e+00, loss: 12.754
+Epoch [1][1325/1780], lr: 0.00000e+00, loss: 12.063
+Epoch [1][1330/1780], lr: 0.00000e+00, loss: 12.688
+Epoch [1][1335/1780], lr: 0.00000e+00, loss: 9.4584
+Epoch [1][1340/1780], lr: 0.00000e+00, loss: 9.9691
+Epoch [1][1345/1780], lr: 0.00000e+00, loss: 12.159
+Epoch [1][1350/1780], lr: 0.00000e+00, loss: 10.769
+Epoch [1][1355/1780], lr: 0.00000e+00, loss: 11.57
+Epoch [1][1360/1780], lr: 0.00000e+00, loss: 14.036
+Epoch [1][1365/1780], lr: 0.00000e+00, loss: 11.341
+Epoch [1][1370/1780], lr: 0.00000e+00, loss: 10.1
+Epoch [1][1375/1780], lr: 0.00000e+00, loss: 11.84
+Epoch [1][1380/1780], lr: 0.00000e+00, loss: 11.155
+Epoch [1][1385/1780], lr: 0.00000e+00, loss: 10.447
+Epoch [1][1390/1780], lr: 0.00000e+00, loss: 14.524
+Epoch [1][1395/1780], lr: 0.00000e+00, loss: 11.196
+Epoch [1][1400/1780], lr: 0.00000e+00, loss: 11.557
+Epoch [1][1405/1780], lr: 0.00000e+00, loss: 8.7141
+Epoch [1][1410/1780], lr: 0.00000e+00, loss: 12.588
+Epoch [1][1415/1780], lr: 0.00000e+00, loss: 11.745
+Epoch [1][1420/1780], lr: 0.00000e+00, loss: 10.27
+Epoch [1][1425/1780], lr: 0.00000e+00, loss: 10.103
+Epoch [1][1430/1780], lr: 0.00000e+00, loss: 10.307
+Epoch [1][1435/1780], lr: 0.00000e+00, loss: 13.027
+Epoch [1][1440/1780], lr: 0.00000e+00, loss: 15.137
+Epoch [1][1445/1780], lr: 0.00000e+00, loss: 8.863
+Epoch [1][1450/1780], lr: 0.00000e+00, loss: 10.774
+Epoch [1][1455/1780], lr: 0.00000e+00, loss: 10.774
+Epoch [1][1460/1780], lr: 0.00000e+00, loss: 8.4802
+Epoch [1][1465/1780], lr: 0.00000e+00, loss: 13.408
+Epoch [1][1470/1780], lr: 0.00000e+00, loss: 10.918
+Epoch [1][1475/1780], lr: 0.00000e+00, loss: 12.333
+Epoch [1][1480/1780], lr: 0.00000e+00, loss: 9.4298
+Epoch [1][1485/1780], lr: 0.00000e+00, loss: 9.8783
+Epoch [1][1490/1780], lr: 0.00000e+00, loss: 8.1182
+Epoch [1][1495/1780], lr: 0.00000e+00, loss: 12.189
+Epoch [1][1500/1780], lr: 0.00000e+00, loss: 12.775
+Epoch [1][1505/1780], lr: 0.00000e+00, loss: 12.727
+Epoch [1][1510/1780], lr: 0.00000e+00, loss: 9.3015
+Epoch [1][1515/1780], lr: 0.00000e+00, loss: 11.534
+Epoch [1][1520/1780], lr: 0.00000e+00, loss: 9.9629
+Epoch [1][1525/1780], lr: 0.00000e+00, loss: 11.737
+Epoch [1][1530/1780], lr: 0.00000e+00, loss: 11.553
+Epoch [1][1535/1780], lr: 0.00000e+00, loss: 11.257
+Epoch [1][1540/1780], lr: 0.00000e+00, loss: 12.52
+Epoch [1][1545/1780], lr: 0.00000e+00, loss: 18.973
+Epoch [1][1550/1780], lr: 0.00000e+00, loss: 8.5515
+Epoch [1][1555/1780], lr: 0.00000e+00, loss: 8.6797
+Epoch [1][1560/1780], lr: 0.00000e+00, loss: 11.846
+Epoch [1][1565/1780], lr: 0.00000e+00, loss: 9.0096
+Epoch [1][1570/1780], lr: 0.00000e+00, loss: 13.491
+Epoch [1][1575/1780], lr: 0.00000e+00, loss: 9.6058
+Epoch [1][1580/1780], lr: 0.00000e+00, loss: 13.477
+Epoch [1][1585/1780], lr: 0.00000e+00, loss: 11.819
+Epoch [1][1590/1780], lr: 0.00000e+00, loss: 11.12
+Epoch [1][1595/1780], lr: 0.00000e+00, loss: 9.5801
+Epoch [1][1600/1780], lr: 0.00000e+00, loss: 13.262
+Epoch [1][1605/1780], lr: 0.00000e+00, loss: 14.907
+Epoch [1][1610/1780], lr: 0.00000e+00, loss: 12.896
+Epoch [1][1615/1780], lr: 0.00000e+00, loss: 10.928
+Epoch [1][1620/1780], lr: 0.00000e+00, loss: 7.196
+Epoch [1][1625/1780], lr: 0.00000e+00, loss: 7.2791
+Epoch [1][1630/1780], lr: 0.00000e+00, loss: 10.442
+Epoch [1][1635/1780], lr: 0.00000e+00, loss: 9.2565
+Epoch [1][1640/1780], lr: 0.00000e+00, loss: 11.149
+Epoch [1][1645/1780], lr: 0.00000e+00, loss: 12.244
+Epoch [1][1650/1780], lr: 0.00000e+00, loss: 9.952
+Epoch [1][1655/1780], lr: 0.00000e+00, loss: 10.199
+Epoch [1][1660/1780], lr: 0.00000e+00, loss: 10.079
+Epoch [1][1665/1780], lr: 0.00000e+00, loss: 12.676
+Epoch [1][1670/1780], lr: 0.00000e+00, loss: 12.268
+Epoch [1][1675/1780], lr: 0.00000e+00, loss: 11.638
+Epoch [1][1680/1780], lr: 0.00000e+00, loss: 10.668
+Epoch [1][1685/1780], lr: 0.00000e+00, loss: 10.316
+Epoch [1][1690/1780], lr: 0.00000e+00, loss: 9.4199
+Epoch [1][1695/1780], lr: 0.00000e+00, loss: 9.6076
+Epoch [1][1700/1780], lr: 0.00000e+00, loss: 8.0201
+Epoch [1][1705/1780], lr: 0.00000e+00, loss: 13.092
+Epoch [1][1710/1780], lr: 0.00000e+00, loss: 10.063
+Epoch [1][1715/1780], lr: 0.00000e+00, loss: 10.941
+Epoch [1][1720/1780], lr: 0.00000e+00, loss: 9.3578
+Epoch [1][1725/1780], lr: 0.00000e+00, loss: 11.267
+Epoch [1][1730/1780], lr: 0.00000e+00, loss: 12.105
+Epoch [1][1735/1780], lr: 0.00000e+00, loss: 9.5392
+Epoch [1][1740/1780], lr: 0.00000e+00, loss: 13.287
+Epoch [1][1745/1780], lr: 0.00000e+00, loss: 12.684
+Epoch [1][1750/1780], lr: 0.00000e+00, loss: 12.168
+Epoch [1][1755/1780], lr: 0.00000e+00, loss: 10.494
+Epoch [1][1760/1780], lr: 0.00000e+00, loss: 9.1599
+Epoch [1][1765/1780], lr: 0.00000e+00, loss: 9.2844
+Epoch [1][1770/1780], lr: 0.00000e+00, loss: 10.251
+Epoch [1][1775/1780], lr: 0.00000e+00, loss: 11.23
+Epoch [1][1780/1780], lr: 0.00000e+00, loss: 10.67
+Evaluating top_k_accuracy...
+top1_acc: 0.0, top5_acc: 0.01163, train_loss: 10.67
+Saving checkpoint at 1 epochs...
+Epoch [2][5/1780], lr: 7.81250e-06, loss: 10.086
+Epoch [2][10/1780], lr: 7.81250e-06, loss: 10.301
+Epoch [2][15/1780], lr: 7.81250e-06, loss: 10.185
+Epoch [2][20/1780], lr: 7.81250e-06, loss: 10.11
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 38, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 190, in forward
+    stream['depth'] = self.depth_stream(rgb=depth)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 870, in forward
+    x = res_layer(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 332, in forward
+    out = _inner_forward(x)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 321, in _inner_forward
+    out = self.conv3(out)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 207, in forward
+    x = self.conv(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/wrappers.py", line 80, in forward
+    return super().forward(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 592, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 587, in _conv_forward
+    return F.conv3d(
+KeyboardInterrupt

@@ -1,0 +1,26 @@
+2023-07-26 15:23:35,291 INFO    MainThread:3961 [wandb_setup.py:_flush():68] Configure stats pid to 3961
+2023-07-26 15:23:35,292 INFO    MainThread:3961 [wandb_setup.py:_flush():68] Loading settings from /home/myuser1/.config/wandb/settings
+2023-07-26 15:23:35,292 INFO    MainThread:3961 [wandb_setup.py:_flush():68] Loading settings from /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/settings
+2023-07-26 15:23:35,292 INFO    MainThread:3961 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-07-26 15:23:35,292 INFO    MainThread:3961 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'experiments/seven_sees/train_one_neuron_head.py', 'program': 'train_one_neuron_head.py'}
+2023-07-26 15:23:35,292 INFO    MainThread:3961 [wandb_init.py:_log_setup():476] Logging user logs to /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230726_152335-l2oycf35/logs/debug.log
+2023-07-26 15:23:35,293 INFO    MainThread:3961 [wandb_init.py:_log_setup():477] Logging internal logs to /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230726_152335-l2oycf35/logs/debug-internal.log
+2023-07-26 15:23:35,293 INFO    MainThread:3961 [wandb_init.py:init():516] calling init triggers
+2023-07-26 15:23:35,293 INFO    MainThread:3961 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {}
+2023-07-26 15:23:35,293 INFO    MainThread:3961 [wandb_init.py:init():569] starting backend
+2023-07-26 15:23:35,293 INFO    MainThread:3961 [wandb_init.py:init():573] setting up manager
+2023-07-26 15:23:35,304 INFO    MainThread:3961 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-07-26 15:23:35,315 INFO    MainThread:3961 [wandb_init.py:init():580] backend started and connected
+2023-07-26 15:23:35,327 INFO    MainThread:3961 [wandb_init.py:init():658] updated telemetry
+2023-07-26 15:23:35,360 INFO    MainThread:3961 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-07-26 15:23:36,132 INFO    MainThread:3961 [wandb_run.py:_on_init():2000] communicating current version
+2023-07-26 15:23:36,155 INFO    MainThread:3961 [wandb_run.py:_on_init():2004] got version response upgrade_message: "wandb version 0.15.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-07-26 15:23:36,155 INFO    MainThread:3961 [wandb_init.py:init():728] starting run threads in backend
+2023-07-26 15:23:37,979 INFO    MainThread:3961 [wandb_run.py:_console_start():1980] atexit reg
+2023-07-26 15:23:37,979 INFO    MainThread:3961 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2023-07-26 15:23:37,980 INFO    MainThread:3961 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2023-07-26 15:23:37,980 INFO    MainThread:3961 [wandb_run.py:_redirect():1925] Redirects installed.
+2023-07-26 15:23:37,980 INFO    MainThread:3961 [wandb_init.py:init():765] run started, returning control to user process
+2023-07-26 15:41:46,439 WARNING MsgRouterThr:3961 [router.py:message_loop():77] message_loop has been closed

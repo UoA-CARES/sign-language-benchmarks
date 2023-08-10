@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 148, in <module>
+    multistream = MultiStreamBackbone(rgb_checkpoint='./rgb.pth',
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 41, in __init__
+    self.rgb_stream.load_state_dict(torch.load(rgb_checkpoint))
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 712, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 1046, in _load
+    result = unpickler.load()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 1016, in persistent_load
+    load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 1001, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 176, in default_restore_location
+    result = fn(storage, location)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/serialization.py", line 158, in _cuda_deserialize
+    return obj.cuda(device)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/_utils.py", line 79, in _cuda
+    return new_type(self.size()).copy_(self, non_blocking)
+KeyboardInterrupt

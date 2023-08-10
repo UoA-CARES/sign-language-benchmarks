@@ -1,0 +1,615 @@
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 6.848
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 6.7412
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 6.9747
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 6.6196
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 6.7333
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 6.7721
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 6.5489
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 6.77
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 7.0441
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 6.5761
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 7.0438
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 6.5523
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 6.9794
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 6.7402
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([1, 400])
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 249, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 76, in train_one_epoch
+    torch.nn.utils.clip_grad_norm_(
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/utils/clip_grad.py", line 33, in clip_grad_norm_
+    grads = [p.grad for p in parameters if p.grad is not None]
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/utils/clip_grad.py", line 33, in <listcomp>
+    grads = [p.grad for p in parameters if p.grad is not None]
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1710, in parameters
+    for name, param in self.named_parameters(recurse=recurse):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1737, in named_parameters
+    for elem in gen:
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1679, in _named_members
+    for module_prefix, module in modules:
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1889, in named_modules
+    for m in module.named_modules(memo, submodule_prefix, remove_duplicate):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1889, in named_modules
+    for m in module.named_modules(memo, submodule_prefix, remove_duplicate):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1889, in named_modules
+    for m in module.named_modules(memo, submodule_prefix, remove_duplicate):
+  [Previous line repeated 2 more times]
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1885, in named_modules
+    for name, module in self._modules.items():
+KeyboardInterrupt

@@ -1,0 +1,8 @@
+
+17
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 224, in <module>
+    train_dataset.visualise()
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 275, in visualise
+    results = self.transforms(results)
+TypeError: 'NoneType' object is not callable

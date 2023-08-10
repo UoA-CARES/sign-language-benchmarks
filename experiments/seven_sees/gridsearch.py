@@ -5,10 +5,6 @@ if __name__ == '__main__':
     skeleton_weights = [0.8, 0.7, 0.6, 0.5, 0.4, 0.3]
     hand_weights = [0.8, 0.7, 0.6, 0.5, 0.4, 0.3]
 
-    trainer = Trainer(
-        epochs=2,
-        batch_size=8)
-
     for rgb_weight in rgb_weights:
         for skeleton_weight in skeleton_weights:
             for hand_weight in hand_weights:
@@ -24,8 +20,12 @@ if __name__ == '__main__':
                                     'left_hand': hand_weight,
                                     'right_hand': hand_weight}
                 
-                trainer.set_weights(modality_weights)
-    
+                trainer = Trainer(
+                    modality_weights,
+                    epochs=25,
+                    batch_size=8,
+                    num_workers=4) # Delete this
+                
                 trainer.train() # Train the model
 
-                print(trainer.validate())
+                # print(trainer.validate())

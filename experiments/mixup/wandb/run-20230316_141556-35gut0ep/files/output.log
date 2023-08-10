@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 57, in forward
+    cls_score = torch.concat([cls_score, nonZeroModalities[i]])
+NameError: name 'torch' is not defined

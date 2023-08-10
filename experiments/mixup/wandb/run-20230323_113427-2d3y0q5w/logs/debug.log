@@ -1,0 +1,33 @@
+2023-03-23 11:34:27,386 INFO    MainThread:2378942 [wandb_setup.py:_flush():68] Configure stats pid to 2378942
+2023-03-23 11:34:27,386 INFO    MainThread:2378942 [wandb_setup.py:_flush():68] Loading settings from /home/myuser1/.config/wandb/settings
+2023-03-23 11:34:27,386 INFO    MainThread:2378942 [wandb_setup.py:_flush():68] Loading settings from /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/settings
+2023-03-23 11:34:27,387 INFO    MainThread:2378942 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-23 11:34:27,387 INFO    MainThread:2378942 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'experiments/seven_sees/train_one_neuron_head.py', 'program': 'train_one_neuron_head.py'}
+2023-03-23 11:34:27,387 INFO    MainThread:2378942 [wandb_init.py:_log_setup():476] Logging user logs to /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230323_113427-2d3y0q5w/logs/debug.log
+2023-03-23 11:34:27,387 INFO    MainThread:2378942 [wandb_init.py:_log_setup():477] Logging internal logs to /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230323_113427-2d3y0q5w/logs/debug-internal.log
+2023-03-23 11:34:27,387 INFO    MainThread:2378942 [wandb_init.py:init():516] calling init triggers
+2023-03-23 11:34:27,388 INFO    MainThread:2378942 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {}
+2023-03-23 11:34:27,388 INFO    MainThread:2378942 [wandb_init.py:init():569] starting backend
+2023-03-23 11:34:27,388 INFO    MainThread:2378942 [wandb_init.py:init():573] setting up manager
+2023-03-23 11:34:27,399 INFO    MainThread:2378942 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-03-23 11:34:27,410 INFO    MainThread:2378942 [wandb_init.py:init():580] backend started and connected
+2023-03-23 11:34:27,420 INFO    MainThread:2378942 [wandb_init.py:init():658] updated telemetry
+2023-03-23 11:34:27,454 INFO    MainThread:2378942 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-03-23 11:34:27,508 WARNING MainThread:2378942 [wandb_init.py:init():1099] interrupted
+Traceback (most recent call last):
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1078, in init
+    run = wi.init()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 697, in init
+    result = handle.wait(
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/wandb/sdk/lib/mailbox.py", line 261, in wait
+    found = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/wandb/sdk/lib/mailbox.py", line 118, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/wandb/sdk/lib/mailbox.py", line 114, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

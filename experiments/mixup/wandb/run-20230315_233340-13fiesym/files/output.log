@@ -1,0 +1,26 @@
+rgb
+flow
+depth
+skeleton
+face
+left_hand
+right_hand
+torch.Size([7, 400])
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 250, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 42, in forward
+    cls_score = self.head(stream)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/one_neuron_head.py", line 47, in forward
+    return self.fc_cls(x.permute(1,0)).permute(1,0)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (400x49 and 7x1)

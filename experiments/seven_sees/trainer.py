@@ -12,26 +12,23 @@ from mmcv_model.scheduler import GradualWarmupScheduler
 
 
 class Trainer():
-    def __init__(self, modality_weights=None, epochs=1, batch_size=1):
+    def __init__(self, modality_weights=None, epochs=1, batch_size=1, num_workers=4):
         self.modality_weights = modality_weights
         self.epochs = epochs
         self.batch_size = batch_size
         self.best_top_1 = 0
         self.best_top_5 = 0
         self.lowest_vloss = 1000.
+        self.num_workers = num_workers
 
         self.device = 'cuda'
 
-        if self.modality_weights is not None:
-            self.set_weights(self.modality_weights)
-
         # Build the dataloaders
-        os.chdir('../../')
         self.work_dir = 'work_dirs/sees7/'
         os.makedirs(self.work_dir, exist_ok=True)
 
-        self.train_dataset = MultiModalDataset(ann_file='data/wlasl/train_annotations.txt',
-                                        root_dir='data/wlasl/rawframes',
+        self.train_dataset = MultiModalDataset(ann_file='../../data/wlasl/train_annotations.txt',
+                                        root_dir='../../data/wlasl/rawframes',
                                         clip_len=32,
                                         resolution=224,
                                         modalities=('rgb',
@@ -49,8 +46,8 @@ class Trainer():
                                         num_clips=1
                                         )
 
-        self.test_dataset = MultiModalDataset(ann_file='data/wlasl/test_annotations.txt',
-                                        root_dir='data/wlasl/rawframes',
+        self.test_dataset = MultiModalDataset(ann_file='../../data/wlasl/test_annotations.txt',
+                                        root_dir='../../data/wlasl/rawframes',
                                         clip_len=32,
                                         resolution=224,
                                         modalities=('rgb',
@@ -71,13 +68,13 @@ class Trainer():
         self.train_loader = torch.utils.data.DataLoader(dataset=self.train_dataset,
                                                 batch_size=self.batch_size,
                                                 shuffle=True,
-                                                num_workers=4,
+                                                num_workers=self.num_workers,
                                                 pin_memory=True)
 
         self.test_loader = torch.utils.data.DataLoader(dataset=self.test_dataset,
                                                 batch_size=1,
                                                 shuffle=True,
-                                                num_workers=4,
+                                                num_workers=self.num_workers,
                                                 pin_memory=True)
 
         self.train_dataset.visualise(key = 'skeleton')
@@ -87,18 +84,16 @@ class Trainer():
         self.loss_fn = nn.CrossEntropyLoss()
 
         # os.chdir('experiments/seven_sees/')
-
-    def set_weights(self, modality_weights):
         self.modality_weights = modality_weights
 
         # Building the model
-        self.multistream = MultiStreamBackbone(rgb_checkpoint='experiments/seven_sees/rgb.pth',
-                                        flow_checkpoint='experiments/seven_sees/flow.pth',
-                                        depth_checkpoint='experiments/seven_sees/depth.pth',
-                                        skeleton_checkpoint='experiments/seven_sees/skeleton.pth',
-                                        face_checkpoint='experiments/seven_sees/face.pth',
-                                        left_hand_checkpoint='experiments/seven_sees/left_hand.pth',
-                                        right_hand_checkpoint='experiments/seven_sees/right_hand.pth'
+        self.multistream = MultiStreamBackbone(rgb_checkpoint='rgb.pth',
+                                        flow_checkpoint='flow.pth',
+                                        depth_checkpoint='depth.pth',
+                                        skeleton_checkpoint='skeleton.pth',
+                                        face_checkpoint='face.pth',
+                                        left_hand_checkpoint='left_hand.pth',
+                                        right_hand_checkpoint='right_hand.pth'
                                         )
 
 
@@ -123,6 +118,9 @@ class Trainer():
             self.optimizer, milestones=[34, 84], gamma=0.1)
         self.scheduler = GradualWarmupScheduler(
             self.optimizer, multiplier=1, total_epoch=16, after_scheduler=scheduler_steplr)
+        
+        wandb.init(reinit=True, entity="cares", project="7Sees-Grid-Search",
+        group="handsxpose", name=str(self.modality_weights))
 
     def top_k_accuracy(self, scores, labels, topk=(1, )):
         """Calculate top k accuracy score.
@@ -264,9 +262,6 @@ class Trainer():
         return (self.best_top_1, self.best_top_5, self.lowest_vloss)
 
     def train(self):
-        wandb.init(entity="cares", project="7Sees-Grid-Search",
-        group="hands-pose", name=str(self.modality_weights))
-
         self.model.train(False)
 
         for epoch in range(self.epochs):
@@ -300,14 +295,13 @@ class Trainer():
 
             # Adjust learning rate
             self.scheduler.step()
-        
+         
+
             # Track wandb
             wandb.log({'train/loss': avg_loss,
                     'train/learning_rate': learning_rate,
                     'val/top1_accuracy': top1_acc,
                     'val/top5_accuracy': top5_acc})
-            
-    wandb.finish()
 
             
 

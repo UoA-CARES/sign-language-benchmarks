@@ -1,0 +1,95 @@
+{
+    "os": "Linux-5.14.0-1058-oem-x86_64-with-glibc2.17",
+    "python": "3.8.15",
+    "heartbeatAt": "2023-03-16T00:35:35.147675",
+    "startedAt": "2023-03-16T00:35:34.188061",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train_one_neuron_head.py",
+    "codePath": "experiments/seven_sees/train_one_neuron_head.py",
+    "git": {
+        "remote": "https://github.com/UoA-CARES/sign-language-summer-research.git",
+        "commit": "5b55b4ff07fe5ca52799691de51f928defa4ba38"
+    },
+    "email": "sttaseen@gmail.com",
+    "root": "/home/myuser1/Desktop/sign-language-summer-research",
+    "host": "Precision-3640",
+    "username": "myuser1",
+    "executable": "/home/myuser1/miniconda3/envs/wlasl/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "cpu_freq": {
+        "current": 2996.7287,
+        "min": 800.0,
+        "max": 5200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 2800.0,
+            "min": 800.0,
+            "max": 5200.0
+        },
+        {
+            "current": 4767.287,
+            "min": 800.0,
+            "max": 5200.0
+        }
+    ],
+    "disk": {
+        "total": 937.3305015563965,
+        "used": 854.2385139465332
+    },
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080",
+            "memory_total": 10737418240
+        }
+    ],
+    "memory": {
+        "total": 31.07886505126953
+    }
+}

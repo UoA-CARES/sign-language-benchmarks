@@ -1,0 +1,28 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 11.306
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 9.5399
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 13.791
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 11.623
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 10.667
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 13.519
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 12.782
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 12.079
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 15.218
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 8.7508
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 252, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 43, in train_one_epoch
+    for i, results in enumerate(train_loader):
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1207, in _next_data
+    idx, data = self._get_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1163, in _get_data
+    success, data = self._try_get_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1011, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

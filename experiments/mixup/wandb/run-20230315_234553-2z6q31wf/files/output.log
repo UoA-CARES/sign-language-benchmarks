@@ -1,0 +1,36 @@
+
+Evaluating top_k_accuracy...
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 241, in <module>
+    validate()
+  File "train_one_neuron_head.py", line 122, in validate
+    voutputs = model(rgb=rgb,
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 28, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 186, in forward
+    stream['rgb'] = self.rgb_stream(rgb=rgb)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 862, in forward
+    x = self.conv1(x)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 207, in forward
+    x = self.conv(x)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/mmcv/cnn/bricks/wrappers.py", line 80, in forward
+    return super().forward(x)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 613, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 608, in _conv_forward
+    return F.conv3d(
+KeyboardInterrupt

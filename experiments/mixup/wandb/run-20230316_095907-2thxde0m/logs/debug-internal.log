@@ -1,0 +1,397 @@
+2023-03-16 09:59:07,713 INFO    StreamThr :1184560 [internal.py:wandb_internal():88] W&B internal server running at pid: 1184560, started at: 2023-03-16 09:59:07.711805
+2023-03-16 09:59:07,721 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: status
+2023-03-16 09:59:07,722 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: status
+2023-03-16 09:59:07,725 DEBUG   SenderThread:1184560 [sender.py:send():303] send: header
+2023-03-16 09:59:07,725 INFO    WriterThread:1184560 [datastore.py:open_for_write():75] open: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/run-2thxde0m.wandb
+2023-03-16 09:59:07,759 DEBUG   SenderThread:1184560 [sender.py:send():303] send: run
+2023-03-16 09:59:08,450 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: check_version
+2023-03-16 09:59:08,453 INFO    SenderThread:1184560 [dir_watcher.py:__init__():216] watching files in: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files
+2023-03-16 09:59:08,454 INFO    SenderThread:1184560 [sender.py:_start_run_threads():928] run started: 2thxde0m with start time 1678913947.710585
+2023-03-16 09:59:08,454 DEBUG   SenderThread:1184560 [sender.py:send():303] send: summary
+2023-03-16 09:59:08,455 INFO    SenderThread:1184560 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-16 09:59:08,455 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: check_version
+2023-03-16 09:59:08,553 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: run_start
+2023-03-16 09:59:08,574 DEBUG   HandlerThread:1184560 [system_info.py:__init__():31] System info init
+2023-03-16 09:59:08,574 DEBUG   HandlerThread:1184560 [system_info.py:__init__():46] System info init done
+2023-03-16 09:59:08,574 INFO    HandlerThread:1184560 [system_monitor.py:start():150] Starting system monitor
+2023-03-16 09:59:08,575 INFO    SystemMonitor:1184560 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2023-03-16 09:59:08,575 INFO    HandlerThread:1184560 [system_monitor.py:probe():168] Collecting system info
+2023-03-16 09:59:08,576 INFO    SystemMonitor:1184560 [interfaces.py:start():168] Started cpu
+2023-03-16 09:59:08,579 INFO    SystemMonitor:1184560 [interfaces.py:start():168] Started disk
+2023-03-16 09:59:08,581 INFO    SystemMonitor:1184560 [interfaces.py:start():168] Started gpu
+2023-03-16 09:59:08,582 INFO    SystemMonitor:1184560 [interfaces.py:start():168] Started memory
+2023-03-16 09:59:08,583 INFO    SystemMonitor:1184560 [interfaces.py:start():168] Started network
+2023-03-16 09:59:08,603 DEBUG   HandlerThread:1184560 [system_info.py:probe():195] Probing system
+2023-03-16 09:59:08,606 DEBUG   HandlerThread:1184560 [system_info.py:_probe_git():180] Probing git
+2023-03-16 09:59:08,612 DEBUG   HandlerThread:1184560 [system_info.py:_probe_git():188] Probing git done
+2023-03-16 09:59:08,613 DEBUG   HandlerThread:1184560 [system_info.py:probe():241] Probing system done
+2023-03-16 09:59:08,613 DEBUG   HandlerThread:1184560 [system_monitor.py:probe():177] {'os': 'Linux-5.14.0-1058-oem-x86_64-with-glibc2.17', 'python': '3.8.15', 'heartbeatAt': '2023-03-15T20:59:08.603502', 'startedAt': '2023-03-15T20:59:07.681346', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'train_one_neuron_head.py', 'codePath': 'experiments/seven_sees/train_one_neuron_head.py', 'git': {'remote': 'https://github.com/UoA-CARES/sign-language-summer-research.git', 'commit': '52aefbb14215005dd8df9c3cd26096c37e454c04'}, 'email': 'sttaseen@gmail.com', 'root': '/home/myuser1/Desktop/sign-language-summer-research', 'host': 'Precision-3640', 'username': 'myuser1', 'executable': '/home/myuser1/miniconda3/envs/wlasl/bin/python', 'cpu_count': 10, 'cpu_count_logical': 10, 'cpu_freq': {'current': 2960.0574, 'min': 800.0, 'max': 5200.0}, 'cpu_freq_per_core': [{'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 4400.574, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}, {'current': 2800.0, 'min': 800.0, 'max': 5200.0}], 'disk': {'total': 937.3305015563965, 'used': 854.2273406982422}, 'gpu': 'NVIDIA GeForce RTX 3080', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}], 'memory': {'total': 31.07886505126953}}
+2023-03-16 09:59:08,613 INFO    HandlerThread:1184560 [system_monitor.py:probe():178] Finished collecting system info
+2023-03-16 09:59:08,613 INFO    HandlerThread:1184560 [system_monitor.py:probe():181] Publishing system info
+2023-03-16 09:59:08,613 DEBUG   HandlerThread:1184560 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-03-16 09:59:08,613 DEBUG   HandlerThread:1184560 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-16 09:59:08,613 DEBUG   HandlerThread:1184560 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-03-16 09:59:09,454 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_created():275] file/dir created: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/conda-environment.yaml
+2023-03-16 09:59:09,454 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_created():275] file/dir created: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-summary.json
+2023-03-16 09:59:09,454 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_created():275] file/dir created: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/requirements.txt
+2023-03-16 09:59:10,953 DEBUG   HandlerThread:1184560 [system_info.py:_save_conda():86] Saving conda packages done
+2023-03-16 09:59:10,954 INFO    HandlerThread:1184560 [system_monitor.py:probe():183] Finished publishing system info
+2023-03-16 09:59:10,969 DEBUG   SenderThread:1184560 [sender.py:send():303] send: files
+2023-03-16 09:59:10,970 INFO    SenderThread:1184560 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2023-03-16 09:59:10,973 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 09:59:10,973 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 09:59:11,262 DEBUG   SenderThread:1184560 [sender.py:send():303] send: telemetry
+2023-03-16 09:59:11,454 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/conda-environment.yaml
+2023-03-16 09:59:11,454 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_created():275] file/dir created: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-metadata.json
+2023-03-16 09:59:11,806 INFO    Thread-16 :1184560 [upload_job.py:push():143] Uploaded file /tmp/tmpry60gsqnwandb/16h1el0n-wandb-metadata.json
+2023-03-16 09:59:19,456 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_created():275] file/dir created: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:21,456 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:23,457 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:25,457 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:26,265 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 09:59:26,265 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 09:59:27,458 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:29,458 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:31,459 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:33,460 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:35,460 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:37,461 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:39,462 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/config.yaml
+2023-03-16 09:59:39,462 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:41,462 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:41,553 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 09:59:41,553 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 09:59:43,463 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:45,463 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:47,464 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:49,465 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:51,465 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:53,466 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:55,466 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:56,856 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 09:59:56,856 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 09:59:57,467 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 09:59:59,467 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:01,468 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:03,469 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:05,469 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:07,470 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:08,583 DEBUG   SystemMonitor:1184560 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2023-03-16 10:00:08,584 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:00:09,470 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:11,471 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:12,140 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:00:12,140 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:00:13,471 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:15,472 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:17,473 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:19,473 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:21,474 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:23,474 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:25,475 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:27,434 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:00:27,435 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:00:27,476 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:29,476 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:31,477 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:33,478 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:35,478 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:37,479 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:38,585 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:00:39,479 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:41,480 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:42,762 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:00:42,762 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:00:43,480 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:45,481 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:47,482 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:49,482 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:51,483 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:53,484 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:55,484 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:57,485 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:00:58,056 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:00:58,056 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:00:59,485 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:01,486 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:03,487 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:05,487 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:07,488 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:08,585 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:01:09,488 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:11,489 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:13,359 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:01:13,359 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:01:13,490 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:15,490 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:17,491 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:19,491 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:21,492 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:23,492 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:25,493 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:27,494 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:28,651 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:01:28,651 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:01:29,494 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:31,495 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:33,495 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:35,496 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:37,496 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:38,586 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:01:39,497 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:41,497 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:43,498 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:43,951 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:01:43,952 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:01:45,499 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:47,499 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:49,500 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:51,500 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:53,501 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:55,501 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:57,502 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:01:59,249 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:01:59,249 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:01:59,503 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:01,503 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:03,504 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:05,504 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:07,505 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:08,586 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:02:09,505 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:11,506 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:13,507 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:14,542 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:02:14,542 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:02:15,507 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:17,508 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:19,508 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:21,509 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:23,510 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:25,510 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:27,511 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:29,512 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:29,832 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:02:29,832 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:02:31,512 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:33,513 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:35,513 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:37,514 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:38,587 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:02:39,515 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:41,515 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:43,516 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:45,224 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:02:45,224 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:02:45,517 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:47,517 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:49,518 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:51,518 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:53,519 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:55,520 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:57,520 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:02:59,521 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:00,526 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:03:00,526 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:03:01,521 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:03,522 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:05,522 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:07,523 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:08,588 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:03:09,523 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:11,524 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:13,525 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:15,525 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:15,810 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:03:15,810 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:03:17,526 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:19,526 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:21,527 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:23,528 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:25,528 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:27,529 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:29,529 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:31,097 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:03:31,097 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:03:31,530 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:33,531 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:35,531 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:37,532 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:38,588 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:03:39,532 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:41,533 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:43,534 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:45,534 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:46,382 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:03:46,382 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:03:47,535 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:49,535 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:51,536 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:53,537 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:55,537 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:57,538 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:03:59,538 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:01,539 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:01,677 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:04:01,677 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:04:03,540 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:05,540 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:07,541 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:08,589 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:04:09,541 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:11,542 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:13,542 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:15,543 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:16,985 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:04:16,985 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:04:17,544 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:19,544 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:04:32,280 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:04:32,280 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:04:38,589 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:04:47,573 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:04:47,573 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:04:59,204 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: partial_history
+2023-03-16 10:04:59,204 DEBUG   SenderThread:1184560 [sender.py:send():303] send: history
+2023-03-16 10:04:59,204 DEBUG   SenderThread:1184560 [sender.py:send():303] send: summary
+2023-03-16 10:04:59,205 INFO    SenderThread:1184560 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-16 10:04:59,554 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-summary.json
+2023-03-16 10:05:01,555 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:02,865 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:05:02,865 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:05:03,556 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:05,556 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:07,557 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:08,590 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:05:09,558 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:11,558 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:13,559 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:15,560 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:17,560 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:18,157 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: stop_status
+2023-03-16 10:05:18,158 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: stop_status
+2023-03-16 10:05:19,561 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:21,561 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:23,562 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:25,563 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:27,563 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:29,564 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:31,564 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:32,588 DEBUG   SenderThread:1184560 [sender.py:send():303] send: exit
+2023-03-16 10:05:32,588 INFO    SenderThread:1184560 [sender.py:send_exit():442] handling exit code: 255
+2023-03-16 10:05:32,588 INFO    SenderThread:1184560 [sender.py:send_exit():444] handling runtime: 384
+2023-03-16 10:05:32,588 INFO    SenderThread:1184560 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-16 10:05:32,588 INFO    SenderThread:1184560 [sender.py:send_exit():450] send defer
+2023-03-16 10:05:32,589 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,589 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 0
+2023-03-16 10:05:32,589 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,589 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 0
+2023-03-16 10:05:32,589 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 1
+2023-03-16 10:05:32,589 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,589 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 1
+2023-03-16 10:05:32,589 INFO    HandlerThread:1184560 [system_monitor.py:finish():160] Stopping system monitor
+2023-03-16 10:05:32,590 DEBUG   SystemMonitor:1184560 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2023-03-16 10:05:32,590 DEBUG   SystemMonitor:1184560 [system_monitor.py:_start():141] Publishing last batch of metrics
+2023-03-16 10:05:32,590 INFO    HandlerThread:1184560 [interfaces.py:finish():173] Joined cpu
+2023-03-16 10:05:32,590 INFO    HandlerThread:1184560 [interfaces.py:finish():173] Joined disk
+2023-03-16 10:05:32,635 INFO    HandlerThread:1184560 [interfaces.py:finish():173] Joined gpu
+2023-03-16 10:05:32,636 INFO    HandlerThread:1184560 [interfaces.py:finish():173] Joined memory
+2023-03-16 10:05:32,636 INFO    HandlerThread:1184560 [interfaces.py:finish():173] Joined network
+2023-03-16 10:05:32,636 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,636 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 1
+2023-03-16 10:05:32,636 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 2
+2023-03-16 10:05:32,636 DEBUG   SenderThread:1184560 [sender.py:send():303] send: stats
+2023-03-16 10:05:32,637 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,637 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 2
+2023-03-16 10:05:32,637 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,637 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 2
+2023-03-16 10:05:32,637 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 3
+2023-03-16 10:05:32,637 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,637 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 3
+2023-03-16 10:05:32,637 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,637 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 3
+2023-03-16 10:05:32,637 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 4
+2023-03-16 10:05:32,637 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,637 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 4
+2023-03-16 10:05:32,638 DEBUG   SenderThread:1184560 [sender.py:send():303] send: summary
+2023-03-16 10:05:32,638 INFO    SenderThread:1184560 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-16 10:05:32,638 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,638 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 4
+2023-03-16 10:05:32,638 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 5
+2023-03-16 10:05:32,638 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,638 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 5
+2023-03-16 10:05:32,638 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,638 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 5
+2023-03-16 10:05:32,638 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 6
+2023-03-16 10:05:32,639 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:32,639 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 6
+2023-03-16 10:05:32,639 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:32,639 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 6
+2023-03-16 10:05:33,565 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-summary.json
+2023-03-16 10:05:33,565 INFO    Thread-13 :1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:33,588 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: poll_exit
+2023-03-16 10:05:34,601 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 7
+2023-03-16 10:05:34,602 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: poll_exit
+2023-03-16 10:05:34,604 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:34,604 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 7
+2023-03-16 10:05:34,604 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:34,604 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 7
+2023-03-16 10:05:34,605 INFO    SenderThread:1184560 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-03-16 10:05:35,567 INFO    SenderThread:1184560 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:35,568 INFO    SenderThread:1184560 [dir_watcher.py:finish():392] scan: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files
+2023-03-16 10:05:35,568 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-metadata.json wandb-metadata.json
+2023-03-16 10:05:35,569 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/requirements.txt requirements.txt
+2023-03-16 10:05:35,569 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log output.log
+2023-03-16 10:05:35,577 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/conda-environment.yaml conda-environment.yaml
+2023-03-16 10:05:35,578 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-summary.json wandb-summary.json
+2023-03-16 10:05:35,579 INFO    SenderThread:1184560 [dir_watcher.py:finish():406] scan save: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/config.yaml config.yaml
+2023-03-16 10:05:35,585 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 8
+2023-03-16 10:05:35,587 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:35,587 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 8
+2023-03-16 10:05:35,598 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:35,598 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 8
+2023-03-16 10:05:35,599 INFO    SenderThread:1184560 [file_pusher.py:finish():168] shutting down file pusher
+2023-03-16 10:05:36,541 INFO    Thread-17 :1184560 [upload_job.py:push():143] Uploaded file /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/requirements.txt
+2023-03-16 10:05:36,551 INFO    Thread-20 :1184560 [upload_job.py:push():143] Uploaded file /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/wandb-summary.json
+2023-03-16 10:05:36,554 INFO    Thread-19 :1184560 [upload_job.py:push():143] Uploaded file /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/conda-environment.yaml
+2023-03-16 10:05:36,559 INFO    Thread-21 :1184560 [upload_job.py:push():143] Uploaded file /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/config.yaml
+2023-03-16 10:05:36,582 INFO    Thread-18 :1184560 [upload_job.py:push():143] Uploaded file /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/files/output.log
+2023-03-16 10:05:36,783 INFO    Thread-12 :1184560 [sender.py:transition_state():463] send defer: 9
+2023-03-16 10:05:36,784 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:36,784 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 9
+2023-03-16 10:05:36,785 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:36,785 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 9
+2023-03-16 10:05:36,785 INFO    SenderThread:1184560 [file_pusher.py:join():173] waiting for file pusher
+2023-03-16 10:05:36,785 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 10
+2023-03-16 10:05:36,786 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:36,786 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 10
+2023-03-16 10:05:36,787 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:36,787 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 10
+2023-03-16 10:05:37,603 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 11
+2023-03-16 10:05:37,604 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:37,604 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 11
+2023-03-16 10:05:37,604 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:37,604 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 11
+2023-03-16 10:05:37,605 INFO    SenderThread:1184560 [sender.py:transition_state():463] send defer: 12
+2023-03-16 10:05:37,606 DEBUG   SenderThread:1184560 [sender.py:send():303] send: final
+2023-03-16 10:05:37,607 DEBUG   SenderThread:1184560 [sender.py:send():303] send: footer
+2023-03-16 10:05:37,607 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: defer
+2023-03-16 10:05:37,608 INFO    HandlerThread:1184560 [handler.py:handle_request_defer():162] handle defer: 12
+2023-03-16 10:05:37,608 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: defer
+2023-03-16 10:05:37,608 INFO    SenderThread:1184560 [sender.py:send_request_defer():459] handle sender defer: 12
+2023-03-16 10:05:37,611 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: poll_exit
+2023-03-16 10:05:37,612 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: server_info
+2023-03-16 10:05:37,612 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: poll_exit
+2023-03-16 10:05:37,613 DEBUG   SenderThread:1184560 [sender.py:send_request():317] send_request: server_info
+2023-03-16 10:05:37,620 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: get_summary
+2023-03-16 10:05:37,622 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: sampled_history
+2023-03-16 10:05:38,250 INFO    MainThread:1184560 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2023-03-16 10:05:38,250 INFO    MainThread:1184560 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2023-03-16 10:05:38,251 INFO    MainThread:1184560 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2023-03-16 10:05:38,252 DEBUG   HandlerThread:1184560 [handler.py:handle_request():139] handle_request: shutdown
+2023-03-16 10:05:38,252 INFO    HandlerThread:1184560 [handler.py:finish():814] shutting down handler
+2023-03-16 10:05:38,608 INFO    WriterThread:1184560 [datastore.py:close():279] close: /home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/wandb/run-20230316_095907-2thxde0m/run-2thxde0m.wandb
+2023-03-16 10:05:39,249 INFO    SenderThread:1184560 [sender.py:finish():1331] shutting down sender
+2023-03-16 10:05:39,249 INFO    SenderThread:1184560 [file_pusher.py:finish():168] shutting down file pusher
+2023-03-16 10:05:39,249 INFO    SenderThread:1184560 [file_pusher.py:join():173] waiting for file pusher
+2023-03-16 10:05:39,255 INFO    MainThread:1184560 [internal.py:handle_exit():78] Internal process exited

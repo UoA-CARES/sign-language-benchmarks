@@ -1,0 +1,93 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 9.072
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 6.5184
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 11.655
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 7.3973
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 9.1402
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 10.457
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 7.4005
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 10.799
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 9.5577
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 8.0065
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 9.5396
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 10.363
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 9.6957
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 14.42
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 8.8847
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 7.7882
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 7.8719
+Epoch [1][90/1780], lr: 0.00000e+00, loss: 9.2845
+Epoch [1][95/1780], lr: 0.00000e+00, loss: 11.094
+Epoch [1][100/1780], lr: 0.00000e+00, loss: 11.449
+Epoch [1][105/1780], lr: 0.00000e+00, loss: 7.366
+Epoch [1][110/1780], lr: 0.00000e+00, loss: 12.813
+Epoch [1][115/1780], lr: 0.00000e+00, loss: 11.42
+Epoch [1][120/1780], lr: 0.00000e+00, loss: 9.6668
+Epoch [1][125/1780], lr: 0.00000e+00, loss: 6.6626
+Epoch [1][130/1780], lr: 0.00000e+00, loss: 7.16
+Epoch [1][135/1780], lr: 0.00000e+00, loss: 7.5297
+Epoch [1][140/1780], lr: 0.00000e+00, loss: 10.528
+Epoch [1][145/1780], lr: 0.00000e+00, loss: 10.012
+Epoch [1][150/1780], lr: 0.00000e+00, loss: 9.2992
+Epoch [1][155/1780], lr: 0.00000e+00, loss: 11.328
+Epoch [1][160/1780], lr: 0.00000e+00, loss: 8.3335
+Epoch [1][165/1780], lr: 0.00000e+00, loss: 5.8699
+Epoch [1][170/1780], lr: 0.00000e+00, loss: 7.507
+Epoch [1][175/1780], lr: 0.00000e+00, loss: 8.2036
+Epoch [1][180/1780], lr: 0.00000e+00, loss: 11.429
+Epoch [1][185/1780], lr: 0.00000e+00, loss: 5.8878
+Epoch [1][190/1780], lr: 0.00000e+00, loss: 12.195
+Epoch [1][195/1780], lr: 0.00000e+00, loss: 9.2202
+Epoch [1][200/1780], lr: 0.00000e+00, loss: 10.062
+Epoch [1][205/1780], lr: 0.00000e+00, loss: 7.5887
+Epoch [1][210/1780], lr: 0.00000e+00, loss: 6.1275
+Epoch [1][215/1780], lr: 0.00000e+00, loss: 10.864
+Epoch [1][220/1780], lr: 0.00000e+00, loss: 11.326
+Epoch [1][225/1780], lr: 0.00000e+00, loss: 8.3779
+Epoch [1][230/1780], lr: 0.00000e+00, loss: 14.327
+Epoch [1][235/1780], lr: 0.00000e+00, loss: 8.9534
+Epoch [1][240/1780], lr: 0.00000e+00, loss: 7.6134
+Epoch [1][245/1780], lr: 0.00000e+00, loss: 11.798
+Epoch [1][250/1780], lr: 0.00000e+00, loss: 10.987
+Epoch [1][255/1780], lr: 0.00000e+00, loss: 11.538
+Epoch [1][260/1780], lr: 0.00000e+00, loss: 9.1172
+Epoch [1][265/1780], lr: 0.00000e+00, loss: 8.8206
+Epoch [1][270/1780], lr: 0.00000e+00, loss: 7.7278
+Epoch [1][275/1780], lr: 0.00000e+00, loss: 10.066
+Epoch [1][280/1780], lr: 0.00000e+00, loss: 8.8339
+Epoch [1][285/1780], lr: 0.00000e+00, loss: 6.4851
+Epoch [1][290/1780], lr: 0.00000e+00, loss: 8.6044
+Epoch [1][295/1780], lr: 0.00000e+00, loss: 11.088
+Epoch [1][300/1780], lr: 0.00000e+00, loss: 8.7748
+Epoch [1][305/1780], lr: 0.00000e+00, loss: 8.4982
+Epoch [1][310/1780], lr: 0.00000e+00, loss: 7.8922
+Epoch [1][315/1780], lr: 0.00000e+00, loss: 7.7186
+Epoch [1][320/1780], lr: 0.00000e+00, loss: 7.5284
+Epoch [1][325/1780], lr: 0.00000e+00, loss: 11.353
+Epoch [1][330/1780], lr: 0.00000e+00, loss: 10.188
+Epoch [1][335/1780], lr: 0.00000e+00, loss: 9.4707
+Epoch [1][340/1780], lr: 0.00000e+00, loss: 9.8638
+Epoch [1][345/1780], lr: 0.00000e+00, loss: 10.603
+Epoch [1][350/1780], lr: 0.00000e+00, loss: 13.234
+Epoch [1][355/1780], lr: 0.00000e+00, loss: 14.193
+Epoch [1][360/1780], lr: 0.00000e+00, loss: 10.275
+Epoch [1][365/1780], lr: 0.00000e+00, loss: 8.4829
+Epoch [1][370/1780], lr: 0.00000e+00, loss: 7.2148
+Epoch [1][375/1780], lr: 0.00000e+00, loss: 8.6091
+Epoch [1][380/1780], lr: 0.00000e+00, loss: 11.202
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 251, in <module>
+  File "train_one_neuron_head.py", line 43, in train_one_epoch
+    for i, results in enumerate(train_loader):
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1207, in _next_data
+    idx, data = self._get_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1163, in _get_data
+    success, data = self._try_get_data()
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1011, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

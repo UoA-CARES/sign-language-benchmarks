@@ -1,0 +1,68 @@
+
+Evaluating top_k_accuracy...
+top1_acc: 0.845, top5_acc: 0.9574
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 1.266e-05
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 2.0504e-06
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 2.3842e-07
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 0.00053213
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 2.3365e-06
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 5.0544e-06
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 2.9133e-05
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 4.5299e-07
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 4.1961e-06
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 7.1526e-08
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 2.9204e-05
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 1.9073e-06
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 7.3467e-05
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 1.2636e-06
+Epoch [1][90/1780], lr: 0.00000e+00, loss: 1.4448e-05
+Epoch [1][95/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][100/1780], lr: 0.00000e+00, loss: 7.0332e-06
+Epoch [1][105/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][110/1780], lr: 0.00000e+00, loss: 8.3446e-07
+Epoch [1][115/1780], lr: 0.00000e+00, loss: 7.1526e-08
+Epoch [1][120/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][125/1780], lr: 0.00000e+00, loss: 7.6054e-06
+Epoch [1][130/1780], lr: 0.00000e+00, loss: 0.0030344
+Epoch [1][135/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][140/1780], lr: 0.00000e+00, loss: 5.0991e-05
+Epoch [1][145/1780], lr: 0.00000e+00, loss: 9.4888e-06
+Epoch [1][150/1780], lr: 0.00000e+00, loss: 1.4305e-07
+Epoch [1][155/1780], lr: 0.00000e+00, loss: 2.1458e-07
+Epoch [1][160/1780], lr: 0.00000e+00, loss: 0.00088678
+Epoch [1][165/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][170/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][175/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][180/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][185/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][190/1780], lr: 0.00000e+00, loss: 9.5367e-08
+Epoch [1][195/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][200/1780], lr: 0.00000e+00, loss: 2.3842e-08
+Epoch [1][205/1780], lr: 0.00000e+00, loss: 0.086877
+Epoch [1][210/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][215/1780], lr: 0.00000e+00, loss: 0.0022167
+Epoch [1][220/1780], lr: 0.00000e+00, loss: 1.2636e-06
+Epoch [1][225/1780], lr: 0.00000e+00, loss: 7.1526e-08
+Epoch [1][230/1780], lr: 0.00000e+00, loss: 0.031378
+Epoch [1][235/1780], lr: 0.00000e+00, loss: 0.072446
+Epoch [1][240/1780], lr: 0.00000e+00, loss: 2.6226e-06
+Epoch [1][245/1780], lr: 0.00000e+00, loss: 4.816e-06
+Epoch [1][250/1780], lr: 0.00000e+00, loss: 0.007198
+Epoch [1][255/1780], lr: 0.00000e+00, loss: 0.076307
+Epoch [1][260/1780], lr: 0.00000e+00, loss: 0.00014522
+Epoch [1][265/1780], lr: 0.00000e+00, loss: 7.1526e-08
+Epoch [1][270/1780], lr: 0.00000e+00, loss: 0.13629
+Epoch [1][275/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][280/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][285/1780], lr: 0.00000e+00, loss: 1.1921e-07
+Epoch [1][290/1780], lr: 0.00000e+00, loss: 0.0
+Epoch [1][295/1780], lr: 0.00000e+00, loss: 0.0
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 257, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 83, in train_one_epoch
+    running_loss += loss.item()
+KeyboardInterrupt

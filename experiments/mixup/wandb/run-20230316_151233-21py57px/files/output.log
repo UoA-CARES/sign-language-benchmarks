@@ -1,0 +1,42 @@
+
+Evaluating top_k_accuracy...
+top1_acc: 0.8411, top5_acc: 0.9341
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 1.1829
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 1.4288
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 1.4178
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 1.1724
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 2.3283
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 1.3492
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 1.1076
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 257, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 34, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 190, in forward
+    stream['depth'] = self.depth_stream(rgb=depth)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 17, in forward
+    rgb = self.rgb_backbone(rgb)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/mmcv_model/mmcv_csn.py", line 862, in forward
+    x = self.conv1(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/mmcv/cnn/bricks/conv_module.py", line 211, in forward
+    x = self.activate(x)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/activation.py", line 98, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/functional.py", line 1440, in relu
+    result = torch.relu_(input)
+KeyboardInterrupt

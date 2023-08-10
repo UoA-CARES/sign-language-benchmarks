@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "gridsearch.py", line 32, in <module>
+    trainer.train() # Train the model
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/trainer.py", line 282, in train
+    avg_loss, learning_rate = self.train_one_epoch(epoch+1)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/trainer.py", line 153, in train_one_epoch
+    for i, results in enumerate(self.train_loader):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1333, in _next_data
+    return self._process_data(data)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sadat/miniconda3/envs/mmsign/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 387, in __getitem__
+    results = self.load_video(idx=idx)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 197, in load_video
+    pose_data = self.load_pose(video_path)
+  File "/home/sadat/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 123, in load_pose
+    with open(osp.join(video_path, 'pose.txt'), 'r') as fin:
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/wlasl/rawframes/val/68189/pose.txt'

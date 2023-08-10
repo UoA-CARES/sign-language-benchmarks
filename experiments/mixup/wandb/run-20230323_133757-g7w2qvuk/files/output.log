@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 224, in <module>
+    train_dataset.visualise()
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/dataset/dataset.py", line 274, in visualise
+    results = self.train_transform(results)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 95, in __call__
+    img = t(img)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 349, in forward
+    return F.resize(img, self.size, self.interpolation, self.max_size, self.antialias)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torchvision/transforms/functional.py", line 436, in resize
+    return F_pil.resize(img, size=size, interpolation=pil_interpolation, max_size=max_size)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torchvision/transforms/functional_pil.py", line 233, in resize
+    raise TypeError(f"img should be PIL Image. Got {type(img)}")
+TypeError: img should be PIL Image. Got <class 'dict'>

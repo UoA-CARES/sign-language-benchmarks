@@ -1,0 +1,45 @@
+Epoch [1][5/1780], lr: 0.00000e+00, loss: 5.9522
+Epoch [1][10/1780], lr: 0.00000e+00, loss: 7.1977
+Epoch [1][15/1780], lr: 0.00000e+00, loss: 6.9583
+Epoch [1][20/1780], lr: 0.00000e+00, loss: 7.1459
+Epoch [1][25/1780], lr: 0.00000e+00, loss: 8.9012
+Epoch [1][30/1780], lr: 0.00000e+00, loss: 7.5557
+Epoch [1][35/1780], lr: 0.00000e+00, loss: 4.4054
+Epoch [1][40/1780], lr: 0.00000e+00, loss: 7.5047
+Epoch [1][45/1780], lr: 0.00000e+00, loss: 5.9155
+Epoch [1][50/1780], lr: 0.00000e+00, loss: 7.4648
+Epoch [1][55/1780], lr: 0.00000e+00, loss: 8.2797
+Epoch [1][60/1780], lr: 0.00000e+00, loss: 10.107
+Epoch [1][65/1780], lr: 0.00000e+00, loss: 7.3252
+Epoch [1][70/1780], lr: 0.00000e+00, loss: 5.9294
+Epoch [1][75/1780], lr: 0.00000e+00, loss: 6.0687
+Epoch [1][80/1780], lr: 0.00000e+00, loss: 8.485
+Epoch [1][85/1780], lr: 0.00000e+00, loss: 8.0753
+Traceback (most recent call last):
+  File "train_one_neuron_head.py", line 256, in <module>
+    avg_loss, learning_rate = train_one_epoch(epoch+1)
+  File "train_one_neuron_head.py", line 63, in train_one_epoch
+    outputs = model(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/sees7.py", line 40, in forward
+    stream = self.multistream_backbone(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multistream_backbone.py", line 198, in forward
+    stream['right_hand'] = self.right_hand_stream(rgb=right_hand)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/flow_autoencoder.py", line 20, in forward
+    neck_out = self.neck(rgb=rgb,
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/Desktop/sign-language-summer-research/experiments/seven_sees/model/multimodal_neck.py", line 24, in forward
+    rgb = torch.flatten(self.avg_pool(rgb[-1]), start_dim=1)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 1218, in forward
+    return F.adaptive_avg_pool3d(input, self.output_size)
+  File "/home/myuser1/miniconda3/envs/wlasl/lib/python3.8/site-packages/torch/nn/functional.py", line 1258, in adaptive_avg_pool3d
+    return torch._C._nn.adaptive_avg_pool3d(input, _output_size)
+KeyboardInterrupt
