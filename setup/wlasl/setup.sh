@@ -4,15 +4,15 @@ cd ../..
 
 # Set parameters
 json="nslt_100.json"
-n_workers=12
+n_workers=24
 
 # Download the dataset
 mkdir -p data
 cd data
 mkdir -p wlasl
 cd wlasl
-kaggle datasets download -d sttaseen/wlasl2000-resized
-unzip wlasl2000-resized.zip -d ./
+# kaggle datasets download -d sttaseen/wlasl2000-resized
+# unzip wlasl2000-resized.zip -d ./
 cd ../..
 
 # Split the videos
