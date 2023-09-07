@@ -9,6 +9,8 @@ mkdir -p autsl
 cd autsl
 # kaggle datasets download -d sttaseen/autsl
 unzip autsl.zip -d ./
+rm -rf autsl.zip
+rm -rf ~/.local/share/Trash/*
 cd ../..
 
 # Extract raw frames
